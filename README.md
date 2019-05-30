@@ -11,7 +11,7 @@
     * [암달의 법칙](#암달의-법칙)
     * [브룩스의 법칙](#브룩스의-법칙)
     * [콘웨이의 법칙](#콘웨이의-법칙)
-    * [Hanlon's Razor](#hanlons-razor)
+    * [핸런의 면도날](#핸런의-면도날)
     * [Hofstadter's Law](#hofstadters-law)
     * [The Hype Cycle & Amara's Law](#the-hype-cycle--amaras-law)
     * [Hyrum's Law (The Law of Implicit Interfaces)](#hyrums-law-the-law-of-implicit-interfaces)
@@ -113,15 +113,17 @@
 
 <br>
 
-### Hanlon's Razor
+### 핸런의 면도날
 
-[Hanlon's Razor on Wikipedia](https://en.wikipedia.org/wiki/Hanlon%27s_razor)
+[위키피디아의 핸런의 면도날](https://ko.wikipedia.org/wiki/핸런의_면도날)
 
-> Never attribute to malice that which is adequately explained by stupidity.
+> 어리석음으로 충분히 설명이 되는 일을 악의의 탓으로 돌리지 말라.
 >
 > Robert J. Hanlon
 
-This principle suggests that actions resulting in a negative outcome were not a result of ill will. Instead the negative outcome is more likely attributed to those actions and/or the impact being not fully understood.
+이 법칙에 따르면 부정적인 결과를 낳는 행동은 악의로부터 비롯된 것이라기보다는, 행동과 그것이 불러올 파장에 대해 제대로 이해하지 못했기 때문이다.
+
+<br>
 
 ### Hofstadter's Law
 
@@ -277,7 +279,7 @@ Modern practices like 'Microservice Architecture' can be thought of as an applic
 
 스포티파이 모델은 부족, 길드, 지부와 같은 그들 조직 구조의 요소 또한 유명하게 만들었다.
 
-
+<br>
 
 ![Spotify Tribe Engineering Model](./images/spotify_model.jpg)
 
