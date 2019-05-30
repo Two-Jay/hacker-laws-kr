@@ -1,8 +1,8 @@
 # 💻📖 hacker-laws
 
-개발자에게 유용한 법칙, 이론, 원칙, 그리고 패턴들
+**개발자에게 유용한 법칙, 이론, 원칙, 그리고 패턴들**
 
-
+<br>
 
 <!-- vim-markdown-toc GFM -->
 
@@ -10,7 +10,7 @@
 * [법칙](#laws)
     * [암달의 법칙](#amdahls-law)
     * [브룩스의 법칙](#brooks-law)
-    * [Conway's Law](#conways-law)
+    * [콘웨이의 법칙](#conways-law)
     * [Hanlon's Razor](#hanlons-razor)
     * [Hofstadter's Law](#hofstadters-law)
     * [The Hype Cycle & Amara's Law](#the-hype-cycle--amaras-law)
@@ -22,7 +22,7 @@
     * [The Law of Leaky Abstractions](#the-law-of-leaky-abstractions)
     * [The Law of Triviality](#the-law-of-triviality)
     * [The Unix Philosophy](#the-unix-philosophy)
-    * [The Spotify Model](#the-spotify-model)
+    * [스포티파이 모델](#the-spotify-model)
     * [Wadler's Law](#wadlers-law)
 * [Principles](#principles)
     * [The Pareto Principle (The 80/20 Rule)](#the-pareto-principle-the-8020-rule)
@@ -39,15 +39,15 @@
 
 <!-- vim-markdown-toc -->
 
-
+<br>
 
 ## 서론
 
 개발을 이야기할 때 흔히 논하는 법칙들이 있습니다. 이 저장소는 그 중 가장 보편적인 것들에 대한 참조와 개요입니다. 공유와 PR 제출 부탁드려요!
 
-❗: 이 저장소는 여러 법칙, 원칙, 그리고 패턴에 관한 설명을 포함하고 있지만, 그 중 어떤 것도  _지지_ 하고 있지 않습니다. 그것들을 적용하여야 할지에 대해서는 언제나 논의의 여지가 있으며, 또한 당신이 어떤 작업을 하느냐에 따라서도 크게 달라집니다.
+❗: 이 저장소는 여러 법칙, 원칙, 그리고 패턴에 관한 설명을 포함하고 있지만, 그 중 어떤 것도  _지지_ 하고 있지 않습니다. 그것들을 적용하여야 할지에 말지에 대해서는 언제나 논의의 여지가 있으며, 또한 당신이 어떤 작업을 하느냐에 따라서도 크게 달라집니다.
 
-
+<br>
 
 ## 법칙
 
@@ -65,20 +65,20 @@
 
 *(이미지 출처: Daniels220 @영어 Wikipedia, Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/File:AmdahlsLaw.svg)*
 
-
+<br>
 
 보다시피 50%나 병렬화 가능한 프로그램임에도 10개 프로세서 이후에는 거의 이득이 없는 반면, 95% 병렬화 가능한 프로그램은 수천 개가 추가될 때까지도 유의미한 성능 향상을 보여주고 있다.
 
 [무어의 법칙](#moores-law)과 개별 프로세서의 성능 증가 속도가 완화되면서, 병렬화는 최적화의 핵심이 되었다. 그래픽스 프로그래밍이 이에 대한 가장 알맞은 예시이다. 셰이더 기반의 최신 컴퓨팅에서는 개별 픽셀 혹은 프래그먼트를 병렬로 렌더링할 수 있는데, 이것이 최신 그래픽 카드들이 대개 수천 개의 코어(GPU 또는 셰이더 유닛)로 구성된 이유이다.
 
-
+<br>
 
 관련:
 
 - [브룩스의 법칙](#brookss-law)
 - [무어의 법칙](#moores-law)
 
-
+<br>
 
 ### 브룩스의 법칙
 
@@ -92,24 +92,26 @@
 
 이것은 그의 저서 '[맨먼스 미신](#reading-list)'의 주요한 주제이다.
 
-
+<br>
 
 관련:
 
 - [Death March](#todo)
-- [Reading List: The Mythical Man Month](#reading-list)
+- [추천 도서 목록 : 맨먼스 미신](#reading-list)
 
+<br>
 
-
-### Conway's Law
+### 콘웨이의 법칙
 
 [Conway's Law on Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_law)
 
-This law suggests that the technical boundaries of a system will reflect the structure of the organisation. It is commonly referred to when looking at organisation improvements, Conway's Law suggests that if an organisation is structured into many small, disconnected units, the software it produces will be. If an organisation is built more around 'verticals' which are orientated around features or services, the software systems will also reflect this.
+이 법칙에 따르면 시스템의 구조는 설계하는 조직의 구조를 반영한다. 이것은 조직 개선을 시도할 때 종종 인용되고는 하는데, 가령 조직이 여러 개의 작고 끊어진 단위로 구성되어 있다면 거기에서 나온 소프트웨어 또한 그 모습을 닮는다고 한다. 또한 만약 조직이 기능과 서비스를 중심으로 수직적으로 짜여 있다면, 이 역시 소프트웨어가 이러한 모습을 반영할 것이란 것이다.
 
-See also:
+<br>관련:
 
-- [The Spotify Model](#the-spotify-model)
+- [스포티파이 모델](#the-spotify-model)
+
+<br>
 
 ### Hanlon's Razor
 
@@ -265,13 +267,23 @@ The Unix Philosophy is that software components should be small, and focused on 
 
 Modern practices like 'Microservice Architecture' can be thought of as an application of this law, where services are small, focused and do one specific thing, allowing complex behaviour to be composed of simple building blocks.
 
-### The Spotify Model
+<br>
+
+### 스포티파이 모델
 
 [The Spotify Model on Spotify Labs](https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/)
 
-The Spotify Model is an approach to team and organisation structure which has been popularised by 'Spotify'. In this model, teams are organised around features, rather than technologies.
+스포티파이 모델은 '스포티파이'에 의해 유명해진 팀과 조직 구조에 대한 접근법이다. 이 모델에서 팀은 기술보단 기능을 중심으로 구성된다.
 
-The Spotify Model also popularises the concepts of Tribes, Guilds, Chapters, which are other components of their organisation structure.
+스포티파이 모델은 부족, 길드, 지부와 같은 그들 조직 구조의 요소 또한 유명하게 만들었다.
+
+
+
+![Spotify Tribe Engineering Model](./images/spotify_model.jpg)
+
+*(이미지 출처: https://medium.com/@media_75624/exploring-key-elements-of-spotifys-agile-scaling-model-471d2a23d7ea)*
+
+<br>
 
 ### Wadler's Law
 
@@ -443,7 +455,7 @@ See also:
 
 - [The Pragmatic Developer](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
 
-## Reading List
+## 추천 도서
 
 If you have found these concepts interesting, you may enjoy the following books.
 
