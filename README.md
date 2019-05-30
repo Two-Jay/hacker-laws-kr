@@ -1,15 +1,13 @@
 # 💻📖 hacker-laws
 
-Laws, Theories, Principles and Patterns that developers will find useful.
-
-🇨🇳 [中文 / Chinese Version](https://github.com/nusr/hacker-laws-zh) - thanks [Steve Xu](https://github.com/nusr)!
+개발자에게 유용한 법칙, 이론, 원칙과 패턴들
 
 <!-- vim-markdown-toc GFM -->
 
-* [Introduction](#introduction)
-* [Laws](#laws)
-    * [Amdahl's Law](#amdahls-law)
-    * [Brooks' Law](#brooks-law)
+* [서론](#introduction)
+* [법칙](#laws)
+    * [암달의 법칙](#amdahls-law)
+    * [브룩스의 법칙](#brooks-law)
     * [Conway's Law](#conways-law)
     * [Hanlon's Razor](#hanlons-razor)
     * [Hofstadter's Law](#hofstadters-law)
@@ -39,40 +37,42 @@ Laws, Theories, Principles and Patterns that developers will find useful.
 
 <!-- vim-markdown-toc -->
 
-## Introduction
+## 서론
 
-There are lots of laws which people discuss when talking about development. This repository is a reference and overview of some of the most common ones. Please share and submit PRs!
+개발을 이야기할 때 흔히 논하는 법칙들이 있습니다. 이 저장소는 그 중 가장 보편적인 것들에 대한 참조와 개요입니다. 공유와 PR 제출 부탁드려요!
 
-❗: This repo contains an explanation of some laws, principles and patterns, but does not _advocate_ for any of them. Whether they should be applied will always be a matter of debate, and greatly dependent on what you are working on.
+❗: 이 저장소는 여러 법칙, 원칙, 그리고 패턴에 관한 설명을 포함하고 있지만, 그 중 어떤 것도 _지지_하고 있지 않습니다. 그것들을 적용하여야 할지에 대해서는 언제나 논의의 여지가 있으며, 또한 당신이 어떤 작업을 하느냐에 따라서도 크게 달라집니다.
 
-## Laws
+## 법칙
 
-And here we go!
+ㄱㄱ!
 
-### Amdahl's Law
+### 암달의 법칙
 
-[Amdahl's Law on Wikipedia](https://en.wikipedia.org/wiki/Amdahl%27s_law)
+[위키피디아의 암달의 법칙](https://ko.wikipedia.org/wiki/암달의_법칙)
 
-> Amdahl's Law is a formula which shows the _potential speedup_ of a computational task which can be achieved by increasing the resources of a system. Normally used in parallel computing, it can predict the actual benefit of increasing the number of processors, which is limited by the parallelisability of the program.
+> 암달의 법칙은 시스템에 리소스를 추가함으로써 얻을 수 있는 컴퓨터 작업 성능 향상의 최대 폭을 나타내주는 공식이다. 일반적으로 병렬 컴퓨팅에서 이를 이용하여, 프로세서 개수의 증가가 프로그램 자체의 구조적인 병렬화 제한에 맞서 실제적으로 가져다주는 이득을 예측할 수 있다.
 
-Best illustrated with an example. If a program is made up of two parts, part A, which must be executed by a single processor, and part B, which can be parallelised, then we see that adding multiple processors to the system executing the program can only have a limited benefit. It can potentially greatly improve the speed of part B - but the speed of part A will remain unchanged.
+예시를 살펴보자. 어떠한 프로그램이 단일 프로세서로 구동되어야 하는 부분 A와 병렬화될 수 있는 부분 B로 이루어져있다고 할 때, 우리는 프로세서의 추가가 제한된 이득만을 가져다줌을 알 수 있다. B 부분의 성능을 크게 향상시킬 수 있지만, A 부분의 속도는 그대로 남을 것이기 때문이다.
 
-The diagram below shows some examples of potential improvements in speed:
+아래의 그래프는 성능 향상 가능성의 예시를 보여준다.
 
 ![Diagram: Amdahl's Law](./images/amdahls_law.png)
 
-*(Image Reference: By Daniels220 at English Wikipedia, Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/File:AmdahlsLaw.svg)*
+*(이미지 출처: Daniels220 @영어 Wikipedia, Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/File:AmdahlsLaw.svg)*
 
-As can be seen, even a program which is 50% parallelisable will benefit very little beyond 10 processing units, whereas a program which is 95% parallelisable can still achieve significant speed improvements with over a thousand processing units.
+보다시피 50%나 병렬화 가능한 프로그램임에도 10개 프로세서 이후에는 거의 이득이 없는 반면, 95% 병렬화 가능한 프로그램은 수천 개가 추가될 때까지도 유의미한 성능 향상을 보여주고 있다.
 
-As [Moore's Law](#moores-law) slows, and the acceleration of individual processor speed slows, parallelisation is key to improving performance. Graphics programming is an excellent example - with modern Shader based computing, individual pixels or fragments can be rendered in parallel - this is why modern graphics cards often have many thousands of processing cores (GPUs or Shader Units).
+[무어의 법칙](#moores-law)과 개별 프로세서의 성능 가속도가 완화되면서, 병렬화는 최적화의 핵심이 되었다. 그래픽스 프로그래밍이 가장 알맞은 예시이다. 셰이더 기반의 최신 컴퓨팅에서는 개별 픽셀 혹은 프래그먼트를 병렬로 렌더링할 수 있다. 이것이 최신 그래픽 카드들이 대개 수천 개의 코어(GPU 또는 셰이더 유닛)로 구성된 이유이다.
 
-See also:
 
-- [Brooks' Law](#brookss-law)
-- [Moore's Law](#moores-law)
 
-### Brooks' Law
+관련:
+
+- [브룩스의 법칙](#brookss-law)
+- [무어의 법칙](#moores-law)
+
+### 브룩스의 법칙
 
 [Brooks' Law on Wikipedia](https://en.m.wikipedia.org/wiki/Brooks%27s_law)
 
