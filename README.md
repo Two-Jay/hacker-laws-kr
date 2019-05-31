@@ -18,7 +18,7 @@
     * [무어의 법칙](#무어의-법칙)
     * [파킨슨의 법칙](#파킨슨의-법칙)
     * [푸트의 법칙](#푸트의-법칙)
-    * [The Law of Conservation of Complexity (Tesler's Law)](#the-law-of-conservation-of-complexity-teslers-law)
+    * [복잡성 보존의 법칙 (테슬러의 법칙)](#복잡성-보존의-법칙-테슬러의-법칙)
     * [허술한 추상화의 법칙](#허술한-추상화의-법칙)
     * [The Law of Triviality](#the-law-of-triviality)
     * [The Unix Philosophy](#the-unix-philosophy)
@@ -182,8 +182,6 @@
 > 다른 이들에게 달려있을 것이다.
 >
 > — 하이럼 라이트
->
-> (Hyrum Wright)
 
 하이럼의 법칙에 따르면 API에 충분히 많은 수의 소비자가 있을 때, API의 모든 행동 양식은 궁극적으로 명세에 있는 정의가 아닌 아닌 다른 누군가에게 달려있게 된다. 간단한 예시를 들자면 가령 API의 응답 시간과도 같은 비함수적 요소들이다. 좀 더 구체적인 예시는 에러 메세지에 정규 표현식을 이용하여 API의 에러의 *타입* 을 알아내는 소비자들을 들 수 있다. API의 공개 명세에서는 메세지의 내용에 관하여서 아무 것도 알려주지 않으며 대신 에러 코드를 사용해야 한다고 하고 있더라도, 어떤 유저들은 메세지를 사용하거나 메세지의 내용을 변경하여 API를 사실상 붕괴시킬 수 있다.
 
@@ -243,15 +241,15 @@
 
 <br>
 
-### The Law of Conservation of Complexity (Tesler's Law)
+### 복잡성 보존의 법칙 (테슬러의 법칙)
 
 [The Law of Conservation of Complexity on Wikipedia](https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity)
 
-This law states that there is a certain amount of complexity in a system which cannot be reduced.
+이 법칙에 따르면 시스템에는 더 이상 줄일 수 없는 특정한 정도의 복잡성이 존재한다.
 
-Some complexity in a system is 'inadvertent'. It is a consequence of poor structure, mistakes, or just bad modeling of a problem to solve. Inadvertent complexity can be reduced (or eliminated). However, some complexity is 'intrinsic' as a consequence of the complexity inherent in the problem being solved. This complexity can be moved, but not eliminated.
+시스템에 있어 어떤 종류의 복잡성은 '의도되지 않은 것'이다. 그것은 빈약한 구조, 실수, 혹은 문제에 대한 그릇된 모델링의 대가이다. 이러한 의도되지 않은 복잡성은 줄이거나 없앨 수 있다. 반면에, 풀어야 할 문제에 대하여 '내재적'으로 자리하는 복잡성이 있다. 이러한 복잡성은 옮겨질 수는 있으나 없앨 수는 없다.
 
-One interesting element to this law is the suggestion that even by simplifying the entire system, the intrinsic complexity is not reduced, it is _moved to the user_, who must behave in a more complex way.
+이 법칙이 시사하는 흥미로는 점은, 설령 전체 시스템을 단순화하더라도 내재적인 복잡성은 줄어드는 것이 아니라 _사용자에게 전이되어서_, 이용을 더욱 복잡하게 만든다.
 
 <br>
 
