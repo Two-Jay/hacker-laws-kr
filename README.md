@@ -20,10 +20,10 @@
     * [푸트의 법칙](#푸트의-법칙)
     * [복잡성 보존의 법칙 (테슬러의 법칙)](#복잡성-보존의-법칙-테슬러의-법칙)
     * [허술한 추상화의 법칙](#허술한-추상화의-법칙)
-    * [The Law of Triviality](#the-law-of-triviality)
-    * [The Unix Philosophy](#the-unix-philosophy)
+    * [사소함의 법칙](#사소함의-법칙)
+    * [유닉스 철학](#유닉스-철학)
     * [스포티파이 모델](#스포티파이-모델)
-    * [Wadler's Law](#wadlers-law)
+    * [와들러의 법칙](#와들러의-법칙)
 * [Principles](#principles)
     * [The Pareto Principle (The 80/20 Rule)](#the-pareto-principle-the-8020-rule)
     * [The Robustness Principle (Postel's Law)](#the-robustness-principle-postels-law)
@@ -257,43 +257,49 @@
 
 [The Law of Leaky Abstractions on Joel on Software](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/)
 
-> All non-trivial abstractions, to some degree, are leaky.
+> 모든 사소하지 않은 추상화는, 어느 정도, 허술하다.
 >
-> (Joel Spolsky)
+> —조엘 스폴스키
 
-This law states that abstractions, which are generally used in computing to simplify working with complicated systems, will in certain situations 'leak' elements of the underlying system, this making the abstraction behave in an unexpected way.
+이 법칙에 따르면 컴퓨팅에서 복잡한 시스템과 작업하기 위해 일반적으로 사용되는 추상화에서는 때에 따라 하단 요소의 '누수'가 일어날 수 있고, 이는 추상화가 예상치 못한 방향으로 전개되게 한다.
 
-An example might be loading a file and reading its contents. The file system APIs are an _abstraction_ of the lower level kernel systems, which are themselves an abstraction over the physical processes relating to changing data on a magnetic platter (or flash memory for an SSD). In most cases, the abstraction of treating a file like a stream of binary data will work. However, for a magnetic drive, reading data sequentially will be *significantly* faster than random access (due to increased overhead of page faults), but for an SSD drive, this overhead will not be present. Underlying details will need to be understood to deal with this case (for example, database index files are structured to reduce the overhead of random access), the abstraction 'leaks' implementation details the developer may need to be aware of.
+파일을 불러와 내용을 읽는 상황을 살펴보자. 파일 시스템 API는 로우 레벨 커널 시스템의 _추상화_ 인데, 이 시스템 또한 자기 플래터(혹은 플래시 메모리나 SSD)의 데이터를 물리적으로 변경하는 것의 추상화이다. 대부분의 경우 파일을 이진 데이터의 스트림으로서 추상화하는 것은 문제가 없을 것이다. 그러나 자기 디스크에서는 데이터를 순서대로 읽는 것이 임의 접근보다 *비교할 수 없을 만큼* 빠른 반면에(페이지 폴트 비용 때문에), SSD에서는 전혀 상관이 없다. 내부 구현을 상세히 이해하여야 이런 경우에 대처할 수 있는데(가령, 데이터베이스 인덱스 파일은 임의 접근의 비용을 줄이도록 구조가 짜여져 있다), 이렇듯 추상화는 개발자가 모르면 곤란하도록 내부 구현 상세를 '누출'한다.
 
-The example above can become more complex when _more_ abstractions are introduced. The Linux operating system allows files to be accessed over a network but represented locally as 'normal' files. This abstraction will 'leak' if there are network failures. If a developer treats these files as 'normal' files, without considering the fact that they may be subject to network latency and failures, the solutions will be buggy.
+위의 예시는 _더 많은_ 추상화가 도입되면 더욱 복잡해질 수 있다. 리눅스 운영체제는 네트워크를 경유하여 파일에 접근할 수 있도록 하면서도 로컬에서는 '일반' 파일로 취급한다. 이런 추상화는 네트워크 오류가 발생하면 '허술해질' 것이다. 만약 개발자가 이런 파일들을 네트워크 지연이나 오류에 대한 고려 없이 '일반' 파일로 취급한다면, 버그가 생길 것이다.
 
-The article describing the law suggests that an over-reliance on abstractions, combined with a poor understanding of the underlying processes, actually makes dealing with the problem at hand _more_ complex in some cases.
+이 법칙을 설명하는 글에 따르면 하부 구동 원리를 모른 채로 추상화에 대한 과도하게 의존할 경우, 도리어 문제 해결을 복잡하게 만들 수 있다고 하고 있다.
 
-See also:
+<br>
 
-- [Hyrum's Law](#hyrums-law-the-law-of-implicit-interfaces)
+관련:
 
-Real-world examples:
+- [하이럼의 법칙](#하이럼의-법칙-암시적-인터페이스의-법칙)
 
-- [Photoshop Slow Startup](https://forums.adobe.com/thread/376152) - an issue I encountered in the past. Photoshop would be slow to startup, sometimes taking minutes. It seems the issue was that on startup it reads some information about the current default printer. However, if that printer is actually a network printer, this could take an extremely long time. The _abstraction_ of a network printer being presented to the system similar to a local printer caused an issue for users in poor connectivity situations.
+실제 예시:
 
-### The Law of Triviality
+- [포토샵의 느린 초기 로딩](https://forums.adobe.com/thread/376152) - 과거에 마주한 문제이다. 포토샵은 종종 켜는 데에 몇 분씩이나 걸리기도 하는데, 이 문제는 구동 시작시에 현재 기본으로 설정된 프린터의 정보를 읽어오는 것에서 발생하였다. 만약 그 프린터가 네트워크 프린터라면 극도로 오랜 시간이 걸리게 되는 것이다. 시스템에 네트워크 프린터의 _추상화_가 로컬 프린터와 유사하게 제공된 점은 연결 상태가 좋지 못한 상황의 사용자에게 문제를 일으켰다.
+
+<br>
+
+### 사소함의 법칙
 
 [The Law of Triviality on Wikipedia](https://en.wikipedia.org/wiki/Law_of_triviality)
 
-This law suggests that groups will give far more time and attention to trivial or cosmetic issues rather than serious and substantial ones.
+이 법칙은 정작 심각한 혹은 중요한 것들보다 사소한 이슈들 혹은 외양에 훨씬 더 많은 시간을 쏟게 됨을 시사한다.
 
-The common fictional example used is that of a committee approving plans for nuclear power plant, who spend the majority of their time discussing the structure of the bike shed, rather than the far more important design for the power plant itself. It can be difficult to give valuable input on discussions about very large, complex topics without a high degree of subject matter expertise or preparation. However, people want to be seen to be contributing valuable input. Hence a tendency to focus too much time on small details, which can be reasoned about easily, but are not necessarily of particular importance.
+가상의 예시로서, 위원회가 원자력 발전소에 건설 계획을 허가하는 과정에서 훨씬 중요한 발전소 자체의 설계는 놔두고 자전거 보관소 얘기나 하는 데에 시간을 쏟는 것을 들 수 있다. 거대하고 복잡한 주제의 논의에서 그 분야의 전문 지식이나 사전 준비 없이 뭔가 유용한 이야기를 할 수는 없을 것이다. 그러나 사람들은 자신이 기여하는 것처럼 보여지고 싶어하고, 따라서 쉽게 해결될 수 있으며 그다지 중요한 것은 아닌 작은 디테일에 너무 많은 시간을 쏟는 경향이 생겨난다.
 
-The fictional example above led to the usage of the term 'Bike Shedding' as an expression for wasting time on trivial details.
+이 가상의 일화는 사소한 디테일에 시간 버리는 것을 '자전거 보관소한다'고 표현하도록 만들었다.
 
-### The Unix Philosophy
+<br>
 
-[The Unix Philosophy on Wikipedia](https://en.wikipedia.org/wiki/Unix_philosophy)
+### 유닉스 철학
 
-The Unix Philosophy is that software components should be small, and focused on doing one specific thing well. This can make it easier to build systems by composing together small, simple, well-defined units, rather than using large, complex, multi-purpose programs.
+[위키피디아의 유닉스 철학](https://ko.wikipedia.org/wiki/유닉스_철학)
 
-Modern practices like 'Microservice Architecture' can be thought of as an application of this law, where services are small, focused and do one specific thing, allowing complex behaviour to be composed of simple building blocks.
+유닉스 철학은 소프트웨어의 구성 요소는 작아야 하며, 하나의 특정한 작업을 잘하도록 해야 한다는 것이다. 작고 단순하며 잘 정의된 단위들을 조합함으로써, 거대하고 복잡하며 다목적인 프로그램을 이용하는 것보다 쉽게 시스템을 설계할 수 있다.
+
+서비스가 작고, 하나의 특정한 작업을 맡으며, 복잡한 행동은 단순한 블록의 조합으로 구성할 수 있는 '마이크로서비스 아키텍쳐' 같은 근래의 관행 또한 이 법칙의 적용으로 생각할 수 있다.
 
 <br>
 
@@ -313,24 +319,28 @@ Modern practices like 'Microservice Architecture' can be thought of as an applic
 
 <br>
 
-### Wadler's Law
+### 와들러의 법칙
 
 [Wadler's Law on wiki.haskell.org](https://wiki.haskell.org/Wadler's_Law)
 
-> In any language design, the total time spent discussing a feature in this list is proportional to two raised to the power of its position.
+> 프로그래밍 언어를 설계할 때, 이 기능 목록에 나온 항목들을 논의하는 데 걸리는 총 시간은 2의 (항목의 번호) 제곱에 비례한다.
 > 
-> 0. Semantics
-> 1. Syntax
-> 2. Lexical syntax
-> 3. Lexical syntax of comments
+> 0. 의미론
+> 1. 구문론
+> 2. 어휘
+> 3. 주석다는 법
 > 
-> (In short, for every hour spent on semantics, 8 hours will be spent on the syntax of comments).
+> (즉, 의미론에 1시간을 쓸 때마다 주석다는 법에 1시간 곱하기 2의 세제곱인 8시간을 쓴다는 뜻이다.)
 
-Similar to [The Law of Triviality](#the-law-of-triviality), Wadler's Law states what when designing a language, the amount of time spent on language structures is disproportionately high in comparison to the importance of those features.
+[사소함의 법칙](#사소함의-법칙)처럼, 와들러의 법칙에 따르면 언어 구조를 설계할 때 쓰이는 시간은 각 기능의 중요도에 반비례한다.
 
-See also:
+<br>
 
-- [The Law of Triviality](#the-law-of-triviality)
+관련:
+
+- [사소함의 법칙](#사소함의-법칙)
+
+<br>
 
 ## Principles
 
