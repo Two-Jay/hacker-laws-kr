@@ -12,8 +12,8 @@
     * [브룩스의 법칙](#브룩스의-법칙)
     * [콘웨이의 법칙](#콘웨이의-법칙)
     * [핸런의 면도날](#핸런의-면도날)
-    * [Hofstadter's Law](#hofstadters-law)
-    * [The Hype Cycle & Amara's Law](#the-hype-cycle--amaras-law)
+    * [호프스태터의 법칙](#호프스태터의-법칙)
+    * [하이프 사이클 & 아마라의 법칙](#하이프-사이클—아마라의-법칙)
     * [Hyrum's Law (The Law of Implicit Interfaces)](#hyrums-law-the-law-of-implicit-interfaces)
     * [Moore's Law](#moores-law)
     * [Parkinson's Law](#parkinsons-law)
@@ -34,7 +34,7 @@
     * [The Interface Segregation Principle](#the-interface-segregation-principle)
     * [The Dependency Inversion Principle](#the-dependency-inversion-principle)
     * [The DRY Principle](#the-dry-principle)
-* [Reading List](#reading-list)
+* [추천 도서](#추천-도서)
 * [TODO](#todo)
 
 <!-- vim-markdown-toc -->
@@ -97,7 +97,7 @@
 관련:
 
 - [Death March](#todo)
-- [추천 도서 목록 : 맨먼스 미신](#추천-도서)
+- [추천 도서 목록: 맨먼스 미신](#추천-도서)
 
 <br>
 
@@ -119,43 +119,53 @@
 
 > 어리석음으로 충분히 설명이 되는 일을 악의의 탓으로 돌리지 말라.
 >
-> Robert J. Hanlon
+> 로버트 J. 핸런
 
-이 법칙에 따르면 부정적인 결과를 낳는 행동은 악의로부터 비롯된 것이라기보다는, 행동과 그것이 불러올 파장에 대해 제대로 이해하지 못했기 때문이다.
+이 법칙에 따르면 부정적인 결과를 낳는 행동은 악의로부터 비롯된 것이라기보다는, 행동과 그것이 불러올 파장에 대한 몰이해 때문이다.
 
 <br>
 
-### Hofstadter's Law
+### 호프스태터의 법칙
 
 [Hofstadter's Law on Wikipedia](https://en.wikipedia.org/wiki/Hofstadter%27s_law)
 
-> It always takes longer than you expect, even when you take into account Hofstadter's Law.
+> 설령 호프스태터의 법칙을 고려하더라도, 일은 마치는 건 언제나 예상보다 오래 걸린다.
 >
-> Douglas Hofstadter
+> 더글라스 호프스태터
 
-You might hear this law referred to when looking at estimates for how long something will take. It seems a truism in software development that we tend to not be very good at accurately estimating how long something will take to deliver.
+무언가가 얼마나 걸릴지 짐작할 때 이 법칙을 인용하는 것을 들을 수 있을지 모른다. 뻔한 말 같지만, 우리는 소프트웨어를 개발함에 있어 결과를 내놓기까지의 기간을 예상하는 것에 그다지 능하지 않다.
 
-This is from the book '[Gödel, Escher, Bach: An Eternal Golden Braid](#reading-list)'.
+이는 '[[괴델, 에셔, 바흐: 영원한 황금 노끈]](#추천-도서)'에서 나온 말이다.
 
-See also:
+<br>
 
-- [Reading List: Gödel, Escher, Bach: An Eternal Golden Braid](#reading-list)
+관련:
 
-### The Hype Cycle & Amara's Law
+- [추천 도서 목록: 괴델, 에셔, 바흐: 영원한 황금 노끈](#추천-도서)
 
-[The Hype Cycle on Wikipedia](https://en.wikipedia.org/wiki/Hype_cycle)
+<br>
 
-> We tend to overestimate the effect of a technology in the short run and underestimate the effect in the long run.
+### 하이프 사이클 & 아마라의 법칙
+
+[위키피디아의 하이프 사이클](https://ko.wikipedia.org/wiki/하이프_사이클)
+
+> 우리는 새로운 기술의 효과를 단기적으로는 과대평가하고, 장기적으로는 과소평가하는 경향이 있다.
 >
-> (Roy Amara)
+> 로이 아마라
 
-The Hype Cycle is a visual representation of the excitement and development of technology over time, originally produced by Gartner. It is best shown with a visual:
+하이프 사이클은 미국의 정보 기술 연구 및 자문 회사인 가트너에서 시간의 흐름에 따른 기술에 대한 기대와 성숙도를 시각적으로 나타낸 것이다.
+
+<br>
 
 ![The Hype Cycle](./images/gartner_hype_cycle.png)
 
-*(Image Reference: By Jeremykemp at English Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=10547051)*
+*(이미치 출처: Jeremykemp @영어 Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=10547051)*
 
-In short, this cycle suggests that there is typically a burst of excitement around new technology and its potential impact. Teams often jump into these technologies quickly, and sometimes find themselves disappointed with the results. This might be because the technology is not yet mature enough, or real-world applications are not yet fully realised. After a certain amount of time, the capabilities of the technology increase and practical opportunities to use it increase, and teams can finally become productive. Roy Amara's quote sums this up most succinctly - "We tend to overestimate the effect of a technology in the short run and underestimate in the long run".
+즉, 이 사이클에 따르면 대개 신기술과 그 전망에 대하여 거품이 촉발된다. 이때 많은 팀들은 너무 빠르게 뛰어들었다가 결과물에 종종 실망하고는 한다. 이것은 어쩌면 기술이 아직 덜 성숙하기 때문이거나, 혹은 실제 세계에의 적용이 덜 이루어졌기 때문일 것이다.
+
+특정 시점이 지나고 나면 기술 자체의 역량과 실제적인 적용의 기회가 늘어나고, 마침내 생산성을 얻을 수 있게 된다. 로이 아마라는 이를 가장 간결한 문장으로 정리하였다. "우리는 새로운 기술의 효과를 단기적으로는 과대평가하고, 장기적으로는 과소평가하는 경향이 있다".
+
+<br>
 
 ### Hyrum's Law (The Law of Implicit Interfaces)
 
