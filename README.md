@@ -1,445 +1,561 @@
 # 💻📖 hacker-laws
 
-Laws, Theories, Principles and Patterns that developers will find useful.
+**개발자에게 유용한 법칙, 이론, 원칙, 그리고 패턴들**
 
-🇨🇳 [中文 / Chinese Version](https://github.com/nusr/hacker-laws-zh) - thanks [Steve Xu](https://github.com/nusr)!
+<br>
 
 <!-- vim-markdown-toc GFM -->
 
-* [Introduction](#introduction)
-* [Laws](#laws)
-    * [Amdahl's Law](#amdahls-law)
-    * [Brooks' Law](#brooks-law)
-    * [Conway's Law](#conways-law)
-    * [Hanlon's Razor](#hanlons-razor)
-    * [Hofstadter's Law](#hofstadters-law)
-    * [The Hype Cycle & Amara's Law](#the-hype-cycle--amaras-law)
-    * [Hyrum's Law (The Law of Implicit Interfaces)](#hyrums-law-the-law-of-implicit-interfaces)
-    * [Moore's Law](#moores-law)
-    * [Parkinson's Law](#parkinsons-law)
-    * [Putt's Law](#putts-law)
-    * [The Law of Conservation of Complexity (Tesler's Law)](#the-law-of-conservation-of-complexity-teslers-law)
-    * [The Law of Leaky Abstractions](#the-law-of-leaky-abstractions)
-    * [The Law of Triviality](#the-law-of-triviality)
-    * [The Unix Philosophy](#the-unix-philosophy)
-    * [The Spotify Model](#the-spotify-model)
-    * [Wadler's Law](#wadlers-law)
-* [Principles](#principles)
-    * [The Pareto Principle (The 80/20 Rule)](#the-pareto-principle-the-8020-rule)
-    * [The Robustness Principle (Postel's Law)](#the-robustness-principle-postels-law)
-    * [SOLID](#solid)
-    * [The Single Responsibility Principle](#the-single-responsibility-principle)
-    * [The Open/Closed Principle](#the-openclosed-principle)
-    * [The Liskov Substitution Principle](#the-liskov-substitution-principle)
-    * [The Interface Segregation Principle](#the-interface-segregation-principle)
-    * [The Dependency Inversion Principle](#the-dependency-inversion-principle)
-    * [The DRY Principle](#the-dry-principle)
-* [Reading List](#reading-list)
+* [서론](#서론)
+* [법칙](#법칙)
+    * [암달의 법칙](#암달의-법칙)
+    * [브룩스의 법칙](#브룩스의-법칙)
+    * [콘웨이의 법칙](#콘웨이의-법칙)
+    * [핸런의 면도날](#핸런의-면도날)
+    * [호프스태터의 법칙](#호프스태터의-법칙)
+    * [하이프 사이클 & 아마라의 법칙](#하이프-사이클—아마라의-법칙)
+    * [하이럼의 법칙 (암시적 인터페이스의 법칙)](#하이럼의-법칙-암시적-인터페이스의-법칙)
+    * [무어의 법칙](#무어의-법칙)
+    * [파킨슨의 법칙](#파킨슨의-법칙)
+    * [푸트의 법칙](#푸트의-법칙)
+    * [복잡성 보존의 법칙 (테슬러의 법칙)](#복잡성-보존의-법칙-테슬러의-법칙)
+    * [허술한 추상화의 법칙](#허술한-추상화의-법칙)
+    * [사소함의 법칙](#사소함의-법칙)
+    * [유닉스 철학](#유닉스-철학)
+    * [스포티파이 모델](#스포티파이-모델)
+    * [와들러의 법칙](#와들러의-법칙)
+* [원리](#원리)
+    * [파레토의 원리 (80:20의 법칙)](#파레토의-원리-8020의-법칙)
+    * [견고함의 원칙 (포스텔의 법칙)](#견고함의-원칙-포스텔의-법칙)
+    * [솔리드](#솔리드)
+    * [단일 책임 원칙](#단일-책임-원칙)
+    * [개방-폐쇄 원칙](#개방-폐쇄-원칙)
+    * [리스코프 치환 원칙](#리스코프-치환-원칙)
+    * [인터페이스 분리 원칙](#인터페이스-분리-원칙)
+    * [의존 관계 역전 원칙](#의존-관계-역전-원칙)
+    * [DRY 원칙](#dry-원칙)
+* [추천 도서](#추천-도서)
 * [TODO](#todo)
 
 <!-- vim-markdown-toc -->
 
-## Introduction
+<br>
 
-There are lots of laws which people discuss when talking about development. This repository is a reference and overview of some of the most common ones. Please share and submit PRs!
+## 서론
 
-❗: This repo contains an explanation of some laws, principles and patterns, but does not _advocate_ for any of them. Whether they should be applied will always be a matter of debate, and greatly dependent on what you are working on.
+개발을 이야기할 때 흔히 논하는 법칙들이 있습니다. 이 저장소는 그 중 가장 보편적인 것들에 대한 참조와 개요입니다. 공유와 PR 제출 부탁드려요!
 
-## Laws
+❗: 이 저장소는 여러 법칙, 원칙, 그리고 패턴에 관한 설명을 포함하고 있지만, 그 중 어떤 것도  _지지_ 하고 있지 않습니다. 그것들을 적용하여야 할지에 말지에 대해서는 언제나 논의의 여지가 있으며, 또한 당신이 어떤 작업을 하느냐에 따라서도 크게 달라집니다.
 
-And here we go!
+<br>
 
-### Amdahl's Law
+## 법칙
 
-[Amdahl's Law on Wikipedia](https://en.wikipedia.org/wiki/Amdahl%27s_law)
+### 암달의 법칙
 
-> Amdahl's Law is a formula which shows the _potential speedup_ of a computational task which can be achieved by increasing the resources of a system. Normally used in parallel computing, it can predict the actual benefit of increasing the number of processors, which is limited by the parallelisability of the program.
+[위키피디아의 암달의 법칙](https://ko.wikipedia.org/wiki/암달의_법칙)
 
-Best illustrated with an example. If a program is made up of two parts, part A, which must be executed by a single processor, and part B, which can be parallelised, then we see that adding multiple processors to the system executing the program can only have a limited benefit. It can potentially greatly improve the speed of part B - but the speed of part A will remain unchanged.
+> 암달의 법칙은 시스템에 리소스를 추가함으로써 얻을 수 있는 컴퓨터 작업 성능 향상의 최대 폭을 나타내주는 공식이다. 일반적으로 병렬 컴퓨팅에서 이를 이용하여, 프로세서 개수의 증가가 프로그램 자체의 구조적인 병렬화 제한에 맞서 실제적으로 가져다주는 이득을 예측할 수 있다.
 
-The diagram below shows some examples of potential improvements in speed:
+예시를 살펴보자. 어떠한 프로그램이 단일 프로세서로 구동되어야 하는 부분 A와 병렬화될 수 있는 부분 B로 이루어져있다고 할 때, 우리는 프로세서의 추가적인 투입이 제한된 이득만을 가져다줌을 알 수 있다. B 부분의 성능을 크게 향상시킬 수 있지만, A 부분의 속도는 그대로 남을 것이기 때문이다.
+
+아래의 그래프는 성능 향상 가능성의 예시를 보여준다.
 
 ![Diagram: Amdahl's Law](./images/amdahls_law.png)
 
-*(Image Reference: By Daniels220 at English Wikipedia, Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/File:AmdahlsLaw.svg)*
+*(이미지 출처: Daniels220 @영어 Wikipedia, Creative Commons Attribution-Share Alike 3.0 Unported, https://en.wikipedia.org/wiki/File:AmdahlsLaw.svg)*
 
-As can be seen, even a program which is 50% parallelisable will benefit very little beyond 10 processing units, whereas a program which is 95% parallelisable can still achieve significant speed improvements with over a thousand processing units.
+<br>
 
-As [Moore's Law](#moores-law) slows, and the acceleration of individual processor speed slows, parallelisation is key to improving performance. Graphics programming is an excellent example - with modern Shader based computing, individual pixels or fragments can be rendered in parallel - this is why modern graphics cards often have many thousands of processing cores (GPUs or Shader Units).
+보다시피 50%나 병렬화 가능한 프로그램임에도 10개 프로세서 이후에는 거의 이득이 없는 반면, 95% 병렬화 가능한 프로그램은 수천 개가 추가될 때까지도 유의미한 성능 향상을 보여주고 있다.
 
-See also:
+[무어의 법칙](#무어의-법칙)과 개별 프로세서의 성능 증가 속도가 완화되면서, 병렬화는 최적화의 핵심이 되었다. 그래픽스 프로그래밍이 이에 대한 가장 알맞은 예시이다. 셰이더 기반의 최신 컴퓨팅에서는 개별 픽셀 혹은 프래그먼트를 병렬로 렌더링할 수 있는데, 이것이 최신 그래픽 카드들이 대개 수천 개의 코어(GPU 또는 셰이더 유닛)로 구성된 이유이다.
 
-- [Brooks' Law](#brookss-law)
-- [Moore's Law](#moores-law)
+<br>
 
-### Brooks' Law
+관련:
 
-[Brooks' Law on Wikipedia](https://en.m.wikipedia.org/wiki/Brooks%27s_law)
+- [브룩스의 법칙](#브룩스의-법칙)
+- [무어의 법칙](#무어의-법칙)
 
-> Adding human resources to a late software development project makes it later.
+<br>
 
-This law suggests that in many cases, attempting to accelerate the delivery of a project which is already late, by adding more people, will make the delivery even later. Brooks is clear that this is an over-simplification, however, the general reasoning is that given the ramp up time of new resources and the communication overheads, in the immediate short-term velocity decreases. Also, many tasks may not be divisible, i.e. easily distributed between more resources, meaning the potential velocity increase is also lower.
+### 브룩스의 법칙
 
-The common phrase in delivery "Nine women can't make a baby in one month" relates to Brooks' Law, in particular, the fact that some kinds of work are not divisible or parallelisable.
+[위키피디아의 브룩스의 법칙](https://ko.wikipedia.org/wiki/브룩스의_법칙)
 
-This is a central theme of the book '[The Mythical Man Month](#reading-list)'.
+> 지체되는 소프트웨어 개발 프로젝트에 인력을 더하는 것은 개발을 늦출 뿐이다.
 
-See also:
+이 법칙은 이미 늦어지고 있는 소프트웨어 개발을 빨리하기 위해 사람을 더 투입하는 것은 도리어 완성을 늦출 뿐이라고 말한다. 브룩스는 이것은 비록 극도로 단순화한 이야기임을 분명히 했으나, 다만 일반적으로 보았을 때 자원 투입 시간과 의사소통 비용으로 인해 단기적으로 속도가 줄어들 수 있다고 하였다. 또한 많은 작업들은 분할할 수 없기 때문에, 즉 인력이 늘어난다고 하여 쉽게 분배할 수 없기 때문에, 기대할 수 있는 속도 증가 역시 낮다.
+
+흔히 말하는 "임산부 9명이 모여도 아기를 한 달만에 낳을 수는 없다"는 구절은 브룩스의 법칙 중에서도, 특정 작업은 나누거나 병렬화할 수 없음을 비유적으로 뜻한다.
+
+이것은 그의 저서 '[맨먼스 미신](#추천-도서)'의 주요한 주제이다.
+
+<br>
+
+관련:
 
 - [Death March](#todo)
-- [Reading List: The Mythical Man Month](#reading-list)
+- [추천 도서 목록: 맨먼스 미신](#추천-도서)
 
-### Conway's Law
+<br>
+
+### 콘웨이의 법칙
 
 [Conway's Law on Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_law)
 
-This law suggests that the technical boundaries of a system will reflect the structure of the organisation. It is commonly referred to when looking at organisation improvements, Conway's Law suggests that if an organisation is structured into many small, disconnected units, the software it produces will be. If an organisation is built more around 'verticals' which are orientated around features or services, the software systems will also reflect this.
+이 법칙에 따르면 시스템의 구조는 설계하는 조직의 구조를 반영한다. 이것은 조직 개선을 시도할 때 종종 인용되고는 하는데, 가령 조직이 여러 개의 작고 끊어진 단위로 구성되어 있다면 거기에서 나온 소프트웨어 또한 그 모습을 닮는다고 한다. 또한 만약 조직이 기능과 서비스를 중심으로 수직적으로 짜여 있다면, 이 역시 소프트웨어가 이러한 모습을 반영할 것이란 것이다.
 
-See also:
+<br>관련:
 
-- [The Spotify Model](#the-spotify-model)
+- [스포티파이 모델](#스포티파이-모델)
 
-### Hanlon's Razor
+<br>
 
-[Hanlon's Razor on Wikipedia](https://en.wikipedia.org/wiki/Hanlon%27s_razor)
+### 핸런의 면도날
 
-> Never attribute to malice that which is adequately explained by stupidity.
+[위키피디아의 핸런의 면도날](https://ko.wikipedia.org/wiki/핸런의_면도날)
+
+> 어리석음으로 충분히 설명이 되는 일을 악의의 탓으로 돌리지 말라.
 >
-> Robert J. Hanlon
+> — 로버트 J. 핸런
 
-This principle suggests that actions resulting in a negative outcome were not a result of ill will. Instead the negative outcome is more likely attributed to those actions and/or the impact being not fully understood.
+이 법칙에 따르면 부정적인 결과를 낳는 행동은 악의로부터 비롯된 것이라기보다는, 행동과 그것이 불러올 파장에 대한 몰이해 때문이다.
 
-### Hofstadter's Law
+<br>
+
+### 호프스태터의 법칙
 
 [Hofstadter's Law on Wikipedia](https://en.wikipedia.org/wiki/Hofstadter%27s_law)
 
-> It always takes longer than you expect, even when you take into account Hofstadter's Law.
+> 설령 호프스태터의 법칙을 고려하더라도, 일은 마치는 건 언제나 예상보다 오래 걸린다.
 >
-> Douglas Hofstadter
+> — 더글라스 호프스태터
 
-You might hear this law referred to when looking at estimates for how long something will take. It seems a truism in software development that we tend to not be very good at accurately estimating how long something will take to deliver.
+무언가가 얼마나 걸릴지 짐작할 때 이 법칙을 인용하는 것을 들을 수 있을지 모른다. 뻔한 말 같지만, 우리는 소프트웨어를 개발함에 있어 결과를 내놓기까지의 기간을 예상하는 것에 그다지 능하지 않다.
 
-This is from the book '[Gödel, Escher, Bach: An Eternal Golden Braid](#reading-list)'.
+이는 '[[괴델, 에셔, 바흐: 영원한 황금 노끈]](#추천-도서)'에서 나온 말이다.
 
-See also:
+<br>
 
-- [Reading List: Gödel, Escher, Bach: An Eternal Golden Braid](#reading-list)
+관련:
 
-### The Hype Cycle & Amara's Law
+- [추천 도서 목록: 괴델, 에셔, 바흐: 영원한 황금 노끈](#추천-도서)
 
-[The Hype Cycle on Wikipedia](https://en.wikipedia.org/wiki/Hype_cycle)
+<br>
 
-> We tend to overestimate the effect of a technology in the short run and underestimate the effect in the long run.
+### 하이프 사이클 & 아마라의 법칙
+
+[위키피디아의 하이프 사이클](https://ko.wikipedia.org/wiki/하이프_사이클)
+
+> 우리는 새로운 기술의 효과를 단기적으로는 과대평가하고, 장기적으로는 과소평가하는 경향이 있다.
 >
-> (Roy Amara)
+> — 로이 아마라
 
-The Hype Cycle is a visual representation of the excitement and development of technology over time, originally produced by Gartner. It is best shown with a visual:
+하이프 사이클은 미국의 정보 기술 연구 및 자문 회사인 가트너에서 시간의 흐름에 따른 기술에 대한 기대와 성숙도를 시각적으로 나타낸 것이다.
+
+<br>
 
 ![The Hype Cycle](./images/gartner_hype_cycle.png)
 
-*(Image Reference: By Jeremykemp at English Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=10547051)*
+*(이미치 출처: Jeremykemp @영어 Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=10547051)*
 
-In short, this cycle suggests that there is typically a burst of excitement around new technology and its potential impact. Teams often jump into these technologies quickly, and sometimes find themselves disappointed with the results. This might be because the technology is not yet mature enough, or real-world applications are not yet fully realised. After a certain amount of time, the capabilities of the technology increase and practical opportunities to use it increase, and teams can finally become productive. Roy Amara's quote sums this up most succinctly - "We tend to overestimate the effect of a technology in the short run and underestimate in the long run".
+<br>
 
-### Hyrum's Law (The Law of Implicit Interfaces)
+즉, 이 사이클에 따르면 대개 신기술과 그 전망에 대하여 거품이 촉발된다. 이때 많은 팀들은 너무 빠르게 뛰어들었다가 결과물에 종종 실망하고는 한다. 이것은 어쩌면 기술이 아직 덜 성숙하기 때문이거나, 혹은 실제 세계에의 적용이 덜 이루어졌기 때문일 것이다.
+
+특정 시점이 지나고 나면 기술 자체의 역량과 실제적인 적용의 기회가 늘어나고, 마침내 생산성을 얻을 수 있게 된다. 로이 아마라는 이를 가장 간결한 문장으로 정리하였다. "우리는 새로운 기술의 효과를 단기적으로는 과대평가하고, 장기적으로는 과소평가하는 경향이 있다".
+
+<br>
+
+### 하이럼의 법칙 (암시적 인터페이스의 법칙)
 
 [Hyrum's Law Online](http://www.hyrumslaw.com/)
 
-> With a sufficient number of users of an API,
-> it does not matter what you promise in the contract:
-> all observable behaviours of your system
-> will be depended on by somebody.
+> API에 충분한 수의 유저가 있다면,
 >
-> (Hyrum Wright)
+> 명세에서 지정된 것은 아무런 상관이 없다:
+>
+> 시스템에서 관측될 수 있는 모든 행동 양식은
+>
+> 다른 이들에게 달려있을 것이다.
+>
+> — 하이럼 라이트
 
-Hyrum's Law states that when you have a _large enough number of consumers_ of an API, all behaviours of the API (even those not defined as part of a public contract) will eventually come to be depended on by someone. A trivial example may be non-functional elements such as the response time of an API. A more subtle example might be consumers who are relying on applying a regex to an error message to determine the *type* of error of an API. Even if the public contract of the API states nothing about the contents of the message, indicating users should use an associated error code, _some_ users may use the message, and changing the message essentially breaks the API for those users.
+하이럼의 법칙에 따르면 API에 충분히 많은 수의 소비자가 있을 때, API의 모든 행동 양식은 궁극적으로 명세에 있는 정의가 아닌 아닌 다른 누군가에게 달려있게 된다. 간단한 예시를 들자면 가령 API의 응답 시간과도 같은 비함수적 요소들이다. 좀 더 구체적인 예시는 에러 메세지에 정규 표현식을 이용하여 API의 에러의 *타입* 을 알아내는 소비자들을 들 수 있다. API의 공개 명세에서는 메세지의 내용에 관하여서 아무 것도 알려주지 않으며 대신 에러 코드를 사용해야 한다고 하고 있더라도, 어떤 유저들은 메세지를 사용하거나 메세지의 내용을 변경하여 API를 사실상 붕괴시킬 수 있다.
 
-See also:
+<br>
 
-- [The Law of Leaky Abstractions](#the-law-of-leaky-abstractions)
+관련:
+
+- [허술한 추상화의 법칙](#허술한-추상화의-법칙)
 - [XKCD 1172](https://xkcd.com/1172/)
 
-### Moore's Law
+<br>
 
-[Moore's Law on Wikipedia](https://en.wikipedia.org/wiki/Moore%27s_law)
+### 무어의 법칙
 
-> The number of transistors in an integrated circuit doubles approximately every two years.
+[위키피디아의 무어의 법칙](https://ko.wikipedia.org/wiki/무어의_법칙)
 
-Often used to illustrate the sheer speed at which semiconductor and chip technology has improved, Moore's prediction has proven to be highly accurate over from the 1970s to the late 2000s. In more recent years, the trend has changed slightly, partly due to [physical limitations on the degree to which components can be miniaturised](https://en.wikipedia.org/wiki/Quantum_tunnelling). However, advancements in parallelisation, and potentially revolutionary changes in semiconductor technology and quantum computing may mean that Moore's Law could continue to hold true for decades to come.
+> 집적 회로의 트랜지스터 수는 대략 2년마다 2배가 된다.
 
-### Parkinson's Law
+반도체와 기판 기술의 가파른 성장 속도를 설명하기 위한 무어의 예측은 1970년대부터 2000년대 후반까지 굉장히 정확한 것으로 드러났다. 최근에는 [부품 소형화의 물리적 한계](https://ko.wikipedia.org/wiki/터널_효과)로 인하여 약간 둔화되긴 하였지만 말이다. 하지만 병렬화와 반도체 기술의 혁신적 변화에 대한 가능성, 그리고 양자 컴퓨팅은 무어의 법칙이 향후 몇 십 년간에도 들어맞을 수 있음을 의미할 수도 있다.
+
+<br>
+
+### 파킨슨의 법칙
 
 [Parkinson's Law on Wikipedia](https://en.wikipedia.org/wiki/Parkinson%27s_law)
 
-> Work expands so as to fill the time available for its completion.
+> 작업은 남은 기한을 채울 때까지 늘어난다.
 
-In its original context, this Law was based on studies of bureaucracies. It may be pessimistically applied to software development initiatives, the theory being that teams will be inefficient until deadlines near, then rush to complete work by the deadline, thus making the actual deadline somewhat arbitrary.
+원래 맥락에서 이 법칙은 관료제에 대한 연구를 기반으로 하고 있다. 소프트웨어 개발 계획에서도 비관적으로 적용될 수 있는데, 개발자들은 기한이 다가오기 전에는 효율적이지 못하다가 기한이 가까워지면 급하게 일을 하게 되므로 결국 실제적인 데드라인을 흐릿하게 한다.
 
-If this law were combined with [Hofstadter's Law](#hofstadters-law), an even more pessimistic viewpoint is reached - work will expand to fill the time available for its completion and *still take longer than expected*.
+만일 이 법칙이 [호프스태터의 법칙](#호프스태터의-법칙)과 결합된다면, 더욱 비관적인 관점에 도달할 수 있다. 작업은 남은 시간을 채우기 위해 늘어나면서도 *예정된 시간보다 길어지기까지 할 것이다.*
 
-See also:
+<br>관련:
 
-- [Hofstadter's Law](#hofstadters-law)
+- [호프스태터의 법칙](#호프스태터의-법칙)
 
-### Putt's Law
+<br>
+
+### 푸트의 법칙
 
 [Putt's Law on Wikipedia](https://en.wikipedia.org/wiki/Putt%27s_Law_and_the_Successful_Technocrat)
 
-> Technology is dominated by two types of people, those who understand what they do not manage and those who manage what they do not understand.
+> 기술은, 자신이 관리하지 않는 것들을 이해하는 자들과, 자신이 관리하는 것들을 이해하지 못하는 자들 두 가지 분류의 사람들에 의해 지배된다.
 
-Putt's Law is often followed by Putt's Corollary:
+푸트의 법칙에는 종종 다음 푸트의 귀결이 따라붙는다:
 
-> Every technical hierarchy, in time, develops a competence inversion.
+> 모든 기술 조직의 계급에서는 시간이 흐르면서 역량의 역전이 일어난다.
 
-These statements suggest that due to various selection criteria and trends in how groups organise, there will be a number of skilled people at working levels of a technical organisations, and a number of people in managerial roles who are not aware of the complexities and challenges of the work they are managing. This can be due to phenomena such as [The Peter Principle](#TODO) or [Dilbert's Law](#TODO).
+이 문구에 따르면 조직 구성론에 대한 여러 가지 선택 기준과 유행 변화에 따라서, 조직에는 여러 명의 숙련된 노동 계층과 자신들이 관리하는 일의 복잡도와 어려움을 모르는 여러 명의 관리직이  생기게 된다. 이것은 [피터의 원리](#TODO) 혹은 [딜버트의 법칙](#TODO)과도 같은 현상 때문이다.
 
-However, it should be stressed that Laws such as this are vast generalisations and may apply to _some_ types of organisations, and not apply to others.
+다만 이런 류의 법칙에서 잊지 말아야 할 점은 이러한 모호한 일반화는 _어떠한_ 조직에는 적용될 수도 있으나, 나머지에는 아니라는 점이다.
 
-See also:
+<br>
 
-- [The Peter Principle](#TODO)
-- [Dilbert's Law](#TODO).
+관련:
 
+- [피터의 원리](#TODO)
+- [딜버트의 법칙](#TODO)
 
-### The Law of Conservation of Complexity (Tesler's Law)
+<br>
+
+### 복잡성 보존의 법칙 (테슬러의 법칙)
 
 [The Law of Conservation of Complexity on Wikipedia](https://en.wikipedia.org/wiki/Law_of_conservation_of_complexity)
 
-This law states that there is a certain amount of complexity in a system which cannot be reduced.
+이 법칙에 따르면 시스템에는 더 이상 줄일 수 없는 특정한 정도의 복잡성이 존재한다.
 
-Some complexity in a system is 'inadvertent'. It is a consequence of poor structure, mistakes, or just bad modeling of a problem to solve. Inadvertent complexity can be reduced (or eliminated). However, some complexity is 'intrinsic' as a consequence of the complexity inherent in the problem being solved. This complexity can be moved, but not eliminated.
+시스템에 있어 어떤 종류의 복잡성은 '의도되지 않은 것'이다. 그것은 빈약한 구조, 실수, 혹은 문제에 대한 그릇된 모델링의 대가이다. 이러한 의도되지 않은 복잡성은 줄이거나 없앨 수 있다. 반면에, 풀어야 할 문제에 대하여 '내재적'으로 자리하는 복잡성이 있다. 이러한 복잡성은 옮겨질 수는 있으나 없앨 수는 없다.
 
-One interesting element to this law is the suggestion that even by simplifying the entire system, the intrinsic complexity is not reduced, it is _moved to the user_, who must behave in a more complex way.
+이 법칙이 시사하는 흥미로는 점은, 설령 전체 시스템을 단순화하더라도 내재적인 복잡성은 줄어드는 것이 아니라 _사용자에게 전이되어서_, 이용을 더욱 복잡하게 만든다.
 
-### The Law of Leaky Abstractions
+<br>
+
+### 허술한 추상화의 법칙
 
 [The Law of Leaky Abstractions on Joel on Software](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/)
 
-> All non-trivial abstractions, to some degree, are leaky.
+> 모든 사소하지 않은 추상화는, 어느 정도, 허술하다.
 >
-> (Joel Spolsky)
+> —조엘 스폴스키
 
-This law states that abstractions, which are generally used in computing to simplify working with complicated systems, will in certain situations 'leak' elements of the underlying system, this making the abstraction behave in an unexpected way.
+이 법칙에 따르면 컴퓨팅에서 복잡한 시스템과 작업하기 위해 일반적으로 사용되는 추상화에서는 때에 따라 하단 요소의 '누수'가 일어날 수 있고, 이는 추상화가 예상치 못한 방향으로 전개되게 한다.
 
-An example might be loading a file and reading its contents. The file system APIs are an _abstraction_ of the lower level kernel systems, which are themselves an abstraction over the physical processes relating to changing data on a magnetic platter (or flash memory for an SSD). In most cases, the abstraction of treating a file like a stream of binary data will work. However, for a magnetic drive, reading data sequentially will be *significantly* faster than random access (due to increased overhead of page faults), but for an SSD drive, this overhead will not be present. Underlying details will need to be understood to deal with this case (for example, database index files are structured to reduce the overhead of random access), the abstraction 'leaks' implementation details the developer may need to be aware of.
+파일을 불러와 내용을 읽는 상황을 살펴보자. 파일 시스템 API는 로우 레벨 커널 시스템의 _추상화_ 인데, 이 시스템 또한 자기 플래터(혹은 플래시 메모리나 SSD)의 데이터를 물리적으로 변경하는 것의 추상화이다. 대부분의 경우 파일을 이진 데이터의 스트림으로서 추상화하는 것은 문제가 없을 것이다. 그러나 자기 디스크에서는 데이터를 순서대로 읽는 것이 임의 접근보다 *비교할 수 없을 만큼* 빠른 반면에(페이지 폴트 비용 때문에), SSD에서는 전혀 상관이 없다. 내부 구현을 상세히 이해하여야 이런 경우에 대처할 수 있는데(가령, 데이터베이스 인덱스 파일은 임의 접근의 비용을 줄이도록 구조가 짜여져 있다), 이렇듯 추상화는 개발자가 모르면 곤란하도록 내부 구현 상세를 '누출'한다.
 
-The example above can become more complex when _more_ abstractions are introduced. The Linux operating system allows files to be accessed over a network but represented locally as 'normal' files. This abstraction will 'leak' if there are network failures. If a developer treats these files as 'normal' files, without considering the fact that they may be subject to network latency and failures, the solutions will be buggy.
+위의 예시는 _더 많은_ 추상화가 도입되면 더욱 복잡해질 수 있다. 리눅스 운영체제는 네트워크를 경유하여 파일에 접근할 수 있도록 하면서도 로컬에서는 '일반' 파일로 취급한다. 이런 추상화는 네트워크 오류가 발생하면 '허술해질' 것이다. 만약 개발자가 이런 파일들을 네트워크 지연이나 오류에 대한 고려 없이 '일반' 파일로 취급한다면, 버그가 생길 것이다.
 
-The article describing the law suggests that an over-reliance on abstractions, combined with a poor understanding of the underlying processes, actually makes dealing with the problem at hand _more_ complex in some cases.
+이 법칙을 설명하는 글에 따르면 하부 구동 원리를 모른 채로 추상화에 대한 과도하게 의존할 경우, 도리어 문제 해결을 복잡하게 만들 수 있다고 하고 있다.
 
-See also:
+<br>
 
-- [Hyrum's Law](#hyrums-law-the-law-of-implicit-interfaces)
+관련:
 
-Real-world examples:
+- [하이럼의 법칙](#하이럼의-법칙-암시적-인터페이스의-법칙)
 
-- [Photoshop Slow Startup](https://forums.adobe.com/thread/376152) - an issue I encountered in the past. Photoshop would be slow to startup, sometimes taking minutes. It seems the issue was that on startup it reads some information about the current default printer. However, if that printer is actually a network printer, this could take an extremely long time. The _abstraction_ of a network printer being presented to the system similar to a local printer caused an issue for users in poor connectivity situations.
+실제 예시:
 
-### The Law of Triviality
+- [포토샵의 느린 초기 로딩](https://forums.adobe.com/thread/376152) - 과거에 마주한 문제이다. 포토샵은 종종 켜는 데에 몇 분씩이나 걸리기도 하는데, 이 문제는 구동 시작시에 현재 기본으로 설정된 프린터의 정보를 읽어오는 것에서 발생하였다. 만약 그 프린터가 네트워크 프린터라면 극도로 오랜 시간이 걸리게 되는 것이다. 시스템에 네트워크 프린터의 _추상화_가 로컬 프린터와 유사하게 제공된 점은 연결 상태가 좋지 못한 상황의 사용자에게 문제를 일으켰다.
+
+<br>
+
+### 사소함의 법칙
 
 [The Law of Triviality on Wikipedia](https://en.wikipedia.org/wiki/Law_of_triviality)
 
-This law suggests that groups will give far more time and attention to trivial or cosmetic issues rather than serious and substantial ones.
+이 법칙은 정작 심각한 혹은 중요한 것들보다 사소한 이슈들 혹은 외양에 훨씬 더 많은 시간을 쏟게 됨을 시사한다.
 
-The common fictional example used is that of a committee approving plans for nuclear power plant, who spend the majority of their time discussing the structure of the bike shed, rather than the far more important design for the power plant itself. It can be difficult to give valuable input on discussions about very large, complex topics without a high degree of subject matter expertise or preparation. However, people want to be seen to be contributing valuable input. Hence a tendency to focus too much time on small details, which can be reasoned about easily, but are not necessarily of particular importance.
+가상의 예시로서, 위원회가 원자력 발전소에 건설 계획을 허가하는 과정에서 훨씬 중요한 발전소 자체의 설계는 놔두고 자전거 보관소 얘기나 하는 데에 시간을 쏟는 것을 들 수 있다. 거대하고 복잡한 주제의 논의에서 그 분야의 전문 지식이나 사전 준비 없이 뭔가 유용한 이야기를 할 수는 없을 것이다. 그러나 사람들은 자신이 기여하는 것처럼 보여지고 싶어하고, 따라서 쉽게 해결될 수 있으며 그다지 중요한 것은 아닌 작은 디테일에 너무 많은 시간을 쏟는 경향이 생겨난다.
 
-The fictional example above led to the usage of the term 'Bike Shedding' as an expression for wasting time on trivial details.
+이 가상의 일화는 사소한 디테일에 시간 버리는 것을 '자전거 보관소한다'고 표현하도록 만들었다.
 
-### The Unix Philosophy
+<br>
 
-[The Unix Philosophy on Wikipedia](https://en.wikipedia.org/wiki/Unix_philosophy)
+### 유닉스 철학
 
-The Unix Philosophy is that software components should be small, and focused on doing one specific thing well. This can make it easier to build systems by composing together small, simple, well-defined units, rather than using large, complex, multi-purpose programs.
+[위키피디아의 유닉스 철학](https://ko.wikipedia.org/wiki/유닉스_철학)
 
-Modern practices like 'Microservice Architecture' can be thought of as an application of this law, where services are small, focused and do one specific thing, allowing complex behaviour to be composed of simple building blocks.
+유닉스 철학은 소프트웨어의 구성 요소는 작아야 하며, 하나의 특정한 작업을 잘하도록 해야 한다는 것이다. 작고 단순하며 잘 정의된 단위들을 조합함으로써, 거대하고 복잡하며 다목적인 프로그램을 이용하는 것보다 쉽게 시스템을 설계할 수 있다.
 
-### The Spotify Model
+서비스가 작고, 하나의 특정한 작업을 맡으며, 복잡한 행동은 단순한 블록의 조합으로 구성할 수 있는 '마이크로서비스 아키텍쳐' 같은 근래의 관행 또한 이 법칙의 적용으로 생각할 수 있다.
+
+<br>
+
+### 스포티파이 모델
 
 [The Spotify Model on Spotify Labs](https://labs.spotify.com/2014/03/27/spotify-engineering-culture-part-1/)
 
-The Spotify Model is an approach to team and organisation structure which has been popularised by 'Spotify'. In this model, teams are organised around features, rather than technologies.
+스포티파이 모델은 '스포티파이'에 의해 유명해진 팀과 조직 구조에 대한 접근법이다. 이 모델에서 팀은 기술보단 기능을 중심으로 구성된다.
 
-The Spotify Model also popularises the concepts of Tribes, Guilds, Chapters, which are other components of their organisation structure.
+스포티파이 모델은 부족, 길드, 지부와 같은 그들 조직 구조의 요소 또한 유명하게 만들었다.
 
-### Wadler's Law
+<br>
+
+![Spotify Tribe Engineering Model](./images/spotify_model.jpg)
+
+*(이미지 출처: https://medium.com/@media_75624/exploring-key-elements-of-spotifys-agile-scaling-model-471d2a23d7ea)*
+
+<br>
+
+### 와들러의 법칙
 
 [Wadler's Law on wiki.haskell.org](https://wiki.haskell.org/Wadler's_Law)
 
-> In any language design, the total time spent discussing a feature in this list is proportional to two raised to the power of its position.
+> 프로그래밍 언어를 설계할 때, 이 기능 목록에 나온 항목들을 논의하는 데 걸리는 총 시간은 2의 항목의 번호 제곱에 비례한다.
 > 
-> 0. Semantics
-> 1. Syntax
-> 2. Lexical syntax
-> 3. Lexical syntax of comments
+> 0. 의미론
+> 1. 구문론
+> 2. 어휘
+> 3. 주석다는 법
 > 
-> (In short, for every hour spent on semantics, 8 hours will be spent on the syntax of comments).
+> (즉, 의미론에 1시간을 쓸 때마다 주석다는 법에 1 곱하기 2의 세제곱인 8시간을 쓴다는 뜻이다.)
 
-Similar to [The Law of Triviality](#the-law-of-triviality), Wadler's Law states what when designing a language, the amount of time spent on language structures is disproportionately high in comparison to the importance of those features.
+[사소함의 법칙](#사소함의-법칙)처럼, 와들러의 법칙에 따르면 언어 구조를 설계할 때 쓰이는 시간은 각 기능의 중요도에 반비례한다.
 
-See also:
+<br>
 
-- [The Law of Triviality](#the-law-of-triviality)
+관련:
 
-## Principles
+- [사소함의 법칙](#사소함의-법칙)
 
-Principles are generally more likely to be guidelines relating to design.
+<br>
 
-### The Pareto Principle (The 80/20 Rule)
+## 원칙
 
-[The Pareto Principle on Wikipedia](https://en.wikipedia.org/wiki/Pareto_principle)
+원칙들은 일반적으로 설계의 가이드라인과도 같다.
 
-> Most things in life are not distributed evenly.
+<br>
 
-The Pareto Principle suggests that in some cases, the majority of results come from a minority of inputs:
+### 파레토의 원리 (80:20의 법칙)
 
-- 80% of a certain piece of software can be written in 20% of the total allocated time (conversely, the hardest 20% of the code takes 80% of the time)
-- 20% of the effort produces 80% of the result
-- 20% of the work creates 80% of the revenue
-- 20% of the bugs cause 80% of the crashes
-- 20% of the features cause 80% of the usage
+[위키피디아의 파레토 법칙](https://ko.wikipedia.org/wiki/파레토_법칙)
 
-In the 1940s American-Romanian engineer Dr. Joseph Juran, who is widely credited with being the father of quality control, [began to apply the Pareto principle to quality issues](https://en.wikipedia.org/wiki/Joseph_M._Juran).
+> 세상 대부분의 것들은 균등하게 분배되지 않았다.
 
-This principle is also known as: The 80/20 Rule, The Law of the Vital Few and The Principle of Factor Sparsity.
+파레토의 원리에 의하면, 경우에 따라 대부분의 결과는 소수로부터 비롯된다:
 
-Real-world examples:
+- 어떤 소프트웨어의 80%는 총 시간 중 20%만에 쓰일 수 있다(반대로, 가장 어려운 20%를 만드는 것에 80%의 시간이 든다).
+- 20%의 노력이 80%의 결과를 만들어낸다.
+- 20%의 일이 80%의 수입을 창출한다.
+- 20%의 버그가 80%의 크래쉬를 일으킨다.
+- 20%의 기능이 사용량 중 80%를 차지한다.
 
-- In 2002 Microsoft reported that by fixing the top 20% of the most-reported bugs, 80% of the related errors and crashes in windows and office would become eliminated ([Reference](https://www.crn.com/news/security/18821726/microsofts-ceo-80-20-rule-applies-to-bugs-not-just-features.htm)).
+1940년대에 품질 관리의 아버지로 널리 알려진 미국계 루마니아인 공학자 조셉 주란 박사는, [품질 문제에 파레토의 원리를 적용하기 시작했다](https://en.wikipedia.org/wiki/Joseph_M._Juran).
 
-### The Robustness Principle (Postel's Law)
+이 원리는 또한 80:20의 법칙, 중요한 소수의 법칙, 혹은 희소 인자의 원리라고도 불리운다.
 
-[The Robustness Principle on Wikipedia](https://en.wikipedia.org/wiki/Robustness_principle)
+<br>
 
-> Be conservative in what you do, be liberal in what you accept from others.
+실제 사례:
 
-Often applied in server application development, this principle states that what you send to others should be as minimal and conformant as possible, but you should be aim to allow non-conformant input if it can be processed.
+- 2002년 당시 마이크로소프트는 20%의 가장 많이 보고된 버그를 고침으로써, 윈도우즈와 오피스에서 80%의 관련 에러와 크래쉬가 사라졌다고 하였다([출처](https://www.crn.com/news/security/18821726/microsofts-ceo-80-20-rule-applies-to-bugs-not-just-features.htm)).
 
-The goal of this principle is to build systems which are robust, as they can handle poorly formed input if the intent can still be understood. However, there are potentially security implications of accepting malformed input, particularly if the processing of such input is not well tested.
+<br>
 
-### SOLID
+### 견고함의 원칙 (포스텔의 법칙)
 
-This is an acronym, which refers to:
+[위키피디아의 견고함의 원칙](https://ko.wikipedia.org/wiki/견고함의_원칙)
 
-* S: [The Single Responsibility Principle](#the-single-responsibility-principle)
-* O: [The Open/Closed Principle](#the-openclosed-principle)
-* L: [The Liskov Substitution Principle](#the-liskov-substitution-principle)
-* I: [The Interface Segregation Principle](#the-interface-segregation-principle)
-* D: [The Dependency Inversion Principle](#the-dependency-inversion-principle)
+> 당신이 하는 일은 엄하게, 남의 것을 받아들일 때는 너그럽게.
 
-These are key principles in [Object-Oriented Programming](#todo). Design principles such as these should be able to aid developers build more maintainable systems.
+종종 서버 어플리케이션 개발에 있어, 이 원칙에 따르면 보내는 것은 최대한 간략하면서도 명세를 철저히 따르도록 하되, 받는 것은 설령 명세를 따르지 않더라도 처리할 수 있는 한 받아들이는 것을 지향해야 한다고 한다.
 
-### The Single Responsibility Principle
+이 원칙의 목적은 의미가 분명한 입력의 경우 비록 형식적으로는 빈약하더라도 이해는 할 수 있으므로 이를 수용함으로써 견고한 시스템을 설계하는 것이다. 다만 그러한 기형의 입력을 받아들임에 있어 특히 입력을 제대로 테스트하지 않을 경우, 보안 위협의 가능성이 생길 수 있다.
 
-[The Single Responsibility Principle on Wikipedia](https://en.wikipedia.org/wiki/Single_responsibility_principle)
+<br>
 
-> Every module or class should have a single responsibility only.
+### 솔리드
 
-The first of the '[SOLID](#solid)' principles. This principle suggests that modules or classes should do one thing and one thing only. In more practical terms, this means that a single, small change to a feature of a program should require a change in one component only. For example, changing how a password is validated for complexity should require a change in only one part of the program.
+이는 다음에 대한 약자이다:
 
-Theoretically, this should make the code more robust, and easier to change. Knowing that a component which is being changed has a single responsibility only means that _testing_ that change should be easier. Using the earlier example, changing the password complexity component should only be able to affect the features which relate to password complexity. It can be much more difficult to reason about the impact of a change to a component which has many responsibilities.
+* S: [The Single Responsibility Principle (단일 책임 원칙)](#단일-책임-원칙)
+* O: [The Open/Closed Principle (개방-폐쇄 원칙)](#개방-폐쇄-원칙)
+* L: [The Liskov Substitution Principle (리스코프 치환 원칙)](#리스코프-치환-원칙)
+* I: [The Interface Segregation Principle (인터페이스 분리 원칙)](#인터페이스-분리-원칙)
+* D: [The Dependency Inversion Principle (의존 관계 역전 원칙)](#의존-관계-역전-원칙)
 
-See also:
+이것은 [객체지향 프로그래밍](#todo)의 핵심 원칙이다. 이러한 설계 원칙들은 개발자들이 유지보수 가능한 시스템을 짓는 것을 도울 수 있다.
 
-- [Object-Oriented Programming](#todo)
-- [SOLID](#solid)
+<br>
 
-### The Open/Closed Principle
+### 단일 책임 원칙
 
-[The Open/Closed Principle on Wikipedia](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
+[위키피디아의 단일 책임 원칙](https://ko.wikipedia.org/wiki/단일_책임_원칙)
 
-> Entities should be open for extension and closed for modification.
+> 모든 모듈과 클래스는 단일한 책임만을 지녀야 한다.
 
-The second of the '[SOLID](#solid)' principles. This principle states that entities (which could be classes, modules, functions and so on) should be able to have their behaviour _extended_, but that their _existing_ behaviour should not be able to be modified.
+'[솔리드](#솔리드)' 원칙의 첫 번째이다. 이 원칙에 따르면 모듈이나 클래스는 반드시 오직 하나의 일만을 해야 한다. 좀 더 실용적으로 말하자면, 프로그램 기능에 있어서 하나의 작은 변화는 오로지 한 구성 요소만을 바꿔야 함을 뜻한다. 가령, 패스워드 복잡도 검증을 어떻게 처리할지 변경하는 것은 오직 프로그램의 한 곳만을 바꿔야 한다.
 
-As a hypothetical example, imagine a module which is able to turn a Markdown document into HTML. If the module could be extended to handle a newly proposed markdown feature, without modifying the module internals, then it would be open for extension. If the module could _not_ be modified by a consumer so that how existing Markdown features are handled, then it would be _closed_ for modification.
+이론적으로 이것은 코드를 더욱 견고하게 만들고 수정을 용이하게 한다. 바뀔 구성 요소가 단일 책임만을 지고 있다는 것을 안다면 그 변화에 대한 _테스팅_ 또한 더욱 쉽기 때문이다. 앞서 말한 예시에서, 패스워드 복잡도 관련 구성 요소를 변경하는 것은 오직 패스워드 복잡도 관련 기능에만 영향을 끼친다. 여러 책임을 지고 있는 구성 요소를 바꿀 때에 어떠한 일이 일어날지 예측하는 것은 훨씬 더 어렵다.
 
-This principle has particular relevance for object-oriented programming, where we may design objects to be easily extended, but would avoid designing objects which can have their existing behaviour changed in unexpected ways.
+<br>
 
-See also:
+관련:
 
-- [Object-Oriented Programming](#todo)
-- [SOLID](#solid)
+- [객체지향 프로그래밍](#todo)
+- [솔리드](#솔리드)
 
-### The Liskov Substitution Principle
+<br>
 
-[The Liskov Substitution Principle on Wikipedia](https://en.wikipedia.org/wiki/Liskov_substitution_principle)
+### 개방-폐쇄 원칙
 
-> It should be possible to replace a type with a subtype, without breaking the system.
+[위키피디아의 개방-폐쇄 원칙](https://ko.wikipedia.org/wiki/개방-폐쇄_원칙)
 
-The third of the '[SOLID](#solid)' principles. This principle states that if a component relies on a type, then it should be able to use subtypes of that type, without the system failing or having to know the details of what that subtype is.
+> 개체는 확장에 대해서는 열려 있어야 하고, 수정에 대해서는 닫혀 있어야 한다.
 
-As an example, imagine we have a method which reads an XML document from a structure which represents a file. If the method uses a base type 'file', then anything which derives from 'file' should be able to be used in the function. If 'file' supports seeking in reverse, and the XML parser uses that function, but the derived type 'network file' fails when reverse seeking is attempted, then the 'network file' would be violating the principle.
+'[솔리드](#솔리드)' 원칙의 두 번째이다. 이 원칙에 따르면 개체(클래스, 모듈, 함수 등)는 행동을 _확장_ 할 수 있어야 하지만, _기존의_ 행동은 고칠 수 없어야 한다.
 
-This principle has particular relevance for object-oriented programming, where type hierarchies must be modeled carefully to avoid confusing users of a system.
+가상의 예시로서 마크다운 문서를 HTML로 변환할 수 있는 모듈을 상상해보자. 모듈이 내부적인 변경 없이도 새로이 제안된 마크다운 기능을 다룰 수 있도록 확장 가능하다면, 확장에 대해 열려 있는 것이다. 만약 모듈이 소비자에 의해서 기존의 마크다운 기능 처리를 변경할 수 있도록 수정될 수 _없다면_, 수정에 대해 닫혀 있는 것이다.
 
-See also:
+이 원칙은 특히 [객체지향 프로그래밍](#todo)과 관련이 있는데, 우리는 객체를 쉽게 확장하고 싶은 반면 예상치 못한 방향으로 수정되는 것은 피하고 싶기 때문이다.
 
-- [Object-Oriented Programming](#todo)
-- [SOLID](#solid)
+<br>
 
-### The Interface Segregation Principle
+관련:
 
-[The Interface Segregation Principle on Wikipedia](https://en.wikipedia.org/wiki/Interface_segregation_principle)
+- [객체지향 프로그래밍](#todo)
+- [솔리드](#솔리드)
 
-> No client should be forced to depend on methods it does not use.
+<br>
 
-The fourth of the '[SOLID](#solid)' principles. This principle states that consumers of a component should not depend on functions of that component which it doesn't actually use.
+### 리스코프 치환 원칙
 
-As an example, imagine we have a method which reads an XML document from a structure which represents a file. It only needs to read bytes, move forwards or move backwards in the file. If this method needs to be updated because an unrelated feature of the file structure changes (such as an update to the permissions model used to represent file security), then the principle has been invalidated. It would be better for the file to implement a 'seekable-stream' interface, and for the XML reader to use that.
+[리스코프 치환 원칙](https://ko.wikipedia.org/wiki/리스코프_치환_원칙)
 
-This principle has particular relevance for object-oriented programming, where interfaces, hierarchies and abstract types are used to [minimise the coupling](#todo) between different components. [Duck typing](#todo) is a methodology which enforces this principle by eliminating explicit interfaces.
+> 시스템을 파괴하지 않으면서도 자료형을 하위 자료형으로 대체할 수 있어야 한다.
 
-See also:
+'[솔리드](#솔리드)' 원칙의 세 번째이다. 이 원칙은 만일 어떠한 구성 요소가 자료형에 의존한다면, 시스템 실패나 하위 자료형이 무엇인지에 대한 정보 없이도 하위형을 대신 사용할 수 있어야 한다고 말한다.
 
-- [Object-Oriented Programming](#todo)
-- [SOLID](#solid)
-- [Duck Typing](#todo)
-- [Decoupling](#todo)
+가령, 파일을 나타내는 구조로부터 XML 문서를 읽어들이는 메소드가 있다고 하자. 만약 메소드가 '파일' 기반형을 사용하고 있다면, '파일'에서 파생된 모든 것은 해당 함수에서 쓰일 수 있다. '파일'이 역방향 탐색을 지원하고 XML 파서가 그 기능을 이용한다고 할 때 만약 하위 자료형인 '네트워크 파일'에 대한 역방향 탐색 시도 시 실패한다면, '네트워크 파일'은 규율을 위반하고 있는 것이다.
 
-### The Dependency Inversion Principle
+이 원칙은 특히 [객체지향 프로그래밍](#todo)과 관련이 있는데, 자료형의 계층 관계를 세심히 모델링해야  시스템 사용자들의 혼란을 막을 수 있기 때문이다.
 
-[The Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle)
+<br>
 
-> High-level modules should not be dependent on low-level implementations.
+관련:
 
-The fifth of the '[SOLID](#solid)' principles. This principle states that higher level orchestrating components should not have to know the details of their dependencies.
+- [객체지향 프로그래밍](#todo)
+- [솔리드](#solid)
 
-As an example, imagine we have a program which read metadata from a website. We would assume that the main component would have to know about a component to download the webpage content, then a component which can read the metadata. If we were to take dependency inversion into account, the main component would depend only on an abstract component which can fetch byte data, and then an abstract component which would be able to read metadata from a byte stream. The main component would not know about TCP/IP, HTTP, HTML, etc.
+<br>
 
-This principle is complex, as it can seem to 'invert' the expected dependencies of a system (hence the name). In practice, it also means that a separate orchestrating component must ensure the correct implementations of abstract types are used (e.g. in the previous example, _something_ must still provide the metadata reader component a HTTP file downloader and HTML meta tag reader). This then touches on patterns such as [Inversion of Control](#todo) and [Dependency Injection](#todo).
+### 인터페이스 분리 원칙
 
-See also:
+[위키피디아의 인터페이스 분리 원칙](https://ko.wikipedia.org/wiki/인터페이스_분리_원칙)
 
-- [Object-Oriented Programming](#todo)
-- [SOLID](#solid)
-- [Inversion of Control](#todo)
-- [Dependency Injection](#todo)
+> 어떠한 클라이언트도 자신이 사용하지 않는 메소드에 의존하도록 강요당하면 안 된다.
 
-### The DRY Principle
+'[솔리드](#솔리드)' 원칙의 네 번째이다. 이 원칙에 따르면 구성 요소의 소비자는 구성 요소가 가진 함수들 중에서 실제로 사용하지 않는 것들에 의존하면 안 된다.
+
+예를 들면, 파일을 나타내는 구조로부터 XML 문서를 읽어들이는 메소드가 있다고 하자. 그 메소드는 오직 파일에서의 바이트 읽기, 전진, 그리고 후진 기능만이 필요하다. 만약 이 메소드가 파일 구조의 연관 없는 기능(파일 보안을 위한 권한 업데이트와도 같은)이 변하였다고 해서 업데이트가 필요하다면, 이 원칙은 무효가 된 것이다. 파일이 '탐색 가능 스트림' 인터페이스를 구현하고, XML 리더기가 사용하도록 하는 편이 나을 것이다.
+
+이 원칙은 특히 [객체지향 프로그래밍](#todo)에서 적용되어, 인터페이스, 계층 구조, 그리고 추상 자료형을 통해 구성 요소 간의 [결합도의 최소화](#todo)를 이루려고 한다. [덕 타이핑](#todo)은 명시적 인터페이스를 제거함으로써 이 원칙을 강제한다.
+
+<br>
+
+관련:
+
+- [객체지향 프로그래밍](#todo)
+- [솔리드](#solid)
+
+- [덕 타이핑](#todo)
+- [디커플링](#todo)
+
+<br>
+
+### 의존 관계 역전 원칙
+
+[위키피디아의 의존 관계 역전 원칙](https://ko.wikipedia.org/wiki/의존관계_역전_원칙)
+
+> 고수준 모듈은 저수준 구현에 의존해서는 안 된다.
+
+'[솔리드](#솔리드)' 원칙의 다섯 번째이다. 고수준에서 지휘하는 구성 요소는 의존 관계를 알 필요가 없다는 원칙이다.
+
+예시로서, 웹사이트의 메타데이터를 읽는 프로그램이 있다고 하자. 우리는 중심 구성 요소가 웹페이지 내용을 다운로드하는 구성 요소와 메타데이터를 읽을 수 있는 구성 요소를 알아야만 한다고 생각할 수 있다. 만약 의존 관계 역전 원칙을 고려한다면, 중심 구성 요소는 오로지 바이트 데이터를 가져올 수 있는 추상 구성 요소와 바이트 스트림에서 메타데이터를 읽을 수 있는 추상 구성 요소에만 의존하면 된다. TCP/IP, HTTP, HTML 등에 대해서는 알 필요가 없다.
+
+이 원칙은 마치 예상되는 의존 관계를 '역전'하는 것처럼 보일 수 있기 때문에 복잡하다(그래서 이러한 이름이 붙었다). 실제로는, 개별 지휘체가 올바른 구현의 추상 자료형이 사용되었는지도 확실시 해야 함을 뜻한다(위의 예시에서 _무언가_ 가 여전히 메타데이터를 읽는 추상 구성 요소에 HTTP 파일 다운로더와 HTML 메타 태그 리더기를 제공해야 한다). 이것은 [제어 반전](#todo)이나 [의존성 주입](#todo)과 같은 패턴으로 이어진다.
+
+<br>
+
+관련:
+
+- [객체지향 프로그래밍](#todo)
+- [솔리드](#solid)
+
+- [제어 반전](#todo)
+- [의존성 주입](#todo)
+
+<br>
+
+### GLIDE (???)
+
+이는 다음에 대한 약자이다?:
+
+- G: [Gaebang-Pyesoe Wonchik (개방-폐쇄 원칙)](#개방-폐쇄-원칙)
+- L: [Liskov Chihwan Wonchik (리스코프 치환 원칙)](#리스코프-치환-원칙)
+- I: [Interface Bunli Wonchik (인터페이스 분리 원칙)](#인터페이스-분리-원칙)
+- D: [Danil Chakim Wonchik (단일 책임 원칙)](#단일-책임-원칙)
+- E: [Euijon Gwangye Yukjun Wonchik (의존 관계 역전 원칙)](#의존-관계-역전-원칙)
+
+이것은 [객체지향 프로그래밍](#todo)의 핵심 원칙이다? 이러한 설계 원칙들은 개발자들이 유지보수 가능한 시스템을 짓는 것을 도울 수 있다?
+
+<br>
+
+### DRY 원칙
 
 [The DRY Principle on Wikipedia](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
-> Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+> 모든 지식은 시스템 내에서 반드시 단일하고, 모호하지 않으며, 권위적인 표현으로 나타나야 한다.
 
-DRY is an acronym for _Don't Repeat Yourself_. This principle aims to help developers reducing the repetition of code and keep the information in a single place and was cited in 1999 by Andrew Hunt and Dave Thomas in the book [The Pragmatic Developer](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
+DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙은 개발자들에게 있어 코드의 반복을 줄이고 정보를 한 곳에 모을 수 있도록 돕기 위해 고안되었으며, 1999년 앤드류 헌트와 데이브 토마스의 저서 [실용주의 프로그래머](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)에 나와 있다.
 
-> The opposite of DRY would be _WET_ (Write Everything Twice or We Enjoy Typing).
+> DRY의 반대는 _WET_ (Write Everything Twice모든 것을 두 번 써라, 혹은 We Enjoy Typing저희는 타자치는 게 좋아요)이라 할 수 있겠다.
 
-In practice, if you have the same piece of information in two (or more) different places, you can use DRY to merge them into a single one and reuse it wherever you want/need.
+만일 같은 정보가 둘 혹은 그 이상 곳에 흩어져 있다면, DRY 원칙을 적용하여 하나로 합친 후 원하는/필요한 곳에서 재사용할 수 있다.
 
-See also:
+<br>
 
-- [The Pragmatic Developer](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
+관련:
 
-## Reading List
+- [실용주의 프로그래머](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
 
-If you have found these concepts interesting, you may enjoy the following books.
+<br>
 
-- [The Mythical Man Month - Frederick P. Brooks Jr.](https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month) - A classic volume on software engineering. [Brooks's Law](#brookss-law) is a central theme of the book.
-- [Gödel, Escher, Bach: An Eternal Golden Braid - Douglas R. Hofstadter.](https://www.goodreads.com/book/show/24113.G_del_Escher_Bach) - This book is difficult to classify. [Hofstadter's Law](#hofstadters-law) is from the book.
+## 추천 도서
+
+이 개념들이 흥미롭다면, 다음 책들도 즐길 수 있을 것입니다.
+
+- [맨먼스 미신 - 프레드릭 P. 브룩스 Jr.](https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month) - 소프트웨어 공학의 고전. [브룩스의 법칙](#브룩스의-법칙)은 이 책의 주요한 주제이다.
+- [괴델, 에셔, 바흐: 영원한 황금 노끈 - 더글라스 R. 호프스태터](https://www.goodreads.com/book/show/24113.G_del_Escher_Bach) - 이 책은 분류하기 어렵다. [호프스태터의 법칙](#호프스태터의-법칙)은 이 책으로부터 비롯되었다.
+
+<br>
 
 ## TODO
 
 Hi! If you land here, you've clicked on a link to a topic I've not written up yet, sorry about this - this is work in progress!
 
-Feel free to [Raise an Issue](https://github.com/dwmkerr/hacker-laws/issues) requesting more details, or [Open a Pull Request](https://github.com/dwmkerr/hacker-laws/pulls) to submit your proposed definition of the topic. 
+Feel free to [Raise an Issue](https://github.com/dwmkerr/hacker-laws/issues) requesting more details, or [Open a Pull Request](https://github.com/dwmkerr/hacker-laws/pulls) to submit your proposed definition of the topic.
