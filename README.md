@@ -17,7 +17,7 @@
     * [하이럼의 법칙 (암시적 인터페이스의 법칙)](#하이럼의-법칙-암시적-인터페이스의-법칙)
     * [무어의 법칙](#무어의-법칙)
     * [파킨슨의 법칙](#파킨슨의-법칙)
-    * [Putt's Law](#putts-law)
+    * [푸트의 법칙](#푸트의-법칙)
     * [The Law of Conservation of Complexity (Tesler's Law)](#the-law-of-conservation-of-complexity-teslers-law)
     * [허술한 추상화의 법칙](#허술한-추상화의-법칙)
     * [The Law of Triviality](#the-law-of-triviality)
@@ -216,29 +216,32 @@
 
 <br>관련:
 
-- [호프스태터의 법칙](#호프스태터의 법칙)
+- [호프스태터의 법칙](#호프스태터의-법칙)
 
 <br>
 
-### Putt's Law
+### 푸트의 법칙
 
 [Putt's Law on Wikipedia](https://en.wikipedia.org/wiki/Putt%27s_Law_and_the_Successful_Technocrat)
 
-> Technology is dominated by two types of people, those who understand what they do not manage and those who manage what they do not understand.
+> 기술은, 자신이 관리하지 않는 것들을 이해하는 자들과, 자신이 관리하는 것들을 이해하지 못하는 자들 두 가지 분류의 사람들에 의해 지배된다.
 
-Putt's Law is often followed by Putt's Corollary:
+푸트의 법칙에는 종종 다음 푸트의 귀결이 따라붙는다:
 
-> Every technical hierarchy, in time, develops a competence inversion.
+> 모든 기술 조직의 계급에서는 시간이 흐르면서 역량의 역전이 일어난다.
 
-These statements suggest that due to various selection criteria and trends in how groups organise, there will be a number of skilled people at working levels of a technical organisations, and a number of people in managerial roles who are not aware of the complexities and challenges of the work they are managing. This can be due to phenomena such as [The Peter Principle](#TODO) or [Dilbert's Law](#TODO).
+이 문구에 따르면 조직 구성론에 대한 여러 가지 선택 기준과 유행 변화에 따라서, 조직에는 여러 명의 숙련된 노동 계층과 자신들이 관리하는 일의 복잡도와 어려움을 모르는 여러 명의 관리직이  생기게 된다. 이것은 [피터의 원리](#TODO) 혹은 [딜버트의 법칙](#TODO)과도 같은 현상 때문이다.
 
-However, it should be stressed that Laws such as this are vast generalisations and may apply to _some_ types of organisations, and not apply to others.
+다만 이런 류의 법칙에서 잊지 말아야 할 점은 이러한 모호한 일반화는 _어떠한_ 조직에는 적용될 수도 있으나, 나머지에는 아니라는 점이다.
 
-See also:
+<br>
 
-- [The Peter Principle](#TODO)
-- [Dilbert's Law](#TODO).
+관련:
 
+- [피터의 원리](#TODO)
+- [딜버트의 법칙](#TODO)
+
+<br>
 
 ### The Law of Conservation of Complexity (Tesler's Law)
 
@@ -482,15 +485,19 @@ See also:
 
 - [The Pragmatic Developer](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
 
+<br>
+
 ## 추천 도서
 
-If you have found these concepts interesting, you may enjoy the following books.
+이 개념들이 흥미롭다면, 다음 책들도 즐길 수 있을 것입니다.
 
-- [The Mythical Man Month - Frederick P. Brooks Jr.](https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month) - A classic volume on software engineering. [Brooks's Law](#brookss-law) is a central theme of the book.
-- [Gödel, Escher, Bach: An Eternal Golden Braid - Douglas R. Hofstadter.](https://www.goodreads.com/book/show/24113.G_del_Escher_Bach) - This book is difficult to classify. [Hofstadter's Law](#hofstadters-law) is from the book.
+- [맨먼스 미신 - 프레드릭 P. 브룩스 Jr.](https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month) - 소프트웨어 공학의 고전. [브룩스의 법칙](#브룩스의-법칙)은 이 책의 주요한 주제이다.
+- [괴델, 에셔, 바흐: 영원한 황금 노끈 - 더글라스 R. 호프스태터](https://www.goodreads.com/book/show/24113.G_del_Escher_Bach) - 이 책은 분류하기 어렵다. [호프스태터의 법칙](#호프스태터의-법칙)은 이 책으로부터 비롯되었다.
+
+<br>
 
 ## TODO
 
 Hi! If you land here, you've clicked on a link to a topic I've not written up yet, sorry about this - this is work in progress!
 
-Feel free to [Raise an Issue](https://github.com/dwmkerr/hacker-laws/issues) requesting more details, or [Open a Pull Request](https://github.com/dwmkerr/hacker-laws/pulls) to submit your proposed definition of the topic. 
+Feel free to [Raise an Issue](https://github.com/dwmkerr/hacker-laws/issues) requesting more details, or [Open a Pull Request](https://github.com/dwmkerr/hacker-laws/pulls) to submit your proposed definition of the topic.
