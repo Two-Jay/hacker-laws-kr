@@ -1,6 +1,6 @@
 # 💻📖 hacker-laws
 
-**개발자에게 유용한 법칙, 이론, 원리, 그리고 패턴들**
+**개발자에게 유용한 법칙, 이론, 원칙, 그리고 패턴들**
 
 <br>
 
@@ -26,14 +26,14 @@
     * [와들러의 법칙](#와들러의-법칙)
 * [원리](#원리)
     * [파레토의 원리 (80:20의 법칙)](#파레토의-원리-8020의-법칙)
-    * [The Robustness Principle (Postel's Law)](#the-robustness-principle-postels-law)
-    * [SOLID](#solid)
-    * [The Single Responsibility Principle](#the-single-responsibility-principle)
-    * [The Open/Closed Principle](#the-openclosed-principle)
-    * [The Liskov Substitution Principle](#the-liskov-substitution-principle)
-    * [The Interface Segregation Principle](#the-interface-segregation-principle)
-    * [The Dependency Inversion Principle](#the-dependency-inversion-principle)
-    * [The DRY Principle](#the-dry-principle)
+    * [견고함의 원칙 (포스텔의 법칙)](#견고함의-원칙-포스텔의-법칙)
+    * [솔리드](#솔리드)
+    * [단일 책임 원칙](#단일-책임-원칙)
+    * [개방-폐쇄 원칙](#개방-폐쇄-원칙)
+    * [리스코프 치환 원칙](#리스코프-치환-원칙)
+    * [인터페이스 분리 원칙](#인터페이스-분리-원칙)
+    * [의존 관계 역전 원칙](#의존-관계-역전-원칙)
+    * [DRY 원칙](#dry-원칙)
 * [추천 도서](#추천-도서)
 * [TODO](#todo)
 
@@ -57,7 +57,7 @@
 
 > 암달의 법칙은 시스템에 리소스를 추가함으로써 얻을 수 있는 컴퓨터 작업 성능 향상의 최대 폭을 나타내주는 공식이다. 일반적으로 병렬 컴퓨팅에서 이를 이용하여, 프로세서 개수의 증가가 프로그램 자체의 구조적인 병렬화 제한에 맞서 실제적으로 가져다주는 이득을 예측할 수 있다.
 
-예시를 살펴보자. 어떠한 프로그램이 단일 프로세서로 구동되어야 하는 부분 A와 병렬화될 수 있는 부분 B로 이루어져있다고 할 때, 우리는 프로세서의 추가가 제한된 이득만을 가져다줌을 알 수 있다. B 부분의 성능을 크게 향상시킬 수 있지만, A 부분의 속도는 그대로 남을 것이기 때문이다.
+예시를 살펴보자. 어떠한 프로그램이 단일 프로세서로 구동되어야 하는 부분 A와 병렬화될 수 있는 부분 B로 이루어져있다고 할 때, 우리는 프로세서의 추가적인 투입이 제한된 이득만을 가져다줌을 알 수 있다. B 부분의 성능을 크게 향상시킬 수 있지만, A 부분의 속도는 그대로 남을 것이기 때문이다.
 
 아래의 그래프는 성능 향상 가능성의 예시를 보여준다.
 
@@ -325,14 +325,14 @@
 
 [Wadler's Law on wiki.haskell.org](https://wiki.haskell.org/Wadler's_Law)
 
-> 프로그래밍 언어를 설계할 때, 이 기능 목록에 나온 항목들을 논의하는 데 걸리는 총 시간은 2의 (항목의 번호) 제곱에 비례한다.
+> 프로그래밍 언어를 설계할 때, 이 기능 목록에 나온 항목들을 논의하는 데 걸리는 총 시간은 2의 항목의 번호 제곱에 비례한다.
 > 
 > 0. 의미론
 > 1. 구문론
 > 2. 어휘
 > 3. 주석다는 법
 > 
-> (즉, 의미론에 1시간을 쓸 때마다 주석다는 법에 1시간 곱하기 2의 세제곱인 8시간을 쓴다는 뜻이다.)
+> (즉, 의미론에 1시간을 쓸 때마다 주석다는 법에 1 곱하기 2의 세제곱인 8시간을 쓴다는 뜻이다.)
 
 [사소함의 법칙](#사소함의-법칙)처럼, 와들러의 법칙에 따르면 언어 구조를 설계할 때 쓰이는 시간은 각 기능의 중요도에 반비례한다.
 
@@ -344,9 +344,9 @@
 
 <br>
 
-## 원리
+## 원칙
 
-원리들은 일반적으로 설계의 가이드라인과도 같다.
+원칙들은 일반적으로 설계의 가이드라인과도 같다.
 
 <br>
 
@@ -376,130 +376,172 @@
 
 <br>
 
-### The Robustness Principle (Postel's Law)
+### 견고함의 원칙 (포스텔의 법칙)
 
-[The Robustness Principle on Wikipedia](https://en.wikipedia.org/wiki/Robustness_principle)
+[위키피디아의 견고함의 원칙](https://ko.wikipedia.org/wiki/견고함의_원칙)
 
-> Be conservative in what you do, be liberal in what you accept from others.
+> 당신이 하는 일은 엄하게, 남의 것을 받아들일 때는 너그럽게.
 
-Often applied in server application development, this principle states that what you send to others should be as minimal and conformant as possible, but you should be aim to allow non-conformant input if it can be processed.
+종종 서버 어플리케이션 개발에 있어, 이 원칙에 따르면 보내는 것은 최대한 간략하면서도 명세를 철저히 따르도록 하되, 받는 것은 설령 명세를 따르지 않더라도 처리할 수 있는 한 받아들이는 것을 지향해야 한다고 한다.
 
-The goal of this principle is to build systems which are robust, as they can handle poorly formed input if the intent can still be understood. However, there are potentially security implications of accepting malformed input, particularly if the processing of such input is not well tested.
+이 원칙의 목적은 의미가 분명한 입력의 경우 비록 형식적으로는 빈약하더라도 이해는 할 수 있으므로 이를 수용함으로써 견고한 시스템을 설계하는 것이다. 다만 그러한 기형의 입력을 받아들임에 있어 특히 입력을 제대로 테스트하지 않을 경우, 보안 위협의 가능성이 생길 수 있다.
 
-### SOLID
+<br>
 
-This is an acronym, which refers to:
+### 솔리드
 
-* S: [The Single Responsibility Principle](#the-single-responsibility-principle)
-* O: [The Open/Closed Principle](#the-openclosed-principle)
-* L: [The Liskov Substitution Principle](#the-liskov-substitution-principle)
-* I: [The Interface Segregation Principle](#the-interface-segregation-principle)
-* D: [The Dependency Inversion Principle](#the-dependency-inversion-principle)
+이는 다음에 대한 약자이다:
 
-These are key principles in [Object-Oriented Programming](#todo). Design principles such as these should be able to aid developers build more maintainable systems.
+* S: [The Single Responsibility Principle (단일 책임 원칙)](#단일-책임-원칙)
+* O: [The Open/Closed Principle (개방-폐쇄 원칙)](#개방-폐쇄-원칙)
+* L: [The Liskov Substitution Principle (리스코프 치환 원칙)](#리스코프-치환-원칙)
+* I: [The Interface Segregation Principle (인터페이스 분리 원칙)](#인터페이스-분리-원칙)
+* D: [The Dependency Inversion Principle (의존 관계 역전 원칙)](#의존-관계-역전-원칙)
 
-### The Single Responsibility Principle
+이것은 [객체지향 프로그래밍](#todo)의 핵심 원칙이다. 이러한 설계 원칙들은 개발자들이 유지보수 가능한 시스템을 짓는 것을 도울 수 있다.
 
-[The Single Responsibility Principle on Wikipedia](https://en.wikipedia.org/wiki/Single_responsibility_principle)
+<br>
 
-> Every module or class should have a single responsibility only.
+### 단일 책임 원칙
 
-The first of the '[SOLID](#solid)' principles. This principle suggests that modules or classes should do one thing and one thing only. In more practical terms, this means that a single, small change to a feature of a program should require a change in one component only. For example, changing how a password is validated for complexity should require a change in only one part of the program.
+[위키피디아의 단일 책임 원칙](https://ko.wikipedia.org/wiki/단일_책임_원칙)
 
-Theoretically, this should make the code more robust, and easier to change. Knowing that a component which is being changed has a single responsibility only means that _testing_ that change should be easier. Using the earlier example, changing the password complexity component should only be able to affect the features which relate to password complexity. It can be much more difficult to reason about the impact of a change to a component which has many responsibilities.
+> 모든 모듈과 클래스는 단일한 책임만을 지녀야 한다.
 
-See also:
+'[솔리드](#솔리드)' 원칙의 첫 번째이다. 이 원칙에 따르면 모듈이나 클래스는 반드시 오직 하나의 일만을 해야 한다. 좀 더 실용적으로 말하자면, 프로그램 기능에 있어서 하나의 작은 변화는 오로지 한 구성 요소만을 바꿔야 함을 뜻한다. 가령, 패스워드 복잡도 검증을 어떻게 처리할지 변경하는 것은 오직 프로그램의 한 곳만을 바꿔야 한다.
 
-- [Object-Oriented Programming](#todo)
-- [SOLID](#solid)
+이론적으로 이것은 코드를 더욱 견고하게 만들고 수정을 용이하게 한다. 바뀔 구성 요소가 단일 책임만을 지고 있다는 것을 안다면 그 변화에 대한 _테스팅_ 또한 더욱 쉽기 때문이다. 앞서 말한 예시에서, 패스워드 복잡도 관련 구성 요소를 변경하는 것은 오직 패스워드 복잡도 관련 기능에만 영향을 끼친다. 여러 책임을 지고 있는 구성 요소를 바꿀 때에 어떠한 일이 일어날지 예측하는 것은 훨씬 더 어렵다.
 
-### The Open/Closed Principle
+<br>
 
-[The Open/Closed Principle on Wikipedia](https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle)
+관련:
 
-> Entities should be open for extension and closed for modification.
+- [객체지향 프로그래밍](#todo)
+- [솔리드](#솔리드)
 
-The second of the '[SOLID](#solid)' principles. This principle states that entities (which could be classes, modules, functions and so on) should be able to have their behaviour _extended_, but that their _existing_ behaviour should not be able to be modified.
+<br>
 
-As a hypothetical example, imagine a module which is able to turn a Markdown document into HTML. If the module could be extended to handle a newly proposed markdown feature, without modifying the module internals, then it would be open for extension. If the module could _not_ be modified by a consumer so that how existing Markdown features are handled, then it would be _closed_ for modification.
+### 개방-폐쇄 원칙
 
-This principle has particular relevance for object-oriented programming, where we may design objects to be easily extended, but would avoid designing objects which can have their existing behaviour changed in unexpected ways.
+[위키피디아의 개방-폐쇄 원칙](https://ko.wikipedia.org/wiki/개방-폐쇄_원칙)
 
-See also:
+> 개체는 확장에 대해서는 열려 있어야 하고, 수정에 대해서는 닫혀 있어야 한다.
 
-- [Object-Oriented Programming](#todo)
-- [SOLID](#solid)
+'[솔리드](#솔리드)' 원칙의 두 번째이다. 이 원칙에 따르면 개체(클래스, 모듈, 함수 등)는 행동을 _확장_ 할 수 있어야 하지만, _기존의_ 행동은 고칠 수 없어야 한다.
 
-### The Liskov Substitution Principle
+가상의 예시로서 마크다운 문서를 HTML로 변환할 수 있는 모듈을 상상해보자. 모듈이 내부적인 변경 없이도 새로이 제안된 마크다운 기능을 다룰 수 있도록 확장 가능하다면, 확장에 대해 열려 있는 것이다. 만약 모듈이 소비자에 의해서 기존의 마크다운 기능 처리를 변경할 수 있도록 수정될 수 _없다면_, 수정에 대해 닫혀 있는 것이다.
 
-[The Liskov Substitution Principle on Wikipedia](https://en.wikipedia.org/wiki/Liskov_substitution_principle)
+이 원칙은 특히 [객체지향 프로그래밍](#todo)과 관련이 있는데, 우리는 객체를 쉽게 확장하고 싶은 반면 예상치 못한 방향으로 수정되는 것은 피하고 싶기 때문이다.
 
-> It should be possible to replace a type with a subtype, without breaking the system.
+<br>
 
-The third of the '[SOLID](#solid)' principles. This principle states that if a component relies on a type, then it should be able to use subtypes of that type, without the system failing or having to know the details of what that subtype is.
+관련:
 
-As an example, imagine we have a method which reads an XML document from a structure which represents a file. If the method uses a base type 'file', then anything which derives from 'file' should be able to be used in the function. If 'file' supports seeking in reverse, and the XML parser uses that function, but the derived type 'network file' fails when reverse seeking is attempted, then the 'network file' would be violating the principle.
+- [객체지향 프로그래밍](#todo)
+- [솔리드](#솔리드)
 
-This principle has particular relevance for object-oriented programming, where type hierarchies must be modeled carefully to avoid confusing users of a system.
+<br>
 
-See also:
+### 리스코프 치환 원칙
 
-- [Object-Oriented Programming](#todo)
-- [SOLID](#solid)
+[리스코프 치환 원칙](https://ko.wikipedia.org/wiki/리스코프_치환_원칙)
 
-### The Interface Segregation Principle
+> 시스템을 파괴하지 않으면서도 자료형을 하위 자료형으로 대체할 수 있어야 한다.
 
-[The Interface Segregation Principle on Wikipedia](https://en.wikipedia.org/wiki/Interface_segregation_principle)
+'[솔리드](#솔리드)' 원칙의 세 번째이다. 이 원칙은 만일 어떠한 구성 요소가 자료형에 의존한다면, 시스템 실패나 하위 자료형이 무엇인지에 대한 정보 없이도 하위형을 대신 사용할 수 있어야 한다고 말한다.
 
-> No client should be forced to depend on methods it does not use.
+가령, 파일을 나타내는 구조로부터 XML 문서를 읽어들이는 메소드가 있다고 하자. 만약 메소드가 '파일' 기반형을 사용하고 있다면, '파일'에서 파생된 모든 것은 해당 함수에서 쓰일 수 있다. '파일'이 역방향 탐색을 지원하고 XML 파서가 그 기능을 이용한다고 할 때 만약 하위 자료형인 '네트워크 파일'에 대한 역방향 탐색 시도 시 실패한다면, '네트워크 파일'은 규율을 위반하고 있는 것이다.
 
-The fourth of the '[SOLID](#solid)' principles. This principle states that consumers of a component should not depend on functions of that component which it doesn't actually use.
+이 원칙은 특히 [객체지향 프로그래밍](#todo)과 관련이 있는데, 자료형의 계층 관계를 세심히 모델링해야  시스템 사용자들의 혼란을 막을 수 있기 때문이다.
 
-As an example, imagine we have a method which reads an XML document from a structure which represents a file. It only needs to read bytes, move forwards or move backwards in the file. If this method needs to be updated because an unrelated feature of the file structure changes (such as an update to the permissions model used to represent file security), then the principle has been invalidated. It would be better for the file to implement a 'seekable-stream' interface, and for the XML reader to use that.
+<br>
 
-This principle has particular relevance for object-oriented programming, where interfaces, hierarchies and abstract types are used to [minimise the coupling](#todo) between different components. [Duck typing](#todo) is a methodology which enforces this principle by eliminating explicit interfaces.
+관련:
 
-See also:
+- [객체지향 프로그래밍](#todo)
+- [솔리드](#solid)
 
-- [Object-Oriented Programming](#todo)
-- [SOLID](#solid)
-- [Duck Typing](#todo)
-- [Decoupling](#todo)
+<br>
 
-### The Dependency Inversion Principle
+### 인터페이스 분리 원칙
 
-[The Dependency Inversion Principle](https://en.wikipedia.org/wiki/Dependency_inversion_principle)
+[위키피디아의 인터페이스 분리 원칙](https://ko.wikipedia.org/wiki/인터페이스_분리_원칙)
 
-> High-level modules should not be dependent on low-level implementations.
+> 어떠한 클라이언트도 자신이 사용하지 않는 메소드에 의존하도록 강요당하면 안 된다.
 
-The fifth of the '[SOLID](#solid)' principles. This principle states that higher level orchestrating components should not have to know the details of their dependencies.
+'[솔리드](#솔리드)' 원칙의 네 번째이다. 이 원칙에 따르면 구성 요소의 소비자는 구성 요소가 가진 함수들 중에서 실제로 사용하지 않는 것들에 의존하면 안 된다.
 
-As an example, imagine we have a program which read metadata from a website. We would assume that the main component would have to know about a component to download the webpage content, then a component which can read the metadata. If we were to take dependency inversion into account, the main component would depend only on an abstract component which can fetch byte data, and then an abstract component which would be able to read metadata from a byte stream. The main component would not know about TCP/IP, HTTP, HTML, etc.
+예를 들면, 파일을 나타내는 구조로부터 XML 문서를 읽어들이는 메소드가 있다고 하자. 그 메소드는 오직 파일에서의 바이트 읽기, 전진, 그리고 후진 기능만이 필요하다. 만약 이 메소드가 파일 구조의 연관 없는 기능(파일 보안을 위한 권한 업데이트와도 같은)이 변하였다고 해서 업데이트가 필요하다면, 이 원칙은 무효가 된 것이다. 파일이 '탐색 가능 스트림' 인터페이스를 구현하고, XML 리더기가 사용하도록 하는 편이 나을 것이다.
 
-This principle is complex, as it can seem to 'invert' the expected dependencies of a system (hence the name). In practice, it also means that a separate orchestrating component must ensure the correct implementations of abstract types are used (e.g. in the previous example, _something_ must still provide the metadata reader component a HTTP file downloader and HTML meta tag reader). This then touches on patterns such as [Inversion of Control](#todo) and [Dependency Injection](#todo).
+이 원칙은 특히 [객체지향 프로그래밍](#todo)에서 적용되어, 인터페이스, 계층 구조, 그리고 추상 자료형을 통해 구성 요소 간의 [결합도의 최소화](#todo)를 이루려고 한다. [덕 타이핑](#todo)은 명시적 인터페이스를 제거함으로써 이 원칙을 강제한다.
 
-See also:
+<br>
 
-- [Object-Oriented Programming](#todo)
-- [SOLID](#solid)
-- [Inversion of Control](#todo)
-- [Dependency Injection](#todo)
+관련:
 
-### The DRY Principle
+- [객체지향 프로그래밍](#todo)
+- [솔리드](#solid)
+
+- [덕 타이핑](#todo)
+- [디커플링](#todo)
+
+<br>
+
+### 의존 관계 역전 원칙
+
+[위키피디아의 의존 관계 역전 원칙](https://ko.wikipedia.org/wiki/의존관계_역전_원칙)
+
+> 고수준 모듈은 저수준 구현에 의존해서는 안 된다.
+
+'[솔리드](#솔리드)' 원칙의 다섯 번째이다. 고수준에서 지휘하는 구성 요소는 의존 관계를 알 필요가 없다는 원칙이다.
+
+예시로서, 웹사이트의 메타데이터를 읽는 프로그램이 있다고 하자. 우리는 중심 구성 요소가 웹페이지 내용을 다운로드하는 구성 요소와 메타데이터를 읽을 수 있는 구성 요소를 알아야만 한다고 생각할 수 있다. 만약 의존 관계 역전 원칙을 고려한다면, 중심 구성 요소는 오로지 바이트 데이터를 가져올 수 있는 추상 구성 요소와 바이트 스트림에서 메타데이터를 읽을 수 있는 추상 구성 요소에만 의존하면 된다. TCP/IP, HTTP, HTML 등에 대해서는 알 필요가 없다.
+
+이 원칙은 마치 예상되는 의존 관계를 '역전'하는 것처럼 보일 수 있기 때문에 복잡하다(그래서 이러한 이름이 붙었다). 실제로는, 개별 지휘체가 올바른 구현의 추상 자료형이 사용되었는지도 확실시 해야 함을 뜻한다(위의 예시에서 _무언가_ 가 여전히 메타데이터를 읽는 추상 구성 요소에 HTTP 파일 다운로더와 HTML 메타 태그 리더기를 제공해야 한다). 이것은 [제어 반전](#todo)이나 [의존성 주입](#todo)과 같은 패턴으로 이어진다.
+
+<br>
+
+관련:
+
+- [객체지향 프로그래밍](#todo)
+- [솔리드](#solid)
+
+- [제어 반전](#todo)
+- [의존성 주입](#todo)
+
+<br>
+
+### GLIDE (???)
+
+이는 다음에 대한 약자이다?:
+
+- G: [Gaebang-Pyesoe Wonchik (개방-폐쇄 원칙)](#개방-폐쇄-원칙)
+- L: [Liskov Chihwan Wonchik (리스코프 치환 원칙)](#리스코프-치환-원칙)
+- I: [Interface Bunli Wonchik (인터페이스 분리 원칙)](#인터페이스-분리-원칙)
+- D: [Danil Chakim Wonchik (단일 책임 원칙)](#단일-책임-원칙)
+- E: [Euijon Gwangye Yukjun Wonchik (의존 관계 역전 원칙)](#의존-관계-역전-원칙)
+
+이것은 [객체지향 프로그래밍](#todo)의 핵심 원칙이다? 이러한 설계 원칙들은 개발자들이 유지보수 가능한 시스템을 짓는 것을 도울 수 있다?
+
+<br>
+
+### DRY 원칙
 
 [The DRY Principle on Wikipedia](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
 
-> Every piece of knowledge must have a single, unambiguous, authoritative representation within a system.
+> 모든 지식은 시스템 내에서 반드시 단일하고, 모호하지 않으며, 권위적인 표현으로 나타나야 한다.
 
-DRY is an acronym for _Don't Repeat Yourself_. This principle aims to help developers reducing the repetition of code and keep the information in a single place and was cited in 1999 by Andrew Hunt and Dave Thomas in the book [The Pragmatic Developer](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
+DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙은 개발자들에게 있어 코드의 반복을 줄이고 정보를 한 곳에 모을 수 있도록 돕기 위해 고안되었으며, 1999년 앤드류 헌트와 데이브 토마스의 저서 [실용주의 프로그래머](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)에 나와 있다.
 
-> The opposite of DRY would be _WET_ (Write Everything Twice or We Enjoy Typing).
+> DRY의 반대는 _WET_ (Write Everything Twice모든 것을 두 번 써라, 혹은 We Enjoy Typing저희는 타자치는 게 좋아요)이라 할 수 있겠다.
 
-In practice, if you have the same piece of information in two (or more) different places, you can use DRY to merge them into a single one and reuse it wherever you want/need.
+만일 같은 정보가 둘 혹은 그 이상 곳에 흩어져 있다면, DRY 원칙을 적용하여 하나로 합친 후 원하는/필요한 곳에서 재사용할 수 있다.
 
-See also:
+<br>
 
-- [The Pragmatic Developer](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
+관련:
+
+- [실용주의 프로그래머](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
 
 <br>
 
