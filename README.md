@@ -14,12 +14,12 @@
     * [핸런의 면도날](#핸런의-면도날)
     * [호프스태터의 법칙](#호프스태터의-법칙)
     * [하이프 사이클 & 아마라의 법칙](#하이프-사이클—아마라의-법칙)
-    * [Hyrum's Law (The Law of Implicit Interfaces)](#hyrums-law-the-law-of-implicit-interfaces)
-    * [Moore's Law](#moores-law)
-    * [Parkinson's Law](#parkinsons-law)
+    * [하이럼의 법칙 (암시적 인터페이스의 법칙)](#하이럼의-법칙-암시적-인터페이스의-법칙)
+    * [무어의 법칙](#무어의-법칙)
+    * [파킨슨의 법칙](#파킨슨의-법칙)
     * [Putt's Law](#putts-law)
     * [The Law of Conservation of Complexity (Tesler's Law)](#the-law-of-conservation-of-complexity-teslers-law)
-    * [The Law of Leaky Abstractions](#the-law-of-leaky-abstractions)
+    * [허술한 추상화의 법칙](#허술한-추상화의-법칙)
     * [The Law of Triviality](#the-law-of-triviality)
     * [The Unix Philosophy](#the-unix-philosophy)
     * [스포티파이 모델](#스포티파이-모델)
@@ -119,7 +119,7 @@
 
 > 어리석음으로 충분히 설명이 되는 일을 악의의 탓으로 돌리지 말라.
 >
-> 로버트 J. 핸런
+> — 로버트 J. 핸런
 
 이 법칙에 따르면 부정적인 결과를 낳는 행동은 악의로부터 비롯된 것이라기보다는, 행동과 그것이 불러올 파장에 대한 몰이해 때문이다.
 
@@ -131,7 +131,7 @@
 
 > 설령 호프스태터의 법칙을 고려하더라도, 일은 마치는 건 언제나 예상보다 오래 걸린다.
 >
-> 더글라스 호프스태터
+> — 더글라스 호프스태터
 
 무언가가 얼마나 걸릴지 짐작할 때 이 법칙을 인용하는 것을 들을 수 있을지 모른다. 뻔한 말 같지만, 우리는 소프트웨어를 개발함에 있어 결과를 내놓기까지의 기간을 예상하는 것에 그다지 능하지 않다.
 
@@ -151,7 +151,7 @@
 
 > 우리는 새로운 기술의 효과를 단기적으로는 과대평가하고, 장기적으로는 과소평가하는 경향이 있다.
 >
-> 로이 아마라
+> — 로이 아마라
 
 하이프 사이클은 미국의 정보 기술 연구 및 자문 회사인 가트너에서 시간의 흐름에 따른 기술에 대한 기대와 성숙도를 시각적으로 나타낸 것이다.
 
@@ -161,51 +161,64 @@
 
 *(이미치 출처: Jeremykemp @영어 Wikipedia, CC BY-SA 3.0, https://commons.wikimedia.org/w/index.php?curid=10547051)*
 
+<br>
+
 즉, 이 사이클에 따르면 대개 신기술과 그 전망에 대하여 거품이 촉발된다. 이때 많은 팀들은 너무 빠르게 뛰어들었다가 결과물에 종종 실망하고는 한다. 이것은 어쩌면 기술이 아직 덜 성숙하기 때문이거나, 혹은 실제 세계에의 적용이 덜 이루어졌기 때문일 것이다.
 
 특정 시점이 지나고 나면 기술 자체의 역량과 실제적인 적용의 기회가 늘어나고, 마침내 생산성을 얻을 수 있게 된다. 로이 아마라는 이를 가장 간결한 문장으로 정리하였다. "우리는 새로운 기술의 효과를 단기적으로는 과대평가하고, 장기적으로는 과소평가하는 경향이 있다".
 
 <br>
 
-### Hyrum's Law (The Law of Implicit Interfaces)
+### 하이럼의 법칙 (암시적 인터페이스의 법칙)
 
 [Hyrum's Law Online](http://www.hyrumslaw.com/)
 
-> With a sufficient number of users of an API,
-> it does not matter what you promise in the contract:
-> all observable behaviours of your system
-> will be depended on by somebody.
+> API에 충분한 수의 유저가 있다면,
+>
+> 명세에서 지정된 것은 아무런 상관이 없다:
+>
+> 시스템에서 관측될 수 있는 모든 행동 양식은
+>
+> 다른 이들에게 달려있을 것이다.
+>
+> — 하이럼 라이트
 >
 > (Hyrum Wright)
 
-Hyrum's Law states that when you have a _large enough number of consumers_ of an API, all behaviours of the API (even those not defined as part of a public contract) will eventually come to be depended on by someone. A trivial example may be non-functional elements such as the response time of an API. A more subtle example might be consumers who are relying on applying a regex to an error message to determine the *type* of error of an API. Even if the public contract of the API states nothing about the contents of the message, indicating users should use an associated error code, _some_ users may use the message, and changing the message essentially breaks the API for those users.
+하이럼의 법칙에 따르면 API에 충분히 많은 수의 소비자가 있을 때, API의 모든 행동 양식은 궁극적으로 명세에 있는 정의가 아닌 아닌 다른 누군가에게 달려있게 된다. 간단한 예시를 들자면 가령 API의 응답 시간과도 같은 비함수적 요소들이다. 좀 더 구체적인 예시는 에러 메세지에 정규 표현식을 이용하여 API의 에러의 *타입* 을 알아내는 소비자들을 들 수 있다. API의 공개 명세에서는 메세지의 내용에 관하여서 아무 것도 알려주지 않으며 대신 에러 코드를 사용해야 한다고 하고 있더라도, 어떤 유저들은 메세지를 사용하거나 메세지의 내용을 변경하여 API를 사실상 붕괴시킬 수 있다.
 
-See also:
+<br>
 
-- [The Law of Leaky Abstractions](#the-law-of-leaky-abstractions)
+관련:
+
+- [허술한 추상화의 법칙](#허술한-추상화의-법칙)
 - [XKCD 1172](https://xkcd.com/1172/)
 
-### Moore's Law
+<br>
 
-[Moore's Law on Wikipedia](https://en.wikipedia.org/wiki/Moore%27s_law)
+### 무어의 법칙
 
-> The number of transistors in an integrated circuit doubles approximately every two years.
+[위키피디아의 무어의 법칙](https://ko.wikipedia.org/wiki/무어의_법칙)
 
-Often used to illustrate the sheer speed at which semiconductor and chip technology has improved, Moore's prediction has proven to be highly accurate over from the 1970s to the late 2000s. In more recent years, the trend has changed slightly, partly due to [physical limitations on the degree to which components can be miniaturised](https://en.wikipedia.org/wiki/Quantum_tunnelling). However, advancements in parallelisation, and potentially revolutionary changes in semiconductor technology and quantum computing may mean that Moore's Law could continue to hold true for decades to come.
+> 집적 회로의 트랜지스터 수는 대략 2년마다 2배가 된다.
 
-### Parkinson's Law
+반도체와 기판 기술의 가파른 성장 속도를 설명하기 위한 무어의 예측은 1970년대부터 2000년대 후반까지 굉장히 정확한 것으로 드러났다. 최근에는 [부품 소형화의 물리적 한계](https://ko.wikipedia.org/wiki/터널_효과)로 인하여 약간 둔화되긴 하였지만 말이다. 하지만 병렬화와 반도체 기술의 혁신적 변화에 대한 가능성, 그리고 양자 컴퓨팅은 무어의 법칙이 향후 몇 십 년간에도 들어맞을 수 있음을 의미할 수도 있다.<br>
+
+### 파킨슨의 법칙
 
 [Parkinson's Law on Wikipedia](https://en.wikipedia.org/wiki/Parkinson%27s_law)
 
-> Work expands so as to fill the time available for its completion.
+> 작업은 남은 기한을 채울 때까지 늘어난다.
 
-In its original context, this Law was based on studies of bureaucracies. It may be pessimistically applied to software development initiatives, the theory being that teams will be inefficient until deadlines near, then rush to complete work by the deadline, thus making the actual deadline somewhat arbitrary.
+원래 맥락에서 이 법칙은 관료제에 대한 연구를 기반으로 하고 있다. 소프트웨어 개발 계획에서도 비관적으로 적용될 수 있는데, 개발자들은 기한이 다가오기 전에는 효율적이지 못하다가 기한이 가까워지면 급하게 일을 하게 되므로 결국 실제적인 데드라인을 흐릿하게 한다.
 
-If this law were combined with [Hofstadter's Law](#hofstadters-law), an even more pessimistic viewpoint is reached - work will expand to fill the time available for its completion and *still take longer than expected*.
+만일 이 법칙이 [호프스태터의 법칙](#호프스태터의-법칙)과 결합된다면, 더욱 비관적인 관점에 도달할 수 있다. 작업은 남은 시간을 채우기 위해 늘어나면서도 *예정된 시간보다 길어지기까지 할 것이다.*
 
-See also:
+<br>관련:
 
-- [Hofstadter's Law](#hofstadters-law)
+- [호프스태터의 법칙](#호프스태터의 법칙)
+
+<br>
 
 ### Putt's Law
 
@@ -237,7 +250,9 @@ Some complexity in a system is 'inadvertent'. It is a consequence of poor struct
 
 One interesting element to this law is the suggestion that even by simplifying the entire system, the intrinsic complexity is not reduced, it is _moved to the user_, who must behave in a more complex way.
 
-### The Law of Leaky Abstractions
+<br>
+
+### 허술한 추상화의 법칙
 
 [The Law of Leaky Abstractions on Joel on Software](https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/)
 
