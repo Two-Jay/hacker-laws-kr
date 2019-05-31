@@ -1,6 +1,6 @@
 # 💻📖 hacker-laws
 
-**개발자에게 유용한 법칙, 이론, 원칙, 그리고 패턴들**
+**개발자에게 유용한 법칙, 이론, 원리, 그리고 패턴들**
 
 <br>
 
@@ -24,8 +24,8 @@
     * [유닉스 철학](#유닉스-철학)
     * [스포티파이 모델](#스포티파이-모델)
     * [와들러의 법칙](#와들러의-법칙)
-* [Principles](#principles)
-    * [The Pareto Principle (The 80/20 Rule)](#the-pareto-principle-the-8020-rule)
+* [원리](#원리)
+    * [파레토의 원리 (80:20의 법칙)](#파레토의-원리-8020의-법칙)
     * [The Robustness Principle (Postel's Law)](#the-robustness-principle-postels-law)
     * [SOLID](#solid)
     * [The Single Responsibility Principle](#the-single-responsibility-principle)
@@ -200,7 +200,9 @@
 
 > 집적 회로의 트랜지스터 수는 대략 2년마다 2배가 된다.
 
-반도체와 기판 기술의 가파른 성장 속도를 설명하기 위한 무어의 예측은 1970년대부터 2000년대 후반까지 굉장히 정확한 것으로 드러났다. 최근에는 [부품 소형화의 물리적 한계](https://ko.wikipedia.org/wiki/터널_효과)로 인하여 약간 둔화되긴 하였지만 말이다. 하지만 병렬화와 반도체 기술의 혁신적 변화에 대한 가능성, 그리고 양자 컴퓨팅은 무어의 법칙이 향후 몇 십 년간에도 들어맞을 수 있음을 의미할 수도 있다.<br>
+반도체와 기판 기술의 가파른 성장 속도를 설명하기 위한 무어의 예측은 1970년대부터 2000년대 후반까지 굉장히 정확한 것으로 드러났다. 최근에는 [부품 소형화의 물리적 한계](https://ko.wikipedia.org/wiki/터널_효과)로 인하여 약간 둔화되긴 하였지만 말이다. 하지만 병렬화와 반도체 기술의 혁신적 변화에 대한 가능성, 그리고 양자 컴퓨팅은 무어의 법칙이 향후 몇 십 년간에도 들어맞을 수 있음을 의미할 수도 있다.
+
+<br>
 
 ### 파킨슨의 법칙
 
@@ -342,31 +344,37 @@
 
 <br>
 
-## Principles
+## 원리
 
-Principles are generally more likely to be guidelines relating to design.
+원리들은 일반적으로 설계의 가이드라인과도 같다.
 
-### The Pareto Principle (The 80/20 Rule)
+<br>
 
-[The Pareto Principle on Wikipedia](https://en.wikipedia.org/wiki/Pareto_principle)
+### 파레토의 원리 (80:20의 법칙)
 
-> Most things in life are not distributed evenly.
+[위키피디아의 파레토 법칙](https://ko.wikipedia.org/wiki/파레토_법칙)
 
-The Pareto Principle suggests that in some cases, the majority of results come from a minority of inputs:
+> 세상 대부분의 것들은 균등하게 분배되지 않았다.
 
-- 80% of a certain piece of software can be written in 20% of the total allocated time (conversely, the hardest 20% of the code takes 80% of the time)
-- 20% of the effort produces 80% of the result
-- 20% of the work creates 80% of the revenue
-- 20% of the bugs cause 80% of the crashes
-- 20% of the features cause 80% of the usage
+파레토의 원리에 의하면, 경우에 따라 대부분의 결과는 소수로부터 비롯된다:
 
-In the 1940s American-Romanian engineer Dr. Joseph Juran, who is widely credited with being the father of quality control, [began to apply the Pareto principle to quality issues](https://en.wikipedia.org/wiki/Joseph_M._Juran).
+- 어떤 소프트웨어의 80%는 총 시간 중 20%만에 쓰일 수 있다(반대로, 가장 어려운 20%를 만드는 것에 80%의 시간이 든다).
+- 20%의 노력이 80%의 결과를 만들어낸다.
+- 20%의 일이 80%의 수입을 창출한다.
+- 20%의 버그가 80%의 크래쉬를 일으킨다.
+- 20%의 기능이 사용량 중 80%를 차지한다.
 
-This principle is also known as: The 80/20 Rule, The Law of the Vital Few and The Principle of Factor Sparsity.
+1940년대에 품질 관리의 아버지로 널리 알려진 미국계 루마니아인 공학자 조셉 주란 박사는, [품질 문제에 파레토의 원리를 적용하기 시작했다](https://en.wikipedia.org/wiki/Joseph_M._Juran).
 
-Real-world examples:
+이 원리는 또한 80:20의 법칙, 중요한 소수의 법칙, 혹은 희소 인자의 원리라고도 불리운다.
 
-- In 2002 Microsoft reported that by fixing the top 20% of the most-reported bugs, 80% of the related errors and crashes in windows and office would become eliminated ([Reference](https://www.crn.com/news/security/18821726/microsofts-ceo-80-20-rule-applies-to-bugs-not-just-features.htm)).
+<br>
+
+실제 사례:
+
+- 2002년 당시 마이크로소프트는 20%의 가장 많이 보고된 버그를 고침으로써, 윈도우즈와 오피스에서 80%의 관련 에러와 크래쉬가 사라졌다고 하였다([출처](https://www.crn.com/news/security/18821726/microsofts-ceo-80-20-rule-applies-to-bugs-not-just-features.htm)).
+
+<br>
 
 ### The Robustness Principle (Postel's Law)
 
