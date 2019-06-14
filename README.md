@@ -50,7 +50,7 @@
 
 <br>
 
-_(이 글은 https://github.com/dwmkerr/hacker-laws의 번역입니다.)_
+_(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
@@ -568,7 +568,7 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 
 관련:
 
-- [추천 도서 : Extreme Programming Installed](#추천-도서)
+- [추천 도서 : Extreme Programming Installed : XP 도입을 위한 실전 입문](#추천-도서)
 
 <br>
 
