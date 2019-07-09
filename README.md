@@ -82,7 +82,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [브룩스의 법칙](#브룩스의-법칙)
 - [무어의 법칙](#무어의-법칙)
@@ -103,7 +103,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [Death March](#todo)
 - [추천 도서 : 맨먼스 미신](#추천-도서)
@@ -116,7 +116,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 이 법칙에 따르면 시스템의 구조는 설계하는 조직의 구조를 반영한다. 이것은 조직 개선을 시도할 때 종종 인용되고는 하는데, 가령 조직이 여러 개의 작고 끊어진 단위로 구성되어 있다면 거기에서 나온 소프트웨어 또한 그 모습을 닮는다고 한다. 또한 만약 조직이 기능과 서비스를 중심으로 수직적으로 짜여 있다면, 이 역시 소프트웨어가 이러한 모습을 반영할 것이란 것이다.
 
-<br>관련:
+<br>참고:
 
 - [스포티파이 모델](#스포티파이-모델)
 
@@ -132,7 +132,7 @@ Like stable relationships between individuals, a developer's relationship with a
 
 <br>
 
-See also:
+참고:
 
 - [Conway's Law](#conways-law)
 
@@ -142,17 +142,17 @@ See also:
 
 [Gall's Law on Wikipedia](https://en.m.wikipedia.org/wiki/John_Gall_(author)#Gall's_law)
 
-> A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.
+> 잘 작동하는 복잡한 체계는 항상 잘 작동하던 간단한 체계에서 발전한다. 처음부터 복잡하게 설계된 체계는 절대로 작동하지 않으며 잘 돌아가도록 만들 수도 없다. 언제나 작동하는 간단한 시스템에서 출발해야 한다.
 >
-> ([John Gall](https://en.m.wikipedia.org/wiki/John_Gall_(author)))
+> ([존 갈](https://en.m.wikipedia.org/wiki/John_Gall_(author)))
 
-Gall's Law implies that attempts to _design_ highly complex systems are likely to fail. Highly complex systems are rarely built in one go, but evolve instead from more simple systems.
+갈의 법칙은 고도로 복잡한 시스템을 _설계_하려는 시도는 대개 실패함을 암시한다. 고도로 복잡한 체계는 하루아침에 이루어진 것이 아니라, 더 간단한 체계로부터 진화한 것이다.
 
-The classic example is the world-wide-web. In it's current state, it is a highly complex system. However, it was defined initially as a simple way to share content between academic institutions. It was very successful in meeting these goals and evolved to become more complex over time.
+고전적인 예시는 월드 와이드 웹이다. 현재의 웹의 상태는 굉장히 복잡하다. 그러나 처음에는 그저 학술 기관 간의 간편한 컨텐트 공유 시스템으로서 시작했을 뿐이다. 이러한 목적을 성공적으로 달성하였기 때문에 시간이 지남에 따라 복잡한 시스템으로 진화할 수 있었다.
 
 <br>
 
-See also:
+참고:
 
 - [KISS (Keep It Simple, Stupid)](#TODO)
 
@@ -184,7 +184,7 @@ See also:
 
 <br>
 
-관련:
+참고:
 
 - [추천 도서 : 괴델, 에셔, 바흐: 영원한 황금 노끈](#추천-도서)
 
@@ -246,7 +246,7 @@ For example, a decrease in response latency for a particular end-point could cau
 
 <br>
 
-관련:
+참고:
 
 - [허술한 추상화의 법칙](#허술한-추상화의-법칙)
 - [XKCD 1172](https://xkcd.com/1172/)
@@ -273,7 +273,7 @@ For example, a decrease in response latency for a particular end-point could cau
 
 만일 이 법칙이 [호프스태터의 법칙](#호프스태터의-법칙)과 결합된다면, 더욱 비관적인 관점에 도달할 수 있다. 작업은 남은 시간을 채우기 위해 늘어나면서도 *예정된 시간보다 길어지기까지 할 것이다.*
 
-<br>관련:
+<br>참고:
 
 - [호프스태터의 법칙](#호프스태터의-법칙)
 
@@ -309,7 +309,7 @@ However, _Premature Optimization_ can be defined (in less loaded terms) as optim
 
 <br>
 
-관련:
+참고:
 
 - [피터의 원리](#TODO)
 - [딜버트의 법칙](#TODO)
@@ -346,11 +346,11 @@ However, _Premature Optimization_ can be defined (in less loaded terms) as optim
 
 <br>
 
-관련:
+참고:
 
 - [하이럼의 법칙](#하이럼의-법칙-암시적-인터페이스의-법칙)
 
-실제 사례:
+<br>실제 사례:
 
 - [포토샵의 느린 초기 로딩](https://forums.adobe.com/thread/376152) - 과거에 마주한 문제이다. 포토샵은 종종 켜는 데에 몇 분씩이나 걸리기도 하는데, 이 문제는 구동 시작시에 현재 기본으로 설정된 프린터의 정보를 읽어오는 것에서 발생하였다. 만약 그 프린터가 네트워크 프린터라면 극도로 오랜 시간이 걸리게 되는 것이다. 시스템에 네트워크 프린터의 _추상화_ 가 로컬 프린터와 유사하게 제공된 점은 연결 상태가 좋지 못한 상황의 사용자에게 문제를 일으켰다.
 
@@ -411,7 +411,7 @@ However, _Premature Optimization_ can be defined (in less loaded terms) as optim
 
 <br>
 
-관련:
+참고:
 
 - [사소함의 법칙](#사소함의-법칙)
 
@@ -487,7 +487,7 @@ However, _Premature Optimization_ can be defined (in less loaded terms) as optim
 
 <br>
 
-관련:
+참고:
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#솔리드)
@@ -508,7 +508,7 @@ However, _Premature Optimization_ can be defined (in less loaded terms) as optim
 
 <br>
 
-관련:
+참고:
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#솔리드)
@@ -517,7 +517,7 @@ However, _Premature Optimization_ can be defined (in less loaded terms) as optim
 
 ### 리스코프 치환 원칙
 
-[리스코프 치환 원칙](https://ko.wikipedia.org/wiki/리스코프_치환_원칙)
+[리스코프 치환 원칙 ](https://ko.wikipedia.org/wiki/리스코프_치환_원칙)
 
 > 시스템을 파괴하지 않으면서도 자료형을 하위 자료형으로 대체할 수 있어야 한다.
 
@@ -529,7 +529,7 @@ However, _Premature Optimization_ can be defined (in less loaded terms) as optim
 
 <br>
 
-관련:
+참고:
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#solid)
@@ -550,7 +550,7 @@ However, _Premature Optimization_ can be defined (in less loaded terms) as optim
 
 <br>
 
-관련:
+참고:
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#solid)
