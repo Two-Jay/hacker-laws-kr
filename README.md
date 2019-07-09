@@ -11,12 +11,16 @@
     * [암달의 법칙](#암달의-법칙)
     * [브룩스의 법칙](#브룩스의-법칙)
     * [콘웨이의 법칙](#콘웨이의-법칙)
+    * [던바의 숫자](#던바의-숫자)
+    * [갈의 법칙](#갈의-법칙)
     * [핸런의 면도날](#핸런의-면도날)
     * [호프스태터의 법칙](#호프스태터의-법칙)
+    * [허트버의 법칙](#허트버의 법칙)
     * [하이프 사이클 & 아마라의 법칙](#하이프-사이클—아마라의-법칙)
     * [하이럼의 법칙 (암시적 인터페이스의 법칙)](#하이럼의-법칙-암시적-인터페이스의-법칙)
     * [무어의 법칙](#무어의-법칙)
     * [파킨슨의 법칙](#파킨슨의-법칙)
+    * [성급한 최적화의 법칙](#성급한-최적화의-법칙)
     * [푸트의 법칙](#푸트의-법칙)
     * [복잡성 보존의 법칙 (테슬러의 법칙)](#복잡성-보존의-법칙-테슬러의-법칙)
     * [허술한 추상화의 법칙](#허술한-추상화의-법칙)
@@ -118,6 +122,42 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
+### 던바의 숫자
+
+[위키피디아의 던바의 숫자](https://ko.wikipedia.org/wiki/던바의_숫자)
+
+"Dunbar's number is a suggested cognitive limit to the number of people with whom one can maintain stable social relationships— relationships in which an individual knows who each person is and how each person relates to every other person." There is some disagreement to the exact number. "... [Dunbar] proposed that humans can comfortably maintain only 150 stable relationships." He put the number into a more social context, "the number of people you would not feel embarrassed about joining uninvited for a drink if you happened to bump into them in a bar." Estimates for the number generally lay between 100 and 250.
+
+Like stable relationships between individuals, a developer's relationship with a codebase takes effort to maintain. When faced with large complicated projects, or ownership of many projects we lean on convention, policy, and modeled procedure to scale. Dunbar's number is not only important to keep in mind as an office grows, but also when setting the scope for team efforts or deciding when a system should invest in tooling to assist in modeling and automating logistical overhead. Putting the number into an engineering context, it is the number of projects (or normalized complexity of a single project) for which you would feel confident in joining an on-call rotation to support.
+
+<br>
+
+See also:
+
+- [Conway's Law](#conways-law)
+
+<br>
+
+### 갈의 법칙
+
+[Gall's Law on Wikipedia](https://en.m.wikipedia.org/wiki/John_Gall_(author)#Gall's_law)
+
+> A complex system that works is invariably found to have evolved from a simple system that worked. A complex system designed from scratch never works and cannot be patched up to make it work. You have to start over with a working simple system.
+>
+> ([John Gall](https://en.m.wikipedia.org/wiki/John_Gall_(author)))
+
+Gall's Law implies that attempts to _design_ highly complex systems are likely to fail. Highly complex systems are rarely built in one go, but evolve instead from more simple systems.
+
+The classic example is the world-wide-web. In it's current state, it is a highly complex system. However, it was defined initially as a simple way to share content between academic institutions. It was very successful in meeting these goals and evolved to become more complex over time.
+
+<br>
+
+See also:
+
+- [KISS (Keep It Simple, Stupid)](#TODO)
+
+<br>
+
 ### 핸런의 면도날
 
 [위키피디아의 핸런의 면도날](https://ko.wikipedia.org/wiki/핸런의_면도날)
@@ -147,6 +187,20 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 관련:
 
 - [추천 도서 : 괴델, 에셔, 바흐: 영원한 황금 노끈](#추천-도서)
+
+<br>
+
+### 허트버의 법칙
+
+[Hutber's Law on Wikipedia](https://en.wikipedia.org/wiki/Hutber%27s_law)
+
+> Improvement means deterioration.
+>
+> ([Patrick Hutber](https://en.wikipedia.org/wiki/Patrick_Hutber))
+
+This law suggests that improvements to a system will lead to deterioration in other parts, or it will hide other deterioration, leading overall to a degradation from the current state of the system.
+
+For example, a decrease in response latency for a particular end-point could cause increased throughput and capacity issues further along in a request flow, effecting an entirely different sub-system.
 
 <br>
 
@@ -222,6 +276,20 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 <br>관련:
 
 - [호프스태터의 법칙](#호프스태터의-법칙)
+
+<br>
+
+### 성급한 최적화의 법칙
+
+[Premature Optimization on WikiWikiWeb](http://wiki.c2.com/?PrematureOptimization)
+
+> Premature optimization is the root of all evil.
+>
+> [(Donald Knuth)](https://twitter.com/realdonaldknuth?lang=en)
+
+In Donald Knuth's paper [Structured Programming With Go To Statements](http://wiki.c2.com/?StructuredProgrammingWithGoToStatements), he wrote: "Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: **premature optimization is the root of all evil**. Yet we should not pass up our opportunities in that critical 3%."
+
+However, _Premature Optimization_ can be defined (in less loaded terms) as optimizing before we know that we need to.
 
 <br>
 
