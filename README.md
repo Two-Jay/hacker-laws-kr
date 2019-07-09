@@ -15,7 +15,7 @@
     * [갈의 법칙](#갈의-법칙)
     * [핸런의 면도날](#핸런의-면도날)
     * [호프스태터의 법칙](#호프스태터의-법칙)
-    * [허트버의 법칙](#허트버의 법칙)
+    * [허트버의 법칙](#허트버의-법칙)
     * [하이프 사이클 & 아마라의 법칙](#하이프-사이클—아마라의-법칙)
     * [하이럼의 법칙 (암시적 인터페이스의 법칙)](#하이럼의-법칙-암시적-인터페이스의-법칙)
     * [무어의 법칙](#무어의-법칙)
@@ -194,13 +194,13 @@ Like stable relationships between individuals, a developer's relationship with a
 
 [Hutber's Law on Wikipedia](https://en.wikipedia.org/wiki/Hutber%27s_law)
 
-> Improvement means deterioration.
+> 개선은 악화를 의미한다.
 >
-> ([Patrick Hutber](https://en.wikipedia.org/wiki/Patrick_Hutber))
+> ([패트릭 허트버](https://en.wikipedia.org/wiki/Patrick_Hutber))
 
-This law suggests that improvements to a system will lead to deterioration in other parts, or it will hide other deterioration, leading overall to a degradation from the current state of the system.
+이 법칙의 주장에 따르면 시스템의 개선은 다른 부분의 악화로 이어지거나 다른 악화를 숨겨, 현 상태로부터 전체적인 질적 저하를 불러오게 된다.
 
-For example, a decrease in response latency for a particular end-point could cause increased throughput and capacity issues further along in a request flow, effecting an entirely different sub-system.
+예를 들어 특정 엔드 포인트의 응답 시간 감소로 인해 요청 흐름에 있어서 스루풋과 용량 이슈가 늘어날 수 있고, 이는 전혀 다른 부분에 영향을 끼칠 수 있다.
 
 <br>
 
@@ -283,13 +283,13 @@ For example, a decrease in response latency for a particular end-point could cau
 
 [Premature Optimization on WikiWikiWeb](http://wiki.c2.com/?PrematureOptimization)
 
-> Premature optimization is the root of all evil.
+> 성급한 최적화는 모든 악의 근원이다.
 >
-> [(Donald Knuth)](https://twitter.com/realdonaldknuth?lang=en)
+> [(도널드 커누스)](https://ko.wikipedia.org/wiki/도널드_커누스)
 
-In Donald Knuth's paper [Structured Programming With Go To Statements](http://wiki.c2.com/?StructuredProgrammingWithGoToStatements), he wrote: "Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: **premature optimization is the root of all evil**. Yet we should not pass up our opportunities in that critical 3%."
+도널드 커누스의 논문 [Goto문을 이용한 구조적 프로그래밍](http://wiki.c2.com/?StructuredProgrammingWithGoToStatements)에 따르면, "프로그래머들은 프로그램에서 중요하지 않은 부분을 최적화하는 것을 생각하고 또 걱정함으로써 어마어마한 시간을 낭비하는데, 이런 시도는 디버깅이나 유지보수를 고려하면 오히려 효율성에 막대하게 부정적인 영향을 끼친다. 우리는 가령 97% 정도의 경우에, 작은 부분의 효율성에 관하여 생각하지 않아야 한다 : **성급한 최적화는 모든 악의 근원이다.** 그러나 나머지 결정적인 3%의 경우에까지 기회를 저버리면 안 된다."
 
-However, _Premature Optimization_ can be defined (in less loaded terms) as optimizing before we know that we need to.
+_성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 전에 행해지는 최적화라고 할 수 있다.
 
 <br>
 
