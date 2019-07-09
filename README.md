@@ -11,12 +11,16 @@
     * [암달의 법칙](#암달의-법칙)
     * [브룩스의 법칙](#브룩스의-법칙)
     * [콘웨이의 법칙](#콘웨이의-법칙)
+    * [던바의 숫자](#던바의-숫자)
+    * [갈의 법칙](#갈의-법칙)
     * [핸런의 면도날](#핸런의-면도날)
     * [호프스태터의 법칙](#호프스태터의-법칙)
+    * [허트버의 법칙](#허트버의 법칙)
     * [하이프 사이클 & 아마라의 법칙](#하이프-사이클—아마라의-법칙)
     * [하이럼의 법칙 (암시적 인터페이스의 법칙)](#하이럼의-법칙-암시적-인터페이스의-법칙)
     * [무어의 법칙](#무어의-법칙)
     * [파킨슨의 법칙](#파킨슨의-법칙)
+    * [성급한 최적화의 법칙](#성급한-최적화의-법칙)
     * [푸트의 법칙](#푸트의-법칙)
     * [복잡성 보존의 법칙 (테슬러의 법칙)](#복잡성-보존의-법칙-테슬러의-법칙)
     * [허술한 추상화의 법칙](#허술한-추상화의-법칙)
@@ -78,7 +82,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [브룩스의 법칙](#브룩스의-법칙)
 - [무어의 법칙](#무어의-법칙)
@@ -99,7 +103,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [Death March](#todo)
 - [추천 도서 : 맨먼스 미신](#추천-도서)
@@ -112,9 +116,45 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 이 법칙에 따르면 시스템의 구조는 설계하는 조직의 구조를 반영한다. 이것은 조직 개선을 시도할 때 종종 인용되고는 하는데, 가령 조직이 여러 개의 작고 끊어진 단위로 구성되어 있다면 거기에서 나온 소프트웨어 또한 그 모습을 닮는다고 한다. 또한 만약 조직이 기능과 서비스를 중심으로 수직적으로 짜여 있다면, 이 역시 소프트웨어가 이러한 모습을 반영할 것이란 것이다.
 
-<br>관련:
+<br>참고:
 
 - [스포티파이 모델](#스포티파이-모델)
+
+<br>
+
+### 던바의 숫자
+
+[위키피디아의 던바의 숫자](https://ko.wikipedia.org/wiki/던바의_숫자)
+
+"Dunbar's number is a suggested cognitive limit to the number of people with whom one can maintain stable social relationships— relationships in which an individual knows who each person is and how each person relates to every other person." There is some disagreement to the exact number. "... [Dunbar] proposed that humans can comfortably maintain only 150 stable relationships." He put the number into a more social context, "the number of people you would not feel embarrassed about joining uninvited for a drink if you happened to bump into them in a bar." Estimates for the number generally lay between 100 and 250.
+
+Like stable relationships between individuals, a developer's relationship with a codebase takes effort to maintain. When faced with large complicated projects, or ownership of many projects we lean on convention, policy, and modeled procedure to scale. Dunbar's number is not only important to keep in mind as an office grows, but also when setting the scope for team efforts or deciding when a system should invest in tooling to assist in modeling and automating logistical overhead. Putting the number into an engineering context, it is the number of projects (or normalized complexity of a single project) for which you would feel confident in joining an on-call rotation to support.
+
+<br>
+
+참고:
+
+- [Conway's Law](#conways-law)
+
+<br>
+
+### 갈의 법칙
+
+[Gall's Law on Wikipedia](https://en.m.wikipedia.org/wiki/John_Gall_(author)#Gall's_law)
+
+> 잘 작동하는 복잡한 체계는 항상 잘 작동하던 간단한 체계에서 발전한다. 처음부터 복잡하게 설계된 체계는 절대로 작동하지 않으며 잘 돌아가도록 만들 수도 없다. 언제나 작동하는 간단한 시스템에서 출발해야 한다.
+>
+> ([존 갈](https://en.m.wikipedia.org/wiki/John_Gall_(author)))
+
+갈의 법칙은 고도로 복잡한 시스템을 _설계_하려는 시도는 대개 실패함을 암시한다. 고도로 복잡한 체계는 하루아침에 이루어진 것이 아니라, 더 간단한 체계로부터 진화한 것이다.
+
+고전적인 예시는 월드 와이드 웹이다. 현재의 웹의 상태는 굉장히 복잡하다. 그러나 처음에는 그저 학술 기관 간의 간편한 컨텐트 공유 시스템으로서 시작했을 뿐이다. 이러한 목적을 성공적으로 달성하였기 때문에 시간이 지남에 따라 복잡한 시스템으로 진화할 수 있었다.
+
+<br>
+
+참고:
+
+- [KISS (Keep It Simple, Stupid)](#TODO)
 
 <br>
 
@@ -144,9 +184,23 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [추천 도서 : 괴델, 에셔, 바흐: 영원한 황금 노끈](#추천-도서)
+
+<br>
+
+### 허트버의 법칙
+
+[Hutber's Law on Wikipedia](https://en.wikipedia.org/wiki/Hutber%27s_law)
+
+> Improvement means deterioration.
+>
+> ([Patrick Hutber](https://en.wikipedia.org/wiki/Patrick_Hutber))
+
+This law suggests that improvements to a system will lead to deterioration in other parts, or it will hide other deterioration, leading overall to a degradation from the current state of the system.
+
+For example, a decrease in response latency for a particular end-point could cause increased throughput and capacity issues further along in a request flow, effecting an entirely different sub-system.
 
 <br>
 
@@ -192,7 +246,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [허술한 추상화의 법칙](#허술한-추상화의-법칙)
 - [XKCD 1172](https://xkcd.com/1172/)
@@ -219,9 +273,23 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 만일 이 법칙이 [호프스태터의 법칙](#호프스태터의-법칙)과 결합된다면, 더욱 비관적인 관점에 도달할 수 있다. 작업은 남은 시간을 채우기 위해 늘어나면서도 *예정된 시간보다 길어지기까지 할 것이다.*
 
-<br>관련:
+<br>참고:
 
 - [호프스태터의 법칙](#호프스태터의-법칙)
+
+<br>
+
+### 성급한 최적화의 법칙
+
+[Premature Optimization on WikiWikiWeb](http://wiki.c2.com/?PrematureOptimization)
+
+> Premature optimization is the root of all evil.
+>
+> [(Donald Knuth)](https://twitter.com/realdonaldknuth?lang=en)
+
+In Donald Knuth's paper [Structured Programming With Go To Statements](http://wiki.c2.com/?StructuredProgrammingWithGoToStatements), he wrote: "Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are considered. We should forget about small efficiencies, say about 97% of the time: **premature optimization is the root of all evil**. Yet we should not pass up our opportunities in that critical 3%."
+
+However, _Premature Optimization_ can be defined (in less loaded terms) as optimizing before we know that we need to.
 
 <br>
 
@@ -241,7 +309,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [피터의 원리](#TODO)
 - [딜버트의 법칙](#TODO)
@@ -278,11 +346,11 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [하이럼의 법칙](#하이럼의-법칙-암시적-인터페이스의-법칙)
 
-실제 사례:
+<br>실제 사례:
 
 - [포토샵의 느린 초기 로딩](https://forums.adobe.com/thread/376152) - 과거에 마주한 문제이다. 포토샵은 종종 켜는 데에 몇 분씩이나 걸리기도 하는데, 이 문제는 구동 시작시에 현재 기본으로 설정된 프린터의 정보를 읽어오는 것에서 발생하였다. 만약 그 프린터가 네트워크 프린터라면 극도로 오랜 시간이 걸리게 되는 것이다. 시스템에 네트워크 프린터의 _추상화_ 가 로컬 프린터와 유사하게 제공된 점은 연결 상태가 좋지 못한 상황의 사용자에게 문제를 일으켰다.
 
@@ -343,7 +411,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [사소함의 법칙](#사소함의-법칙)
 
@@ -419,7 +487,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#솔리드)
@@ -440,7 +508,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#솔리드)
@@ -449,7 +517,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 ### 리스코프 치환 원칙
 
-[리스코프 치환 원칙](https://ko.wikipedia.org/wiki/리스코프_치환_원칙)
+[리스코프 치환 원칙 ](https://ko.wikipedia.org/wiki/리스코프_치환_원칙)
 
 > 시스템을 파괴하지 않으면서도 자료형을 하위 자료형으로 대체할 수 있어야 한다.
 
@@ -461,7 +529,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#solid)
@@ -482,7 +550,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-관련:
+참고:
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#solid)
