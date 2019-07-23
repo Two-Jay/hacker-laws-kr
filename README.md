@@ -126,15 +126,15 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 [위키피디아의 던바의 숫자](https://ko.wikipedia.org/wiki/던바의_숫자)
 
-"Dunbar's number is a suggested cognitive limit to the number of people with whom one can maintain stable social relationships— relationships in which an individual knows who each person is and how each person relates to every other person." There is some disagreement to the exact number. "... [Dunbar] proposed that humans can comfortably maintain only 150 stable relationships." He put the number into a more social context, "the number of people you would not feel embarrassed about joining uninvited for a drink if you happened to bump into them in a bar." Estimates for the number generally lay between 100 and 250.
+"던바의 숫자는 한 사람이 안정적인 사회적 관계(한 개인이 다른 이들에 대하여 누가 누군지 잘 알며 그들 사이의 관계도 파악할 수 있는 관계)를 유지할 수 있는 인지적 최대치로서 제시된 수이다." 정확한 수치에 대해서는 의견이 분분하다. "…(던바는) 인간은 오직 150명까지의 안정적인 관계만을 편안히 유지할 수 있다"고 주장하였다. 그는 좀 더 사회적인 맥락에서 말하길, "바에서 우연히 만났을 때 어색하지 않게 같이 술을 마실 수 있는 사람의 수"라고 하였다. 일반적으로 100에서 250 사이라고 추정한다.
 
-Like stable relationships between individuals, a developer's relationship with a codebase takes effort to maintain. When faced with large complicated projects, or ownership of many projects we lean on convention, policy, and modeled procedure to scale. Dunbar's number is not only important to keep in mind as an office grows, but also when setting the scope for team efforts or deciding when a system should invest in tooling to assist in modeling and automating logistical overhead. Putting the number into an engineering context, it is the number of projects (or normalized complexity of a single project) for which you would feel confident in joining an on-call rotation to support.
+개개인 간의 안정적인 관계처럼, 개발자와 코드베이스의 관계도 유지하려면 노력이 든다. 크고 복잡한 프로젝트 혹은 여러 프로젝트를 마주할 때, 우리는 규모를 확장하기 위해 관례, 정책, 그리고 만들어진 절차를 따른다. 던바의 숫자는 사무실이 커질 때만 염두해둘 것이 아니라 팀이 들일 노력의 범위를 얼마나로 할지, 언제 모델링과 계획 자동화 툴에 투자할지 등을 정하는 데에도 중요하다. 엔지니어링 측면에서 보면, 이 숫자는 당직(On-call : 시스템 장애 발생을 대비하여 대기함)으로 설 수 있는 프로젝트의 수이다.
 
 <br>
 
 참고:
 
-- [Conway's Law](#conways-law)
+- [콘웨이의 법칙](#콘웨이의-법칙)
 
 <br>
 
@@ -146,7 +146,7 @@ Like stable relationships between individuals, a developer's relationship with a
 >
 > ([존 갈](https://en.m.wikipedia.org/wiki/John_Gall_(author)))
 
-갈의 법칙은 고도로 복잡한 시스템을 _설계_하려는 시도는 대개 실패함을 암시한다. 고도로 복잡한 체계는 하루아침에 이루어진 것이 아니라, 더 간단한 체계로부터 진화한 것이다.
+갈의 법칙은 고도로 복잡한 시스템을 _설계_ 하려는 시도는 대개 실패함 암시한다. 고도로 복잡한 체계는 하루아침에 이루어진 것이 아니라, 더 간단한 체계로부터 진화한 것이다.
 
 고전적인 예시는 월드 와이드 웹이다. 현재의 웹의 상태는 굉장히 복잡하다. 그러나 처음에는 그저 학술 기관 간의 간편한 컨텐트 공유 시스템으로서 시작했을 뿐이다. 이러한 목적을 성공적으로 달성하였기 때문에 시간이 지남에 따라 복잡한 시스템으로 진화할 수 있었다.
 
@@ -180,13 +180,13 @@ Like stable relationships between individuals, a developer's relationship with a
 
 무언가가 얼마나 걸릴지 짐작할 때 이 법칙을 인용하는 것을 들을 수 있을지 모른다. 뻔한 말 같지만, 우리는 소프트웨어를 개발함에 있어 결과를 내놓기까지의 기간을 예상하는 것에 그다지 능하지 않다.
 
-이는 '[괴델, 에셔, 바흐: 영원한 황금 노끈](#추천-도서)'에서 나온 말이다.
+이는 '[괴델, 에셔, 바흐 : 영원한 황금 노끈](#추천-도서)'에서 나온 말이다.
 
 <br>
 
 참고:
 
-- [추천 도서 : 괴델, 에셔, 바흐: 영원한 황금 노끈](#추천-도서)
+- [추천 도서 : 괴델, 에셔, 바흐 : 영원한 황금 노끈](#추천-도서)
 
 <br>
 
