@@ -7,6 +7,7 @@
 <!-- vim-markdown-toc GFM -->
 
 * [서론](#서론)
+
 * [법칙](#법칙)
     * [암달의 법칙](#암달의-법칙)
     * [브룩스의 법칙](#브룩스의-법칙)
@@ -19,7 +20,7 @@
     * [하이프 사이클 & 아마라의 법칙](#하이프-사이클—아마라의-법칙)
     * [하이럼의 법칙 (암시적 인터페이스의 법칙)](#하이럼의-법칙-암시적-인터페이스의-법칙)
     * [무어의 법칙](#무어의-법칙)
-    * [머피의 법칙 / 소드의 법칙 ](#머피의-법칙—소드의-법칙)
+    * [머피의 법칙 / 소드의 법칙](#머피의-법칙--소드의-법칙)
     * [파킨슨의 법칙](#파킨슨의-법칙)
     * [성급한 최적화의 법칙](#성급한-최적화의-법칙)
     * [푸트의 법칙](#푸트의-법칙)
@@ -29,8 +30,13 @@
     * [유닉스 철학](#유닉스-철학)
     * [스포티파이 모델](#스포티파이-모델)
     * [와들러의 법칙](#와들러의-법칙)
+    
 * [원칙](#원칙)
+    
+    * [The Dilbert Principle](#견고함의-원칙-포스텔의-법칙)
+    
     * [파레토의 원리 (80 : 20의 법칙)](#파레토의-원리-80--20의-법칙)
+    * [The Peter Principle](#견고함의-원칙-포스텔의-법칙)
     * [견고함의 원칙 (포스텔의 법칙)](#견고함의-원칙-포스텔의-법칙)
     * [솔리드](#솔리드)
     * [단일 책임 원칙](#단일-책임-원칙)
@@ -40,7 +46,9 @@
     * [의존 관계 역전 원칙](#의존-관계-역전-원칙)
     * [DRY 원칙](#dry-원칙)
     * [YAGNI](#yagni)
+    
 * [추천 도서](#추천-도서)
+
 * [TODO](#todo)
 
 <!-- vim-markdown-toc -->
@@ -447,6 +455,25 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 <br>
 
+### The Dilbert Principle
+
+[The Dilbert Principle on Wikipedia](https://en.wikipedia.org/wiki/Dilbert_principle)
+
+> Companies tend to systematically promote incompetent employees to management to get them out of the workflow.
+>
+> _Scott Adams_
+
+A management concept developed by Scott Adams (creator of the Dilbert comic strip), the Dilbert Principle is inspired by [The Peter Principle](#the-peter-principle). Under the Dilbert Principle, employees who were never competent are promoted to management in order to limit the damage they can do. Adams first explained the principle in a 1995 Wall Street Journal article, and expanded upon it in his 1996 business book, [The Dilbert Principle](#reading-list).
+
+<br>
+
+See Also:
+
+- [The Peter Principle](#the-peter-principle)
+- [Putt's Law](#putts-law)
+
+<br>
+
 ### 파레토의 원리 (80 : 20의 법칙)
 
 [위키피디아의 파레토 법칙](https://ko.wikipedia.org/wiki/파레토_법칙)
@@ -470,6 +497,27 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 실제 사례:
 
 - 2002년 당시 마이크로소프트는 20%의 가장 많이 보고된 버그를 고침으로써, 윈도우즈와 오피스에서 80%의 관련 에러와 크래쉬가 사라졌다고 하였다([출처](https://www.crn.com/news/security/18821726/microsofts-ceo-80-20-rule-applies-to-bugs-not-just-features.htm)).
+
+<br>
+
+### The Peter Principle
+
+[The Peter Principle on Wikipedia](https://en.wikipedia.org/wiki/Peter_principle)
+
+> People in a hierarchy tend to rise to their "level of incompetence".
+>
+> _Laurence J. Peter_
+
+A management concept developed by Laurence J. Peter, the Peter Principle observes that people who are good at their jobs are promoted, until they reach a level where they are no longer successful (their "level of incompetence". At this point, as they are more senior, they are less likely to be removed from the organisation (unless they perform spectacularly badly) and will continue to reside in a role which they have few intrinsic skills at, as their original skills which made them successful are not necessarily the skills required for their new jobs.
+
+This is of particular interest to engineers - who initial start out in deeply technical roles, but often have a career path which leads to _managing_ other engineers - which requires a fundamentally different skills-set.
+
+<br>
+
+See Also:
+
+- [The Dilbert Principle](#the-dilbert-principle)
+- [Putt's Law](#putts-law)
 
 <br>
 
@@ -669,9 +717,10 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 이 개념들이 흥미롭다면, 다음 책들도 즐길 수 있을 것입니다.
 
 - [Extreme Programming Installed : XP 도입을 위한 실전 입문 - 론 제프리즈, 앤 앤더슨, 체트 핸드릭슨](https://www.goodreads.com/en/book/show/67834) - 익스트림 프로그래밍의 핵심 원리를 다룬다.
-
 - [맨먼스 미신 - 프레드릭 P. 브룩스 Jr.](https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month) - 소프트웨어 공학의 고전. [브룩스의 법칙](#브룩스의-법칙)은 이 책의 주요한 주제이다.
 - [괴델, 에셔, 바흐 : 영원한 황금 노끈 - 더글라스 R. 호프스태터](https://www.goodreads.com/book/show/24113.G_del_Escher_Bach) - 이 책은 분류하기 어렵다. [호프스태터의 법칙](#호프스태터의-법칙)은 이 책으로부터 비롯되었다.
+- [The Dilbert Principle - Adam Scott](https://www.goodreads.com/book/show/85574.The_Dilbert_Principle) - A comic look at corporate America, from the author who created the [Dilbert Principle](#the-dilbert-principl).
+- [The Peter Principle - Lawrence J. Peter](https://www.goodreads.com/book/show/890728.The_Peter_Principle) - Another comic look at the challenges of larger organisations and people management, the source of [The Peter Principle](#the-peter-principle). 
 
 <br>
 
