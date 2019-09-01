@@ -33,10 +33,10 @@
     
 * [원칙](#원칙)
     
-    * [딜버트의 원칙](#딜버트의-원칙)
+    * [딜버트의 법칙](#딜버트의-법칙)
     
     * [파레토의 원리 (80 : 20의 법칙)](#파레토의-원리-80--20의-법칙)
-    * [피터의 원칙](#피터의-원칙)
+    * [피터의 원리](#피터의-원리)
     * [견고함의 원칙 (포스텔의 법칙)](#견고함의-원칙-포스텔의-법칙)
     * [솔리드](#솔리드)
     * [단일 책임 원칙](#단일-책임-원칙)
@@ -91,7 +91,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-참고:
+참고 :
 
 - [브룩스의 법칙](#브룩스의-법칙)
 - [무어의 법칙](#무어의-법칙)
@@ -112,7 +112,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-참고:
+참고 :
 
 - [Death March](#todo)
 - [추천 도서 : 맨먼스 미신](#추천-도서)
@@ -125,7 +125,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 이 법칙에 따르면 시스템의 구조는 설계하는 조직의 구조를 반영한다. 이것은 조직 개선을 시도할 때 종종 인용되고는 하는데, 가령 조직이 여러 개의 작고 끊어진 단위로 구성되어 있다면 거기에서 나온 소프트웨어 또한 그 모습을 닮는다고 한다. 또한 만약 조직이 기능과 서비스를 중심으로 수직적으로 짜여 있다면, 이 역시 소프트웨어가 이러한 모습을 반영할 것이란 것이다.
 
-<br>참고:
+<br>참고 :
 
 - [스포티파이 모델](#스포티파이-모델)
 
@@ -141,7 +141,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-참고:
+참고 :
 
 - [콘웨이의 법칙](#콘웨이의-법칙)
 
@@ -161,7 +161,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-참고:
+참고 :
 
 - [KISS (Keep It Simple, Stupid)](#TODO)
 
@@ -193,7 +193,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-참고:
+참고 :
 
 - [추천 도서 : 괴델, 에셔, 바흐 : 영원한 황금 노끈](#추천-도서)
 
@@ -255,7 +255,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-참고:
+참고 :
 
 - [허술한 추상화의 법칙](#허술한-추상화의-법칙)
 - [XKCD 1172](https://xkcd.com/1172/)
@@ -288,7 +288,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-참고:
+참고 :
 
 - [확증편향](#TODO)
 - [선택편향](#TODO)
@@ -305,7 +305,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 만일 이 법칙이 [호프스태터의 법칙](#호프스태터의-법칙)과 결합된다면, 더욱 비관적인 관점에 도달할 수 있다. 작업은 남은 시간을 채우기 위해 늘어나면서도 *예정된 시간보다 길어지기까지 할 것이다.*
 
-<br>참고:
+<br>참고 :
 
 - [호프스태터의 법칙](#호프스태터의-법칙)
 
@@ -335,16 +335,16 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 > 모든 기술 조직의 계급에서는 시간이 흐르면서 역량의 역전이 일어난다.
 
-이 문구에 따르면 조직 구성론에 대한 여러 가지 선택 기준과 유행 변화에 따라서, 조직에는 여러 명의 숙련된 노동 계층과 자신들이 관리하는 일의 복잡도와 어려움을 모르는 여러 명의 관리직이  생기게 된다. 이것은 [피터의 원리](#TODO) 혹은 [딜버트의 법칙](#TODO)과도 같은 현상 때문이다.
+이 문구에 따르면 조직 구성론에 대한 여러 가지 선택 기준과 유행 변화에 따라서, 조직에는 여러 명의 숙련된 노동 계층과 자신들이 관리하는 일의 복잡도와 어려움을 모르는 여러 명의 관리직이  생기게 된다. 이것은 [피터의 원리](#피터의-원리) 혹은 [딜버트의 법칙](#딜버트의-법칙)과도 같은 현상 때문이다.
 
 다만 이런 류의 법칙에서 잊지 말아야 할 점은 이러한 모호한 일반화는 _일부_ 조직에는 적용될 수도 있으나, 나머지에는 아니라는 점이다.
 
 <br>
 
-참고:
+참고 :
 
-- [피터의 원리](#TODO)
-- [딜버트의 법칙](#TODO)
+- [피터의 원리](#피터의-원리)
+- [딜버트의 법칙](#딜버트의-법칙)
 
 <br>
 
@@ -378,7 +378,7 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 <br>
 
-참고:
+참고 :
 
 - [하이럼의 법칙](#하이럼의-법칙-암시적-인터페이스의-법칙)
 
@@ -443,7 +443,7 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 <br>
 
-참고:
+참고 :
 
 - [사소함의 법칙](#사소함의-법칙)
 
@@ -455,7 +455,7 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 <br>
 
-### 딜버트의 원칙
+### 딜버트의 법칙
 
 [The Dilbert Principle on Wikipedia](https://en.wikipedia.org/wiki/Dilbert_principle)
 
@@ -467,10 +467,10 @@ A management concept developed by Scott Adams (creator of the Dilbert comic stri
 
 <br>
 
-See Also:
+참고 :
 
-- [The Peter Principle](#the-peter-principle)
-- [Putt's Law](#putts-law)
+- [피터의 원리](#피터의-원리)
+- [푸트의 법칙](#푸트의-법칙)
 
 <br>
 
@@ -500,7 +500,7 @@ See Also:
 
 <br>
 
-### 피터의 원칙
+### 피터의 원리
 
 [The Peter Principle on Wikipedia](https://en.wikipedia.org/wiki/Peter_principle)
 
@@ -508,16 +508,16 @@ See Also:
 >
 > _로렌스 J. 피터_
 
-로렌스 J. 피터에 의해 고안된 경영 개념인 피터의 원칙에서, 일을 잘하는 사람들은 그들이 더 이상 성공적이지 못한 수준("무능력한 정도")까지 승진한다. 이 지점에서 그들은 심각할 정도로 성과가 없지 않는 이상 상급자가 될 수록 조직에서 쫓겨날 가능성이 더욱 낮아지며, 자신과 별로 관련된 능력이 없는 역할에 계속 남게 될 것이다. 그들을 성공적으로 이끌었던 원래 가진 능력은 새로운 일에 그다지 필요하지 않기 때문이다.
+로렌스 J. 피터에 의해 고안된 경영 개념인 피터의 원리에서, 일을 잘하는 사람들은 그들이 더 이상 성공적이지 못한 수준("무능력한 정도")까지 승진한다. 이 지점에서 그들은 심각할 정도로 성과가 없지 않는 이상 상급자가 될 수록 조직에서 쫓겨날 가능성이 더욱 낮아지며, 자신과 별로 관련된 능력이 없는 역할에 계속 남게 될 것이다. 그들을 성공적으로 이끌었던 원래 가진 능력은 새로운 일에 그다지 필요하지 않기 때문이다.
 
 이것은 특히 엔지니어에게 있어 흥미로운데, 처음엔 기술력이 깊이 요구되는 분야에서 시작하나 대개 경력이 근본적으로 다른 능력이 필요한 _관리직_ 으로 이어지기 때문이다.
 
 <br>
 
-See Also:
+참고 :
 
-- [The Dilbert Principle](#the-dilbert-principle)
-- [Putt's Law](#putts-law)
+- [딜버트의-법칙](#딜버트의-법칙)
+- [푸트의-법칙](#푸트의-법칙)
 
 <br>
 
@@ -559,7 +559,7 @@ See Also:
 
 <br>
 
-참고:
+참고 :
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#솔리드)
@@ -580,7 +580,7 @@ See Also:
 
 <br>
 
-참고:
+참고 :
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#솔리드)
@@ -601,7 +601,7 @@ See Also:
 
 <br>
 
-참고:
+참고 :
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#solid)
@@ -622,7 +622,7 @@ See Also:
 
 <br>
 
-참고:
+참고 :
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#solid)
@@ -646,7 +646,7 @@ See Also:
 
 <br>
 
-관련:
+참고 :
 
 - [객체지향 프로그래밍](#todo)
 - [솔리드](#solid)
@@ -684,7 +684,7 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 
 <br>
 
-관련:
+참고 :
 
 - [실용주의 프로그래머](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
 
@@ -706,7 +706,7 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 
 <br>
 
-관련:
+참고 :
 
 - [추천 도서 : Extreme Programming Installed : XP 도입을 위한 실전 입문](#추천-도서)
 
@@ -719,8 +719,8 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 - [Extreme Programming Installed : XP 도입을 위한 실전 입문 - 론 제프리즈, 앤 앤더슨, 체트 핸드릭슨](https://www.goodreads.com/en/book/show/67834) - 익스트림 프로그래밍의 핵심 원리를 다룬다.
 - [맨먼스 미신 - 프레드릭 P. 브룩스 Jr.](https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month) - 소프트웨어 공학의 고전. [브룩스의 법칙](#브룩스의-법칙)은 이 책의 주요한 주제이다.
 - [괴델, 에셔, 바흐 : 영원한 황금 노끈 - 더글라스 R. 호프스태터](https://www.goodreads.com/book/show/24113.G_del_Escher_Bach) - 이 책은 분류하기 어렵다. [호프스태터의 법칙](#호프스태터의-법칙)은 이 책으로부터 비롯되었다.
-- [The Dilbert Principle - Adam Scott](https://www.goodreads.com/book/show/85574.The_Dilbert_Principle) - A comic look at corporate America, from the author who created the [딜버트의 원칙](#딜버트의-원칙).
-- [The Peter Principle - Lawrence J. Peter](https://www.goodreads.com/book/show/890728.The_Peter_Principle) - Another comic look at the challenges of larger organisations and people management, the source of [피터의 원칙](#피터의-원칙). 
+- [딜버트의 법칙 - 아담 스코트](https://www.goodreads.com/book/show/85574.The_Dilbert_Principle) - [딜버트의 법칙](#딜버트의-법칙)을 만든 저자의 미국 업계에 대한 풍자적인 만화.
+- [피터의 원리 - 로렌스 J. 피터](https://www.goodreads.com/book/show/890728.The_Peter_Principle) - 거대 조직과 인적 경영에 있어서의 난점에 관한 또 다른 해학적 관점을 보여주는, [피터의 원리](#피터의-원리)의 출처. 
 
 <br>
 
