@@ -459,11 +459,11 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 [The Dilbert Principle on Wikipedia](https://en.wikipedia.org/wiki/Dilbert_principle)
 
-> Companies tend to systematically promote incompetent employees to management to get them out of the workflow.
+> 기업들은 시스템적으로 무능력한 직원들을 관리직으로 승진시켜 업무 흐름에서 배제하는 경향이 있다.
 >
-> _Scott Adams_
+> _스캇 아담스_
 
-A management concept developed by Scott Adams (creator of the Dilbert comic strip), the Dilbert Principle is inspired by [The Peter Principle](#the-peter-principle). Under the Dilbert Principle, employees who were never competent are promoted to management in order to limit the damage they can do. Adams first explained the principle in a 1995 Wall Street Journal article, and expanded upon it in his 1996 business book, [The Dilbert Principle](#reading-list).
+스캇 아담스(딜버트 만화의 작가)에 의해 만들어진 경영 개념인 딜버트의 법칙은 [피터의 원리](#피터의-원리)로부터 영향을 받았다. 딜버트의 법칙에 따르면, 무능한 직원들은 그들이 입힐 수 있는 피해를 최소화하기 위해 관리직으로 승진된다. 아담스는 1995년 월 스트리트 저널의 기사에서 이를 처음 설명했고, 이를 1996년 그의 경영학 서적 [딜버트의 법칙](#추천-도서)에서 확장하였다.
 
 <br>
 
@@ -719,7 +719,7 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 - [Extreme Programming Installed : XP 도입을 위한 실전 입문 - 론 제프리즈, 앤 앤더슨, 체트 핸드릭슨](https://www.goodreads.com/en/book/show/67834) - 익스트림 프로그래밍의 핵심 원리를 다룬다.
 - [맨먼스 미신 - 프레드릭 P. 브룩스 Jr.](https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month) - 소프트웨어 공학의 고전. [브룩스의 법칙](#브룩스의-법칙)은 이 책의 주요한 주제이다.
 - [괴델, 에셔, 바흐 : 영원한 황금 노끈 - 더글라스 R. 호프스태터](https://www.goodreads.com/book/show/24113.G_del_Escher_Bach) - 이 책은 분류하기 어렵다. [호프스태터의 법칙](#호프스태터의-법칙)은 이 책으로부터 비롯되었다.
-- [딜버트의 법칙 - 아담 스코트](https://www.goodreads.com/book/show/85574.The_Dilbert_Principle) - [딜버트의 법칙](#딜버트의-법칙)을 만든 저자의 미국 업계에 대한 풍자적인 만화.
+- [딜버트의 법칙 - 스캇 아담스](https://www.goodreads.com/book/show/85574.The_Dilbert_Principle) - [딜버트의 법칙](#딜버트의-법칙)을 만든 저자의 미국 업계에 대한 풍자적인 만화.
 - [피터의 원리 - 로렌스 J. 피터](https://www.goodreads.com/book/show/890728.The_Peter_Principle) - 거대 조직과 인적 경영에 있어서의 난점에 관한 또 다른 해학적 관점을 보여주는, [피터의 원리](#피터의-원리)의 출처. 
 
 <br>
