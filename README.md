@@ -15,6 +15,7 @@
     * [커닝햄의 법칙](#커닝햄의-법칙)
     * [던바의 숫자](#던바의-숫자)
     * [갈의 법칙](#갈의-법칙)
+    * [굿하트의 법칙](#굿하트의-법칙)
     * [핸런의 면도날](#핸런의-면도날)
     * [호프스태터의 법칙](#호프스태터의-법칙)
     * [허트버의 법칙](#허트버의-법칙)
@@ -44,7 +45,9 @@
     * [인터페이스 분리 원칙](#인터페이스-분리-원칙)
     * [의존 관계 역전 원칙](#의존-관계-역전-원칙)
     * [DRY 원칙](#dry-원칙)
+    * [KISS 원칙](#kiss-원칙)
     * [YAGNI](#yagni)
+    * [분산 컴퓨팅의 오류](#분산-컴퓨팅의-오류)
     
 * [추천 도서](#추천-도서)
 
@@ -178,9 +181,41 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 참고 :
 
-- [KISS (Keep It Simple, Stupid)](#TODO)
+- [KISS 원칙](#kiss-원칙)
 
 <br>
+
+### 굿하트의 법칙
+
+[The Goodhart's Law on Wikipedia](https://en.wikipedia.org/wiki/Goodhart's_law)
+
+> 관측된 통계적 규칙성은 그것을 조종할 목적으로 개입할 경우 사라져버리는 경향이 있다.
+>
+> 찰스 굿하트
+
+종종 이렇게도 인용되고는 한다 :
+
+> 지표가 목표가 되면, 더 이상 좋은 지표가 아니게 된다.
+>
+> _마릴린 스트래던_
+
+이 법칙에 따르면 지표를 기반으로 한 최적화는 측정된 결과 자체의 평가 절하로 이어진다. 과도하게 선정된 표본 지표([핵심 성과 지표](https://en.wikipedia.org/wiki/Performance_indicator))를 무작정 처리 결과에 적용하는 것은 왜곡된 효과를 낳는다. 사람들은 행위로 인한 전체적인 결과에 주목하는 대신, 특정 수치를 만족시키기 위해 시스템을 "게임화"함으로써 국소적으로만 최적화하는 경향이 있다.
+
+<br>
+
+실제 사례 :
+- Assert가 없는 테스트는 코드 커버리지는 높지만, 잘 테스트된 소프트웨어의 작성이라는 목적을 벗어난다.
+
+- 작성한 라인 수로 개발자 퍼포먼스를 측정할 경우, 코드베이스는 받아들일 수 없는 수준으로 불어난다.
+
+  <br>
+
+참고 :
+- [Goodhart’s Law: How Measuring The Wrong Things Drive Immoral Behaviour](https://coffeeandjunk.com/goodharts-campbells-law/)
+
+- [Dilbert on bug-free software](https://dilbert.com/strip/1995-11-13)
+
+  <br>
 
 ### 핸런의 면도날
 
@@ -397,7 +432,7 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 - [하이럼의 법칙](#하이럼의-법칙-암시적-인터페이스의-법칙)
 
-<br>실제 사례:
+<br>실제 사례 :
 
 - [포토샵의 느린 초기 로딩](https://forums.adobe.com/thread/376152) - 과거에 마주한 문제이다. 포토샵은 종종 켜는 데에 몇 분씩이나 걸리기도 하는데, 이 문제는 구동 시작시에 현재 기본으로 설정된 프린터의 정보를 읽어오는 것에서 발생하였다. 만약 그 프린터가 네트워크 프린터라면 극도로 오랜 시간이 걸리게 되는 것이다. 시스템에 네트워크 프린터의 _추상화_ 가 로컬 프린터와 유사하게 제공된 점은 연결 상태가 좋지 못한 상황의 사용자에게 문제를 일으켰다.
 
@@ -671,20 +706,6 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 <br>
 
-### GLIDE (???)
-
-이는 다음에 대한 약자이다?:
-
-- G: [Gaebang-Pyesoe Wonchik (개방-폐쇄 원칙)](#개방-폐쇄-원칙)
-- L: [Liskov Chihwan Wonchik (리스코프 치환 원칙)](#리스코프-치환-원칙)
-- I: [Interface Bunli Wonchik (인터페이스 분리 원칙)](#인터페이스-분리-원칙)
-- D: [Danil Chakim Wonchik (단일 책임 원칙)](#단일-책임-원칙)
-- E: [Euijon Gwangye Yukjun Wonchik (의존 관계 역전 원칙)](#의존-관계-역전-원칙)
-
-이것은 [객체지향 프로그래밍](#todo)의 핵심 원칙이다? 이러한 설계 원칙들은 개발자들이 유지보수 가능한 시스템을 짓는 것을 도울 수 있다?
-
-<br>
-
 ### DRY 원칙
 
 [The DRY Principle on Wikipedia](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
@@ -702,6 +723,26 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 참고 :
 
 - [실용주의 프로그래머](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
+
+<br>
+
+### KISS 원칙
+
+[위키피디아의 KISS 원칙](https://ko.wikipedia.org/wiki/KISS_원칙)
+
+> Keep it simple, stupid
+>
+> 간단하게 놔둬, 바보야
+
+키스 원칙에 따르면 대부분의 시스템은 복잡하기보다는 단순할 때 가장 잘 작동한다고 한다. 즉, 간단함은 설계의 핵심 목표여야 하며 불필요한 복잡성은 피해야하는 것이다. 1960년대 미 해군에서 유래한 이 어구는 항공 기술자 켈리 존슨과 관련 있다.
+
+이 원칙을 설명하기 좋은 예시로 존슨의 이야기가 있다. 존슨은 제트기 기술자들에게 몇 가지의 장비를 나누어주었는데, 교전 중에도 평균적인 수준의 정비공들이 오직 이 장비만을 사용해서 수리할 수 있도록 하는 제약을 지키면서 항공기를 설계했다. 즉, '바보'라는 것은 엔지니어들의 수준을 말하는 것이 아닌, 어떻게 기체를 분해할 것인가와 수리를 위해 가용한 도구들 간의 관계를 뜻하는 것이다.
+
+<br>
+
+참고 :
+
+- [갈의 법칙](#갈의-법칙)
 
 <br>
 
@@ -724,6 +765,50 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 참고 :
 
 - [추천 도서 : Extreme Programming Installed : XP 도입을 위한 실전 입문](#추천-도서)
+
+<br>
+
+### 분산 컴퓨팅의 오류
+
+[The Fallacies of Distributed Computing on Wikipedia](https://en.wikipedia.org/wiki/You_aren%https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
+
+네트워크 컴퓨팅의 오류라고도 알려진 이것은, 소프트웨어 개발에 있어 실패로 이어질 수 있는 분산 컴퓨팅에 있어서의 가설의 목록이다.
+
+<br>
+
+이는 다음과 같다 :
+
+- 네트워크는 신뢰할 수 있다.
+
+- 지연은 0이다.
+
+- 대역폭은 무한하다.
+
+- 네트워크는 안전하다.
+
+- 위상은 변화하지 않는다.
+
+- 오직 하나의 관리자만이 존재한다.
+
+- 전송 비용은 없다.
+
+- 네트워크는 모두 균일하다.
+
+  <br>
+
+첫 네 가지는 [빌 조이](https://ko.wikipedia.org/wiki/빌_조이)와 [톰 리온](https://twitter.com/aka_pugs)에 의해 1991년경 제기되었으며 [제임스 고슬링](https://ko.wikipedia.org/wiki/제임스_고슬링)에 의해 처음으로 '분산 컴퓨팅의 오류'로서 분류되었다. [L. 피터 도이치](https://en.wikipedia.org/wiki/L._Peter_Deutsch가  5 ~ 7번째 오류를 추가하였고 90년대 말 고슬링은 8번째 오류를 추가하였다.
+
+그들은 당시 [썬 마이크로시스템즈](https://ko.wikipedia.org/wiki/썬_마이크로시스템즈)내에서 일어나던 일로부터 영향을 받았다.
+
+회복성이 높은 코드를 설계할 때, 이 오류들에 의해 잘못된 로직을 작성하여 실제 세계와 분산 컴퓨팅의 복잡성을 다루는 데에 실패할 수 있으므로 유의해야한다.
+
+<br>
+
+참고 :
+
+- [Foraging for the Fallacies of Distributed Computing (Part 1) - Vaidehi Joshi
+ on Medium](https://medium.com/baseds/foraging-for-the-fallacies-of-distributed-computing-part-1-1b35c3b85b53)
+- [Deutsch's Fallacies, 10 Years After](http://java.sys-con.com/node/38665)
 
 <br>
 
