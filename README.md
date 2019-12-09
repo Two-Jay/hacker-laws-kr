@@ -208,7 +208,7 @@ Real-world examples:
 
   <br>
 
-See also:
+참고 :
 - [Goodhart’s Law: How Measuring The Wrong Things Drive Immoral Behaviour](https://coffeeandjunk.com/goodharts-campbells-law/)
 
 - [Dilbert on bug-free software](https://dilbert.com/strip/1995-11-13)
@@ -770,22 +770,35 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 
 [The Fallacies of Distributed Computing on Wikipedia](https://en.wikipedia.org/wiki/You_aren%https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
 
-Also known as _Fallacies of Networked Computing_, the Fallacies are a list of conjectures (or beliefs) about distributed computing, which can lead to failures in software development. The assumptions are:
+네트워크 컴퓨팅의 오류라고도 알려진 이것은, 소프트웨어 개발에 있어 실패로 이어질 수 있는 분산 컴퓨팅에 있어서의 가설의 목록이다.
 
-- The network is reliable
-- Latency is zero
-- Bandwidth is infinite
-- The network is secure
-- Topology doesn't change
-- There is one administrator
-- Transport cost is zero
-- The network is homogeneous
+<br>
 
-The first four items were listed by [Bill Joy](https://en.wikipedia.org/wiki/Bill_Joy) and [Tom Lyon](https://twitter.com/aka_pugs) around 1991 and first classified by [James Gosling](https://en.wikipedia.org/wiki/James_Gosling) as the "Fallacies of Networked Computing". [L. Peter Deutsch](https://en.wikipedia.org/wiki/L._Peter_Deutsch) added the 5th, 6th and 7th fallacies. In the late 90's Gosling added the 8th fallacy.
+이는 다음과 같다 :
 
-The group were inspired by what was happening at the time inside [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems).
+- 네트워크는 신뢰할 수 있다.
 
-These fallacies should be considered carefully when designing code which is resilient; assuming any of these fallacies can lead to flawed logic which fails to deal with the realities and complexities of distributed systems.
+- 지연은 0이다.
+
+- 대역폭은 무한하다.
+
+- 네트워크는 안전하다.
+
+- 위상은 변화하지 않는다.
+
+- 오직 하나의 관리자만이 존재한다.
+
+- 전송 비용은 없다.
+
+- 네트워크는 모두 균일하다.
+
+  <br>
+
+첫 네 가지는 [빌 조이](https://ko.wikipedia.org/wiki/빌_조이)와 [톰 리온](https://twitter.com/aka_pugs)에 의해 1991년경 제기되었으며 [제임스 고슬링](https://ko.wikipedia.org/wiki/제임스_고슬링)에 의해 처음으로 '분산 컴퓨팅의 오류'로서 분류되었다. [L. 피터 도이치](https://en.wikipedia.org/wiki/L._Peter_Deutsch가  5 ~ 7번째 오류를 추가하였고 90년대 말 고슬링은 8번째 오류를 추가하였다.
+
+그들은 당시 [썬 마이크로시스템즈](https://ko.wikipedia.org/wiki/썬_마이크로시스템즈)내에서 일어나던 일로부터 영향을 받았다.
+
+회복성이 높은 코드를 설계할 때, 이 오류들에 의해 잘못된 로직을 작성하여 실제 세계와 분산 컴퓨팅의 복잡성을 다루는 데에 실패할 수 있으므로 유의해야한다.
 
 <br>
 
