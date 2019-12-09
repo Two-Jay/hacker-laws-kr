@@ -189,22 +189,24 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 [The Goodhart's Law on Wikipedia](https://en.wikipedia.org/wiki/Goodhart's_law)
 
-> Any observed statistical regularity will tend to collapse once pressure is placed upon it for control purposes.
+> 관측된 통계적 규칙성은 그것을 조종할 목적으로 개입할 경우 사라져버리는 경향이 있다.
 >
-> _Charles Goodhart_
+> 찰스 굿하트
 
-Also commonly referenced as:
+종종 이렇게도 인용되고는 한다 :
 
-> When a measure becomes a target, it ceases to be a good measure.
+> 지표가 목표가 되면, 더 이상 좋은 지표가 아니게 된다.
 >
-> _Marilyn Strathern_
+> _마릴린 스트래던_
 
-The law states that the measure-driven optimizations could lead to devaluation of the measurement outcome itself. Overly selective set of measures ([KPIs](https://en.wikipedia.org/wiki/Performance_indicator)) blindly applied to a process results in distorted effect. People tend to optimize locally by "gaming" the system in order to satisfy particular metrics instead of paying attention to holistic outcome of their actions.
+이 법칙에 따르면 지표를 기반으로 한 최적화는 측정된 결과 자체의 평가 절하로 이어진다. 과도하게 선정된 표본 지표([핵심 성과 지표](https://en.wikipedia.org/wiki/Performance_indicator))를 무작정 처리 결과에 적용하는 것은 왜곡된 효과를 낳는다. 사람들은 행위로 인한 전체적인 결과에 주목하는 대신, 특정 수치를 만족시키기 위해 시스템을 "게임화"함으로써 국소적으로만 최적화하는 경향이 있다.
 
-Real-world examples:
-- Assert-free tests satisfy the code coverage expectation, despite the metric intent was to create well-tested software.
+<br>
 
-- Developer performance score indicated by the number of lines committed leads to unjustifiably bloated codebase.
+실제 사례 :
+- Assert가 없는 테스트는 코드 커버리지는 높지만, 잘 테스트된 소프트웨어의 작성이라는 목적을 벗어난다.
+
+- 작성한 라인 수로 개발자 퍼포먼스를 측정할 경우, 코드베이스는 받아들일 수 없는 수준으로 불어난다.
 
   <br>
 
@@ -430,7 +432,7 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 - [하이럼의 법칙](#하이럼의-법칙-암시적-인터페이스의-법칙)
 
-<br>실제 사례:
+<br>실제 사례 :
 
 - [포토샵의 느린 초기 로딩](https://forums.adobe.com/thread/376152) - 과거에 마주한 문제이다. 포토샵은 종종 켜는 데에 몇 분씩이나 걸리기도 하는데, 이 문제는 구동 시작시에 현재 기본으로 설정된 프린터의 정보를 읽어오는 것에서 발생하였다. 만약 그 프린터가 네트워크 프린터라면 극도로 오랜 시간이 걸리게 되는 것이다. 시스템에 네트워크 프린터의 _추상화_ 가 로컬 프린터와 유사하게 제공된 점은 연결 상태가 좋지 못한 상황의 사용자에게 문제를 일으켰다.
 
