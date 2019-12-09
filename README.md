@@ -15,6 +15,7 @@
     * [커닝햄의 법칙](#커닝햄의-법칙)
     * [던바의 숫자](#던바의-숫자)
     * [갈의 법칙](#갈의-법칙)
+    * [굿하트의 법칙](#굿하트의-법칙)
     * [핸런의 면도날](#핸런의-면도날)
     * [호프스태터의 법칙](#호프스태터의-법칙)
     * [허트버의 법칙](#허트버의-법칙)
@@ -44,7 +45,9 @@
     * [인터페이스 분리 원칙](#인터페이스-분리-원칙)
     * [의존 관계 역전 원칙](#의존-관계-역전-원칙)
     * [DRY 원칙](#dry-원칙)
+    * [KISS 원칙](#kiss-원칙)
     * [YAGNI](#yagni)
+    * [분산 컴퓨팅의 오류](#분산-컴퓨팅의-오류)
     
 * [추천 도서](#추천-도서)
 
@@ -178,9 +181,39 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 참고 :
 
-- [KISS (Keep It Simple, Stupid)](#TODO)
+- [KISS 원칙](#kiss-원칙)
 
 <br>
+
+### 굿하트의 법칙
+
+[The Goodhart's Law on Wikipedia](https://en.wikipedia.org/wiki/Goodhart's_law)
+
+> Any observed statistical regularity will tend to collapse once pressure is placed upon it for control purposes.
+>
+> _Charles Goodhart_
+
+Also commonly referenced as:
+
+> When a measure becomes a target, it ceases to be a good measure.
+>
+> _Marilyn Strathern_
+
+The law states that the measure-driven optimizations could lead to devaluation of the measurement outcome itself. Overly selective set of measures ([KPIs](https://en.wikipedia.org/wiki/Performance_indicator)) blindly applied to a process results in distorted effect. People tend to optimize locally by "gaming" the system in order to satisfy particular metrics instead of paying attention to holistic outcome of their actions.
+
+Real-world examples:
+- Assert-free tests satisfy the code coverage expectation, despite the metric intent was to create well-tested software.
+
+- Developer performance score indicated by the number of lines committed leads to unjustifiably bloated codebase.
+
+  <br>
+
+See also:
+- [Goodhart’s Law: How Measuring The Wrong Things Drive Immoral Behaviour](https://coffeeandjunk.com/goodharts-campbells-law/)
+
+- [Dilbert on bug-free software](https://dilbert.com/strip/1995-11-13)
+
+  <br>
 
 ### 핸런의 면도날
 
@@ -671,20 +704,6 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 <br>
 
-### GLIDE (???)
-
-이는 다음에 대한 약자이다?:
-
-- G: [Gaebang-Pyesoe Wonchik (개방-폐쇄 원칙)](#개방-폐쇄-원칙)
-- L: [Liskov Chihwan Wonchik (리스코프 치환 원칙)](#리스코프-치환-원칙)
-- I: [Interface Bunli Wonchik (인터페이스 분리 원칙)](#인터페이스-분리-원칙)
-- D: [Danil Chakim Wonchik (단일 책임 원칙)](#단일-책임-원칙)
-- E: [Euijon Gwangye Yukjun Wonchik (의존 관계 역전 원칙)](#의존-관계-역전-원칙)
-
-이것은 [객체지향 프로그래밍](#todo)의 핵심 원칙이다? 이러한 설계 원칙들은 개발자들이 유지보수 가능한 시스템을 짓는 것을 도울 수 있다?
-
-<br>
-
 ### DRY 원칙
 
 [The DRY Principle on Wikipedia](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself)
@@ -702,6 +721,26 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 참고 :
 
 - [실용주의 프로그래머](https://en.wikipedia.org/wiki/The_Pragmatic_Programmer)
+
+<br>
+
+### KISS 원칙
+
+[위키피디아의 KISS 원칙](https://ko.wikipedia.org/wiki/KISS_원칙)
+
+> Keep it simple, stupid
+>
+> 간단하게 놔둬, 바보야
+
+키스 원칙에 따르면 대부분의 시스템은 복잡하기보다는 단순할 때 가장 잘 작동한다고 한다. 즉, 간단함은 설계의 핵심 목표여야 하며 불필요한 복잡성은 피해야하는 것이다. 1960년대 미 해군에서 유래한 이 어구는 항공 기술자 켈리 존슨과 관련 있다.
+
+이 원칙을 설명하기 좋은 예시로 존슨의 이야기가 있다. 존슨은 제트기 기술자들에게 몇 가지의 장비를 나누어주었는데, 교전 중에도 평균적인 수준의 정비공들이 오직 이 장비만을 사용해서 수리할 수 있도록 하는 제약을 지키면서 항공기를 설계했다. 즉, '바보'라는 것은 엔지니어들의 수준을 말하는 것이 아닌, 어떻게 기체를 분해할 것인가와 수리를 위해 가용한 도구들 간의 관계를 뜻하는 것이다.
+
+<br>
+
+참고 :
+
+- [갈의 법칙](#갈의-법칙)
 
 <br>
 
@@ -724,6 +763,37 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 참고 :
 
 - [추천 도서 : Extreme Programming Installed : XP 도입을 위한 실전 입문](#추천-도서)
+
+<br>
+
+### 분산 컴퓨팅의 오류
+
+[The Fallacies of Distributed Computing on Wikipedia](https://en.wikipedia.org/wiki/You_aren%https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
+
+Also known as _Fallacies of Networked Computing_, the Fallacies are a list of conjectures (or beliefs) about distributed computing, which can lead to failures in software development. The assumptions are:
+
+- The network is reliable
+- Latency is zero
+- Bandwidth is infinite
+- The network is secure
+- Topology doesn't change
+- There is one administrator
+- Transport cost is zero
+- The network is homogeneous
+
+The first four items were listed by [Bill Joy](https://en.wikipedia.org/wiki/Bill_Joy) and [Tom Lyon](https://twitter.com/aka_pugs) around 1991 and first classified by [James Gosling](https://en.wikipedia.org/wiki/James_Gosling) as the "Fallacies of Networked Computing". [L. Peter Deutsch](https://en.wikipedia.org/wiki/L._Peter_Deutsch) added the 5th, 6th and 7th fallacies. In the late 90's Gosling added the 8th fallacy.
+
+The group were inspired by what was happening at the time inside [Sun Microsystems](https://en.wikipedia.org/wiki/Sun_Microsystems).
+
+These fallacies should be considered carefully when designing code which is resilient; assuming any of these fallacies can lead to flawed logic which fails to deal with the realities and complexities of distributed systems.
+
+<br>
+
+참고 :
+
+- [Foraging for the Fallacies of Distributed Computing (Part 1) - Vaidehi Joshi
+ on Medium](https://medium.com/baseds/foraging-for-the-fallacies-of-distributed-computing-part-1-1b35c3b85b53)
+- [Deutsch's Fallacies, 10 Years After](http://java.sys-con.com/node/38665)
 
 <br>
 
