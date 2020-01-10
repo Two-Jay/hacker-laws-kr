@@ -22,14 +22,14 @@
     * [허트버의 법칙](#허트버의-법칙)
     * [하이프 사이클 & 아마라의 법칙](#하이프-사이클—아마라의-법칙)
     * [하이럼의 법칙 (암시적 인터페이스의 법칙)](#하이럼의-법칙-암시적-인터페이스의-법칙)
-    * [Metcalfe's Law](#metcalfes-law)
+    * [메칼프의 법칙](#메칼프의-법칙)
     * [무어의 법칙](#무어의-법칙)
     * [머피의 법칙 / 소드의 법칙](#머피의-법칙--소드의-법칙)
     * [Occam's Razor](#occams-razor)
     * [파킨슨의 법칙](#파킨슨의-법칙)
     * [성급한 최적화의 법칙](#성급한-최적화의-법칙)
     * [푸트의 법칙](#푸트의-법칙)
-    * [Reed's Law](#reeds-law)
+    * [리드의 법칙](#리드의-법칙)
     * [복잡성 보존의 법칙 (테슬러의 법칙)](#복잡성-보존의-법칙-테슬러의-법칙)
     * [허술한 추상화의 법칙](#허술한-추상화의-법칙)
     * [사소함의 법칙](#사소함의-법칙)
@@ -341,19 +341,18 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-### Metcalfe's Law
+### 메칼프의 법칙
 
-[Metcalfe's Law on Wikipedia](https://en.wikipedia.org/wiki/Metcalfe's_law)
+[위키피디아의 메칼프의 법칙](https://ko.wikipedia.org/wiki/메칼프의_법칙)
 
-> In network theory, the value of a system grows as approximately the square of the number of users of the system.
+> 네트워크 이론에서, 망의 가치는 대략 사용자 수의 제곱에 비례한다.
 
-This law is based on the number of possible pairwise connections within a system and is closely related to [Reed's Law](#reeds-law). Odlyzko and others have argued that both Reed's Law and Metcalfe's Law overstate the value of the system by not accounting for the limits of human cognition on network effects; see [Dunbar's Number](#dunbars-number).
+이 법칙은 시스템 안의 가능한 연결쌍의 수를 기반으로 하고 있으며 [리드의 법칙](#리드의 법칙)과 많은 관련이 있다. 그러나 오들리즈코를 비롯한 다른 이들은, [리드의 법칙](#리드의 법칙)과 메칼프의 법칙 둘 모두 네트워크 효과에 있어 인간의 인지를 고려하지 않음으로써 가치를 너무 높게 잡았다고 반박하였다. [던바의-숫자](#던바의-숫자) 참고.
 
-<br>
+<br>참고 :
 
-See also:
-- [Reed's Law](#reeds-law)
-- [Dunbar's Number](#dunbars-number)
+- [리드의 법칙](#리드의-법칙)
+- [던바의 숫자](#던바의-숫자)
 
 <br>
 
@@ -468,7 +467,7 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 <br>
 
-### Reed's Law
+### 리드의 법칙
 
 [Reed's Law on Wikipedia](https://en.wikipedia.org/wiki/Reed's_law)
 
@@ -476,9 +475,11 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 This law is based on graph theory, where the utility scales as the number of possible sub-groups, which is faster than the number of participants or the number of possible pairwise connections. Odlyzko and others have argued that Reed's Law overstates the utility of the system by not accounting for the limits of human cognition on network effects; see [Dunbar's Number](#dunbars-number).
 
-See also:
-- [Metcalfe's Law](#metcalfes-law)
-- [Dunbar's Number](#dunbars-number)
+<br>
+
+참고 :
+- [메칼프의 법칙](#메칼프의-법칙)
+- [던바의 숫자](#던바의-숫자)
 
 <br>
 
