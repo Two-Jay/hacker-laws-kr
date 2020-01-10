@@ -25,7 +25,7 @@
     * [메칼프의 법칙](#메칼프의-법칙)
     * [무어의 법칙](#무어의-법칙)
     * [머피의 법칙 / 소드의 법칙](#머피의-법칙--소드의-법칙)
-    * [Occam's Razor](#occams-razor)
+    * [오컴의 면도날](#오컴의-면도날)
     * [파킨슨의 법칙](#파킨슨의-법칙)
     * [성급한 최적화의 법칙](#성급한-최적화의-법칙)
     * [푸트의 법칙](#푸트의-법칙)
@@ -389,26 +389,26 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
-### Occam's Razor
+### 오컴의 면도날
 
-[Occam's Razor on Wikipedia](https://en.wikipedia.org/wiki/Occam's_razor)
+[위키피디아의 오컴의 면도날](https://ko.wikipedia.org/wiki/오컴의_면도날)
 
-> Entities should not be multiplied without necessity.
+> 실체가 필요 이상으로 늘어나면 안 된다.
 >
-> William of Ockham
+> 오컴의 윌리엄
 
-Occam's razor says that among several possible solutions, the most likely solution is the one with the least number of concepts and assumptions. This solution is the simplest and solves only the given problem, without introducing accidental complexity and possible negative consequences.
+오컴의 면도날은 여러 가능한 해결책 중에서, 가장 그럴 듯한 것은 가장 적은 개념과 가정이 필요한 것이라고 말한다. 이 해결책이 가장 단순하며 오직 주어진 문제만을 해결하고, 복잡성을 야기하거나 부정적인 결과를 초래하지 않는다.
 
 <br>
 
-See also:
+참고 :
 
 - [YAGNI](#yagni)
 - [No Silver Bullet: Accidental Complexity and Essential Complexity](https://en.wikipedia.org/wiki/No_Silver_Bullet)
 
 <br>
 
-Example:
+예시 :
 
 - [Lean Software Development: Eliminate Waste](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste)
 
