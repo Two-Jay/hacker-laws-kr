@@ -36,7 +36,7 @@
     * [유닉스 철학](#유닉스-철학)
     * [스포티파이 모델](#스포티파이-모델)
     * [와들러의 법칙](#와들러의-법칙)
-    * [Wheaton's Law](#wheatons-law)
+    * [휘턴의 법칙](#휘턴의-법칙)
     
 * [원칙](#원칙)
     * [딜버트의 법칙](#딜버트의-법칙)
@@ -397,7 +397,7 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 >
 > 오컴의 윌리엄
 
-오컴의 면도날은 여러 가능한 해결책 중에서, 가장 그럴 듯한 것은 가장 적은 개념과 가정이 필요한 것이라고 말한다. 이 해결책이 가장 단순하며 오직 주어진 문제만을 해결하고, 복잡성을 야기하거나 부정적인 결과를 초래하지 않는다.
+오컴의 면도날은 여러 가능한 해결책 중에서, 가장 그럴 듯한 것은 가장 적은 개념과 가정이 필요한 것이라고 말한다. 그 해결책이 가장 단순하며 오직 주어진 문제만을 해결하고, 복잡성을 야기하거나 부정적인 결과를 초래하지 않는다.
 
 <br>
 
@@ -584,17 +584,17 @@ This law is based on graph theory, where the utility scales as the number of pos
 
 <br>
 
-### Wheaton's Law
+### 휘턴의 법칙
 
-[The Link](http://www.wheatonslaw.com/)
+[링크](http://www.wheatonslaw.com/)
 
-[The Official Day](https://dontbeadickday.com/)
+[공식 기념일](https://dontbeadickday.com/)
 
-> Don't be a dick.
+> 좆같이 굴지 마라.
 >
-> _Wil Wheaton_
+> _윌 휘턴_
 
-Coined by Wil Wheaton (Star Trek: The Next Generation, The Big Bang Theory), this simple, concise, and powerful law aims for an increase in harmony and respect within a professional organization. It can be applied when speaking with coworkers, performing code reviews, countering other points of view, critiquing, and in general, most professional interactions humans have with each other.
+윌 휘턴(스타 트렉 : 더 넥스트 제너레이션, 빅뱅 이론 등에 출연한 배우)이 만든 이 단순명료하고 강력한 법칙은 전문적인 조직에서의 조화와 존중의 증대를 지향한다. 이것은 동료들과 이야기할 때, 코드 리뷰를 할 때, 다른 관점에 직면했을 때, 비평할 때, 그리고 일반적인 대부분의 사람들 간의 직업적인 상호 작용에 적용할 수 있다.
 
 <br>
 
