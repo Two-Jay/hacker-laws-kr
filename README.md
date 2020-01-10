@@ -10,6 +10,7 @@
 
 * [법칙](#법칙)
     * [암달의 법칙](#암달의-법칙)
+    * [깨진 유리창 이론](#깨진-유리창-이론)
     * [브룩스의 법칙](#브룩스의-법칙)
     * [콘웨이의 법칙](#콘웨이의-법칙)
     * [커닝햄의 법칙](#커닝햄의-법칙)
@@ -21,17 +22,21 @@
     * [허트버의 법칙](#허트버의-법칙)
     * [하이프 사이클 & 아마라의 법칙](#하이프-사이클—아마라의-법칙)
     * [하이럼의 법칙 (암시적 인터페이스의 법칙)](#하이럼의-법칙-암시적-인터페이스의-법칙)
+    * [Metcalfe's Law](#metcalfes-law)
     * [무어의 법칙](#무어의-법칙)
     * [머피의 법칙 / 소드의 법칙](#머피의-법칙--소드의-법칙)
+    * [Occam's Razor](#occams-razor)
     * [파킨슨의 법칙](#파킨슨의-법칙)
     * [성급한 최적화의 법칙](#성급한-최적화의-법칙)
     * [푸트의 법칙](#푸트의-법칙)
+    * [Reed's Law](#reeds-law)
     * [복잡성 보존의 법칙 (테슬러의 법칙)](#복잡성-보존의-법칙-테슬러의-법칙)
     * [허술한 추상화의 법칙](#허술한-추상화의-법칙)
     * [사소함의 법칙](#사소함의-법칙)
     * [유닉스 철학](#유닉스-철학)
     * [스포티파이 모델](#스포티파이-모델)
     * [와들러의 법칙](#와들러의-법칙)
+    * [Wheaton's Law](#wheatons-law)
     
 * [원칙](#원칙)
     * [딜버트의 법칙](#딜버트의-법칙)
@@ -97,6 +102,30 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 - [브룩스의 법칙](#브룩스의-법칙)
 - [무어의 법칙](#무어의-법칙)
+
+<br>
+
+### 깨진 유리창 이론
+
+[위키피디아의 깨진 유리창 이론](https://ko.wikipedia.org/wiki/깨진_유리창_이론)
+
+깨진 유리창 이론에 따르면, 눈에 띠는 범죄의 흔적 혹은 환경에 대한 소홀함은 더욱 심각한 범죄와 시설의 감가로 이어진다.
+
+이 이론을 소프트웨어 개발에 적용해보면, 질 낮은 코드(혹은 [기술 부채](#TODO))는 품질을 향상하려는 노력이 무시되거나 평가절하된다는 인식을 줄 수 있게 되고, 결국 더욱 조악한 품질의 코드를 낳게 된다. 이 효과가 퍼지며 시간이 지남에 따라 더욱 큰 질적 저하가 나타나게 된다.
+
+<br>
+
+참고 :
+
+- [기술 부채](#TODO)
+
+<br>
+
+예시 :
+
+- [The Pragmatic Programming: Software Entropy](https://pragprog.com/the-pragmatic-programmer/extracts/software-entropy)
+- [Coding Horror: The Broken Window Theory](https://blog.codinghorror.com/the-broken-window-theory/)
+- [OpenSource: Joy of Programming - The Broken Window Theory](https://opensourceforu.com/2011/05/joy-of-programming-broken-window-theory/)
 
 <br>
 
@@ -312,6 +341,22 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 <br>
 
+### Metcalfe's Law
+
+[Metcalfe's Law on Wikipedia](https://en.wikipedia.org/wiki/Metcalfe's_law)
+
+> In network theory, the value of a system grows as approximately the square of the number of users of the system.
+
+This law is based on the number of possible pairwise connections within a system and is closely related to [Reed's Law](#reeds-law). Odlyzko and others have argued that both Reed's Law and Metcalfe's Law overstate the value of the system by not accounting for the limits of human cognition on network effects; see [Dunbar's Number](#dunbars-number).
+
+<br>
+
+See also:
+- [Reed's Law](#reeds-law)
+- [Dunbar's Number](#dunbars-number)
+
+<br>
+
 ### 무어의 법칙
 
 [위키피디아의 무어의 법칙](https://ko.wikipedia.org/wiki/무어의_법칙)
@@ -342,6 +387,31 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 - [확증편향](#TODO)
 - [선택편향](#TODO)
+
+<br>
+
+### Occam's Razor
+
+[Occam's Razor on Wikipedia](https://en.wikipedia.org/wiki/Occam's_razor)
+
+> Entities should not be multiplied without necessity.
+>
+> William of Ockham
+
+Occam's razor says that among several possible solutions, the most likely solution is the one with the least number of concepts and assumptions. This solution is the simplest and solves only the given problem, without introducing accidental complexity and possible negative consequences.
+
+<br>
+
+See also:
+
+- [YAGNI](#yagni)
+- [No Silver Bullet: Accidental Complexity and Essential Complexity](https://en.wikipedia.org/wiki/No_Silver_Bullet)
+
+<br>
+
+Example:
+
+- [Lean Software Development: Eliminate Waste](https://en.wikipedia.org/wiki/Lean_software_development#Eliminate_waste)
 
 <br>
 
@@ -395,6 +465,20 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 - [피터의 원리](#피터의-원리)
 - [딜버트의 법칙](#딜버트의-법칙)
+
+<br>
+
+### Reed's Law
+
+[Reed's Law on Wikipedia](https://en.wikipedia.org/wiki/Reed's_law)
+
+> The utility of large networks, particularly social networks, scales exponentially with the size of the network.
+
+This law is based on graph theory, where the utility scales as the number of possible sub-groups, which is faster than the number of participants or the number of possible pairwise connections. Odlyzko and others have argued that Reed's Law overstates the utility of the system by not accounting for the limits of human cognition on network effects; see [Dunbar's Number](#dunbars-number).
+
+See also:
+- [Metcalfe's Law](#metcalfes-law)
+- [Dunbar's Number](#dunbars-number)
 
 <br>
 
@@ -496,6 +580,20 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 참고 :
 
 - [사소함의 법칙](#사소함의-법칙)
+
+<br>
+
+### Wheaton's Law
+
+[The Link](http://www.wheatonslaw.com/)
+
+[The Official Day](https://dontbeadickday.com/)
+
+> Don't be a dick.
+>
+> _Wil Wheaton_
+
+Coined by Wil Wheaton (Star Trek: The Next Generation, The Big Bang Theory), this simple, concise, and powerful law aims for an increase in harmony and respect within a professional organization. It can be applied when speaking with coworkers, performing code reviews, countering other points of view, critiquing, and in general, most professional interactions humans have with each other.
 
 <br>
 
