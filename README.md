@@ -471,9 +471,9 @@ _성급한 최적화_ 란 (좁은 의미로) 그것이 꼭 필요한지 알기 �
 
 [Reed's Law on Wikipedia](https://en.wikipedia.org/wiki/Reed's_law)
 
-> The utility of large networks, particularly social networks, scales exponentially with the size of the network.
+> 거대한 네트워크, 특히 소셜 네트워크의 효용은 망의 크기에 대해 지수적으로 증가한다.
 
-This law is based on graph theory, where the utility scales as the number of possible sub-groups, which is faster than the number of participants or the number of possible pairwise connections. Odlyzko and others have argued that Reed's Law overstates the utility of the system by not accounting for the limits of human cognition on network effects; see [Dunbar's Number](#dunbars-number).
+이 법칙은 그래프 이론에 기반하는데, 이에 따르면 망의 효용은 참여자 군의 부분집합의 수에 비례한다. 이것은 망의 참여자의 수 혹은 가능한 연결쌍의 수보다 매우 빠른 속도로 증가하는 것이다. 그러나 오들리즈코를 비롯한 다른 이들은 이 법칙이 네트워크 효과에 있어 인간의 인지를 고려하지 않음으로써 가치를 너무 높게 잡았다고 반박하였다. [던바의-숫자](#던바의-숫자) 참고.
 
 <br>
 
