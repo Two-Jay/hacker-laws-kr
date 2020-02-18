@@ -869,7 +869,7 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 
 ### 분산 컴퓨팅의 오류
 
-[The Fallacies of Distributed Computing on Wikipedia](https://en.wikipedia.org/wiki/You_aren%https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
+[The Fallacies of Distributed Computing on Wikipedia](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
 
 네트워크 컴퓨팅의 오류라고도 알려진 이것은, 소프트웨어 개발에 있어 실패로 이어질 수 있는 분산 컴퓨팅 관련 가설의 목록이다.
 
