@@ -22,6 +22,7 @@
     * [허트버의 법칙](#허트버의-법칙)
     * [하이프 사이클 & 아마라의 법칙](#하이프-사이클—아마라의-법칙)
     * [하이럼의 법칙 (암시적 인터페이스의 법칙)](#하이럼의-법칙-암시적-인터페이스의-법칙)
+    * [커니핸의 법칙](#커니핸의-법칙)
     * [메칼프의 법칙](#메칼프의-법칙)
     * [무어의 법칙](#무어의-법칙)
     * [머피의 법칙 / 소드의 법칙](#머피의-법칙--소드의-법칙)
@@ -338,6 +339,28 @@ _(이 글은 https://github.com/dwmkerr/hacker-laws 의 번역입니다.)_
 
 - [허술한 추상화의 법칙](#허술한-추상화의-법칙)
 - [XKCD 1172](https://xkcd.com/1172/)
+
+<br>
+
+### 커니핸의 법칙
+
+> 애초에 디버깅이란 코드 작성보다 두 배는 더 어렵다. 그러므로 만약 코드를 가능한한 영리하게 작성한다면, 당신은 디버그를 하기에는 역부족이다.
+>
+> (브라이언 커니핸)
+
+커니핸의 법칙은 [브라이언 커니핸](https://ko.wikipedia.org/wiki/브라이언_커니핸)의 이름을 따라 지었으며, 그와 플라우거의 저서 [The Elements of Programming Style](https://en.wikipedia.org/wiki/The_Elements_of_Programming_Style)에서 유래하였다 :
+
+> 디버깅이 프로그램 작성보다 두 배는 어렵다는 것을 모두들 안다. 따라서 만약 당신이 최대한 영리하게 코드를 쓴다면 디버그는 어떻게 할 것인가?
+
+과장되긴 하지만, 커니핸의 법칙의 주장은 복잡한 코드에서 일어나는 문제들은 고치기 매우 어렵거나 심지어 불가능하므로 단순한 코드가 낫다는 것이다.
+
+<br>
+
+참고 :
+
+- [KISS 원칙](#kiss-원칙)
+- [유닉스 철학](#유닉스-철학)
+- [오컴의 면도날](#오컴의-면도날)
 
 <br>
 
@@ -869,7 +892,7 @@ DRY는 _Don't Repeat Yourself반복하지 마라_ 의 약자이다. 이 원칙�
 
 ### 분산 컴퓨팅의 오류
 
-[The Fallacies of Distributed Computing on Wikipedia](https://en.wikipedia.org/wiki/You_aren%https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
+[The Fallacies of Distributed Computing on Wikipedia](https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing)
 
 네트워크 컴퓨팅의 오류라고도 알려진 이것은, 소프트웨어 개발에 있어 실패로 이어질 수 있는 분산 컴퓨팅 관련 가설의 목록이다.
 
