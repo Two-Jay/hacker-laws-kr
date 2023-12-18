@@ -1,1 +1,2 @@
 - [rheh](https://github.com/rheh) - Suggestion - Brooks's Law
+- [Two-Jay](https://github.com/Two-Jay) - PR - The Law of Demeter
